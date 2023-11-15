@@ -26,9 +26,7 @@ interface PageProps { }
 const Page: FunctionComponent<PageProps> = () => {
   return (
     <Stack align="center">
-      {/* <Title mt={100} mb={50} order={1}>Lebenslauf</Title> */}
       <Stack>
-
         <Group align="start" justify="left" ml={100} mt={150} mb={250}>
           <Box maw={"20em"} mr={50}>
             <Title mt={15} mb={15} order={3}>Skills</Title>

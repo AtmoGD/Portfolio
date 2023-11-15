@@ -24,11 +24,6 @@ const Page: FunctionComponent<PageProps> = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-    console.log("HEEELLLOOOO");
-  }
-
-  function handleSubmit(values: any) {
-    console.log(form.values);
     open();
   }
 
@@ -38,23 +33,19 @@ const Page: FunctionComponent<PageProps> = () => {
         <Title m={25}>
           Nachricht <br />
         </Title>
-        {/* <form onSubmit={form.onSubmit((values) => handleSubmit(values))}> */}
         <form onSubmit={sendEmail}>
           <TextInput m={25}
             withAsterisk
-            // label="Name"
             placeholder="Name"
             {...form.getInputProps("name")}
           />
           <TextInput m={25}
             withAsterisk
-            // label="Email"
             placeholder="Email"
             {...form.getInputProps("email")}
           />
           <TextInput m={25}
             withAsterisk
-            // label="Nachricht"
             placeholder="Nachricht"
             {...form.getInputProps("message")}
           />

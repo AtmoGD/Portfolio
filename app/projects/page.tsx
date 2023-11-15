@@ -76,8 +76,6 @@ const Page: FunctionComponent<PageProps> = () => {
             link={"https://atmogd.github.io/BomberMan/html/Game.html"}
           />
 
-
-
         </Stack>
       </Stack>
     </Center>
