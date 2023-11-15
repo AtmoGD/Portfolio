@@ -1,12 +1,15 @@
 "use client";
 
-import { Box, Button, Text, Group, TextInput, Title } from "@mantine/core";
+import { Box, Button, Text, Group, TextInput, Title, Center, Modal } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { useDisclosure } from '@mantine/hooks';
 import React, { FunctionComponent } from "react";
 
-interface PageProps {}
+interface PageProps { }
 
 const Page: FunctionComponent<PageProps> = () => {
+  const [opened, { open, close }] = useDisclosure(false);
+
   const form = useForm({
     initialValues: {
       name: "",
@@ -21,44 +24,49 @@ const Page: FunctionComponent<PageProps> = () => {
 
   function handleSubmit(values: any) {
     console.log(form.values);
+    open();
   }
 
   return (
-    <Box maw={"36em"} mx="auto">
-      <Title>
-        Sie möchten mich kontaktieren? <br />
-      </Title>
-      <Text>
-        Sie können mich gerne über meine oben verlinkten Kanäle erreichen oder
-        mir ganz unkompliziert über das unten stehende Formular eine Nachricht
-        zukommen lassen.
-      </Text>
-      <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
-        <TextInput
-          withAsterisk
-          label="Name"
-          placeholder="Ihr Name"
-          {...form.getInputProps("name")}
-        />
-        <TextInput
-          withAsterisk
-          label="Email"
-          placeholder="Ihre@email.com"
-          {...form.getInputProps("email")}
-        />
-        <TextInput
-          withAsterisk
-          label="Nachricht"
-          placeholder="Bitte geben Sie eine Nachricht ein"
-          {...form.getInputProps("message")}
-        />
+    <Center>
+      <Box w={500} m={50}>
+        <Title m={25}>
+          Nachricht <br />
+        </Title>
+        <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
+          <TextInput m={25}
+            withAsterisk
+            // label="Name"
+            placeholder="Name"
+            {...form.getInputProps("name")}
+          />
+          <TextInput m={25}
+            withAsterisk
+            // label="Email"
+            placeholder="Email"
+            {...form.getInputProps("email")}
+          />
+          <TextInput m={25}
+            withAsterisk
+            // label="Nachricht"
+            placeholder="Nachricht"
+            {...form.getInputProps("message")}
+          />
 
-        <Group justify="flex-end" mt="md">
-          <Button type="submit">Submit</Button>
-        </Group>
-      </form>
-    </Box>
+          <Group justify="flex-end" m={25}>
+            <Button type="submit">Submit</Button>
+          </Group>
+        </form>
+      </Box>
+
+      <Modal opened={opened} onClose={close} title="Authentication" centered>
+        <Text>Modal content</Text>
+      </Modal>
+    </Center>
   );
 };
 
 export default Page;
+
+
+
