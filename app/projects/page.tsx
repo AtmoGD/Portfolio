@@ -8,7 +8,7 @@ import pumpkinHarvestImage from "@/assets/PumpkinHarvest@0.25x.png";
 import witchWayImage from "@/assets/WitchWay.png";
 import gravityPongImage from "@/assets/GravityPong.png";
 import oasisImage from "@/assets/Oasis.jpg";
-import bombermanImage from "@/assets/BomberMan.png";
+import bombermanImage from "@/assets/Bomberman.png";
 
 interface PageProps { }
 

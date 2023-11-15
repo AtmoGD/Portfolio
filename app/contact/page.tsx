@@ -22,6 +22,11 @@ const Page: FunctionComponent<PageProps> = () => {
     },
   });
 
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    console.log("HEEELLLOOOO");
+  }
+
   function handleSubmit(values: any) {
     console.log(form.values);
     open();
@@ -33,7 +38,8 @@ const Page: FunctionComponent<PageProps> = () => {
         <Title m={25}>
           Nachricht <br />
         </Title>
-        <form onSubmit={form.onSubmit((values) => handleSubmit(values))}>
+        {/* <form onSubmit={form.onSubmit((values) => handleSubmit(values))}> */}
+        <form onSubmit={sendEmail}>
           <TextInput m={25}
             withAsterisk
             // label="Name"
@@ -54,7 +60,7 @@ const Page: FunctionComponent<PageProps> = () => {
           />
 
           <Group justify="flex-end" m={25}>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" onSubmit={sendEmail}>Submit</Button>
           </Group>
         </form>
       </Box>
