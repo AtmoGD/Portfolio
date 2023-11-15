@@ -1,34 +1,61 @@
-import { AspectRatio, Center, Group, Image, Stack } from "@mantine/core";
-import profileImgSrc from "@/assets/profile.jpg";
+"use client";
+
+import { Carousel } from "@mantine/carousel";
+import { Title, Image, AspectRatio, Center, Box, Stack } from "@mantine/core";
 import NextImage from "next/image";
+
+import cozyMarktImgSrc from "@/assets/CozyWinterMarket.png";
 
 export default function Home() {
   return (
-    <main>
-      <Center w={"100vw"} h={"100vh"} bg="var(--mantine-color-gray-light)">
-        <Stack align="center">
-          <h1>Welcome!</h1>
-          <Group justify="center">
-            <Group justify="center">
+    <Center>
+      <Stack>
+        <Box maw={"36em"}>
+          <Title>Willkommen!</Title>
+        </Box>
+        <Box maw={"36em"}>
+          <Title>Projekte von mir</Title>
+          <Carousel
+            slideSize="100%"
+            height={200}
+            slideGap="xs"
+            draggable={false}
+            withIndicators
+            loop
+          >
+            <Carousel.Slide>
               <AspectRatio ratio={1 / 1} w={200} mx="auto">
                 <Image
                   component={NextImage}
-                  src={profileImgSrc}
+                  src={cozyMarktImgSrc}
                   alt="Profile Image"
                   radius={"50%"}
                 />
               </AspectRatio>
-            </Group>
-
-            <Group justify="center">
-              <Stack h={"100%"} justify="flex-start">
-                <h1>Dennis Hawran</h1>
-                <span>Passionate Programmer</span>
-              </Stack>
-            </Group>
-          </Group>
-        </Stack>
-      </Center>
-    </main>
+            </Carousel.Slide>
+            <Carousel.Slide>
+              <AspectRatio ratio={1 / 1} w={200} mx="auto">
+                <Image
+                  component={NextImage}
+                  src={cozyMarktImgSrc}
+                  alt="Profile Image"
+                  radius={"50%"}
+                />
+              </AspectRatio>
+            </Carousel.Slide>
+            <Carousel.Slide>
+              <AspectRatio ratio={1 / 1} w={200} mx="auto">
+                <Image
+                  component={NextImage}
+                  src={cozyMarktImgSrc}
+                  alt="Profile Image"
+                  radius={"50%"}
+                />
+              </AspectRatio>
+            </Carousel.Slide>
+          </Carousel>
+        </Box>
+      </Stack>
+    </Center>
   );
 }
