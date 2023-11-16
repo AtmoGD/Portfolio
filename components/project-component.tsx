@@ -58,7 +58,8 @@ const ProjectCard: FunctionComponent<PageProps> = ({
             rightSection={<IconArrowRight size={16} />}
             onClick={() => {
               window.open(link, "_blank");
-            }}>
+            }}
+          >
             {buttonText}
           </Button>
         </Stack>

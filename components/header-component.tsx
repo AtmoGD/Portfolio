@@ -17,6 +17,7 @@ import {
 } from "@mantine/core";
 
 import {
+  IconArrowDown,
   IconBrandGithub,
   IconBrandItch,
   IconBrandLinkedin,
@@ -26,7 +27,7 @@ import {
   IconMapPinFilled,
 } from "@tabler/icons-react";
 
-interface PageProps { }
+interface PageProps {}
 
 const HeaderComponent: FunctionComponent<PageProps> = () => {
   const [birthday] = useState(new Date(1996, 6, 12));
@@ -35,11 +36,10 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
   );
 
   return (
-    <div>
+    <Stack gap={0}>
       <Center w={"100%"} h={"100vh"} className="gradient-background">
         <Stack align="center">
           <Group justify="center">
-
             <Group justify="center">
               <AspectRatio ratio={1 / 1} w={200} mx="auto">
                 <Image
@@ -72,13 +72,13 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
 
                 <Group>
                   <Link href={"https://atmogd.itch.io/"} target="_blank">
-                    <IconBrandItch size={60} />
+                    <IconBrandItch size={50} />
                   </Link>
                   <Link href={"https://sketchfab.com/atmo_gd"} target="_blank">
-                    <IconBrandSketch size={60} />
+                    <IconBrandSketch size={50} />
                   </Link>
                   <Link href={"https://github.com/AtmoGD"} target="_blank">
-                    <IconBrandGithub size={60} />
+                    <IconBrandGithub size={50} />
                   </Link>
                   <Link
                     href={
@@ -86,18 +86,17 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
                     }
                     target="_blank"
                   >
-                    <IconBrandLinkedin size={60} />
+                    <IconBrandLinkedin size={50} />
                   </Link>
                 </Group>
               </Stack>
             </Group>
-
-
           </Group>
         </Stack>
+        <IconArrowDown size={60} className="headerArrow" />
       </Center>
       <TabSection />
-    </div>
+    </Stack>
   );
 };
 

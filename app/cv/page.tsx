@@ -1,27 +1,15 @@
 "use client";
 
+import { Timeline, Text, Title, Stack, Box, Group, Badge } from "@mantine/core";
 import {
-  Timeline,
-  Text,
-  Title,
-  Stack,
-  Box,
-  Group,
-  Badge,
-} from "@mantine/core";
-import {
-  IconCircle,
   IconCircleOff,
-  IconCodeCircle,
   IconCodeDots,
   IconMapPinFilled,
-  IconMusic,
   IconSchool,
-  IconVinyl,
 } from "@tabler/icons-react";
 import React, { FunctionComponent } from "react";
 
-interface PageProps { }
+interface PageProps {}
 
 const Page: FunctionComponent<PageProps> = () => {
   return (
@@ -29,7 +17,9 @@ const Page: FunctionComponent<PageProps> = () => {
       <Stack>
         <Group align="start" justify="left" ml={100} mt={150} mb={250}>
           <Box maw={"20em"} mr={50}>
-            <Title mt={15} mb={15} order={3}>Skills</Title>
+            <Title mt={15} mb={15} order={3}>
+              Skills
+            </Title>
             <Group justify="flex-start">
               <Group w={"3em"}>
                 <Text>Unity</Text>
@@ -160,7 +150,6 @@ const Page: FunctionComponent<PageProps> = () => {
                   {" "}
                   2.4
                 </Text>
-
               </Timeline.Item>
 
               <Timeline.Item
@@ -214,9 +203,7 @@ const Page: FunctionComponent<PageProps> = () => {
           </Stack>
 
           <Stack>
-            <Title order={2}>
-              Berufserfahrung
-            </Title>
+            <Title order={2}>Berufserfahrung</Title>
 
             <Timeline active={3} bulletSize={24} lineWidth={2}>
               <Timeline.Item
@@ -246,7 +233,8 @@ const Page: FunctionComponent<PageProps> = () => {
                   Praktikum
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Organisation den Spielelabors, unterstützen von Studenten und entwicklung verschiedener Anwendungen
+                  Organisation den Spielelabors, unterstützen von Studenten und
+                  entwicklung verschiedener Anwendungen
                 </Text>
               </Timeline.Item>
 
@@ -261,7 +249,8 @@ const Page: FunctionComponent<PageProps> = () => {
                   Tutor "Entwicklung Interaktiver Anwendungen"
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Unterstützen von Studenten bei der Entwicklung von Spielen mit der FUDGE Engine
+                  Unterstützen von Studenten bei der Entwicklung von Spielen mit
+                  der FUDGE Engine
                 </Text>
               </Timeline.Item>
 
@@ -276,7 +265,8 @@ const Page: FunctionComponent<PageProps> = () => {
                   Tutor "Unity Engine"
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Unterstützen von Studenten bei der Entwicklung von Spielen mit der Unity Engine
+                  Unterstützen von Studenten bei der Entwicklung von Spielen mit
+                  der Unity Engine
                 </Text>
               </Timeline.Item>
 
@@ -294,96 +284,10 @@ const Page: FunctionComponent<PageProps> = () => {
                   Entwickeln eines Chatbots spezialisiert auf die Lehre
                 </Text>
               </Timeline.Item>
-
-
             </Timeline>
           </Stack>
         </Group>
         <Group align="start" justify="flex-start" maw={"72em"}>
-          {/* <Box maw={"20em"}>
-            <Title mt={15} mb={15} order={3}>Skills</Title>
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>Unity</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>C#</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>Java</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>Blender</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>Unreal</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>Python</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>C++</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-          </Box> */}
-
           {/* <Box maw={"20em"}>
             <Title mt={15} mb={15} order={3}>Hobbys</Title>
             <Group>
@@ -419,7 +323,7 @@ const Page: FunctionComponent<PageProps> = () => {
           </Box> */}
         </Group>
       </Stack>
-    </Stack >
+    </Stack>
   );
 };
 
