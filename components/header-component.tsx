@@ -2,7 +2,6 @@
 
 import React, { FunctionComponent, useState } from "react";
 import profileImgSrc from "@/assets/profile.jpg";
-import sketchfabIcon from "@/assets/sketchfab.svg";
 import NextImage from "next/image";
 import TabSection from "./tab-section-component";
 import Link from "next/link";
@@ -23,6 +22,7 @@ import {
   IconBrandItch,
   IconBrandLinkedin,
   IconCalendar,
+  IconCube,
   IconMailFilled,
   IconMapPinFilled,
 } from "@tabler/icons-react";
@@ -71,28 +71,35 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
                 </Group>
 
                 <Group>
-                  <Link href={"https://atmogd.itch.io/"} target="_blank">
-                    <IconBrandItch size={50} color="black" />
+                  <Link
+                    href={"https://atmogd.itch.io/"}
+                    target="_blank"
+                    className="headerIcon"
+                  >
+                    <IconBrandItch size={50} />
                   </Link>
-                  <Link href={"https://sketchfab.com/atmo_gd"} target="_blank">
-                    <AspectRatio ratio={1 / 1} h={40} w={40}>
-                      <Image
-                        src={sketchfabIcon}
-                        component={NextImage}
-                        alt="Dunno"
-                      ></Image>
-                    </AspectRatio>
+                  <Link
+                    href={"https://sketchfab.com/atmo_gd"}
+                    target="_blank"
+                    className="headerIcon"
+                  >
+                    <IconCube size={50} />
                   </Link>
-                  <Link href={"https://github.com/AtmoGD"} target="_blank">
-                    <IconBrandGithub size={50} color="black" />
+                  <Link
+                    href={"https://github.com/AtmoGD"}
+                    target="_blank"
+                    className="headerIcon"
+                  >
+                    <IconBrandGithub size={50} />
                   </Link>
                   <Link
                     href={
                       "https://www.linkedin.com/in/dennis-hawran-30497b19a/"
                     }
                     target="_blank"
+                    className="headerIcon"
                   >
-                    <IconBrandLinkedin size={50} color="black" />
+                    <IconBrandLinkedin size={50} />
                   </Link>
                 </Group>
               </Stack>

@@ -9,6 +9,7 @@ import witchWayImage from "@/assets/WitchWay.png";
 import gravityPongImage from "@/assets/GravityPong.png";
 import oasisImage from "@/assets/Oasis.jpg";
 import bombermanImage from "@/assets/Bomb.png";
+import aureaImage from "@/assets/Aurea.png";
 
 import arcImage from "@/assets/Arc.png";
 import hammerImage from "@/assets/Hammer.png";
@@ -52,6 +53,21 @@ const Page: FunctionComponent<PageProps> = () => {
               "Bachelor Thesis",
             ]}
             link={"https://youtu.be/Wh6ieci--3E"}
+            buttonText="Gameplay Teaser"
+          />
+
+          <ProjectCard
+            title="Aurea"
+            description="Aurea ist ein Augmented-Reality Multiplayer Spiel im Low-Poly-Stil für dein Smartphone. Es wurde mit der Unity Engine entwickelt und für die Modelle wurden die 3D Programme Blender und Maya benutzt. Mit der AR-Funktion kannst du hautnah ins Geschehen eintauchen und dir die Welt der Aurea in dein Wohnzimmer holen."
+            image={aureaImage}
+            badges={[
+              "Unity",
+              "Programming",
+              "Game Design",
+              "AR",
+              "Student Project",
+            ]}
+            link={"https://www.youtube.com/watch?v=t9RwqJnLjy8"}
             buttonText="Gameplay Teaser"
           />
 

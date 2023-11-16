@@ -4,25 +4,6 @@ body {
   /* overflow-x: hidden; */
 }
 
-.navBar {
-  position: sticky;
-  top: 0;
-}
-
-.gradient {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 21%,
-    rgba(180, 84, 84, 1) 100%
-  );
-}
-
-.skillIcon {
-  margin: 0;
-  padding: 0;
-}
-
 .gradient-background {
   @mixin dark {
     background: black;
@@ -83,12 +64,22 @@ body {
 .titleBar {
   padding: 25px;
   width: 97vw;
+
   @mixin dark {
     background-color: rgba(40, 40, 40, 1);
   }
 
   @mixin light {
-    /* background-color: #f7eaea; */
     background-color: rgba(251, 242, 242, 0.4);
+  }
+}
+
+.headerIcon {
+  @mixin dark {
+    color: #c1c2c5;
+  }
+
+  @mixin light {
+    color: black;
   }
 }

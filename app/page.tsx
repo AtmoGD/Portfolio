@@ -8,7 +8,6 @@ import {
   Stack,
   rem,
   Title,
-  Group,
 } from "@mantine/core";
 
 import { Carousel } from "@mantine/carousel";
