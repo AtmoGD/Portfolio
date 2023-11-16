@@ -50,7 +50,7 @@ const ProjectCard: FunctionComponent<PageProps> = ({
           <Title order={2}>{title}</Title>
           <Group maw={"36em"}>
             {badges.map((badge) => (
-              <Badge>{badge}</Badge>
+              <Badge key={badge}>{badge}</Badge>
             ))}
           </Group>
           <Text maw={"36em"}>{description}</Text>

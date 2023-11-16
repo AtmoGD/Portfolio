@@ -246,7 +246,7 @@ const Page: FunctionComponent<PageProps> = () => {
                   September 2020 - August 2021
                 </Text>
                 <Text size="xs" mt={4}>
-                  Tutor "Entwicklung Interaktiver Anwendungen"
+                  Tutor &quotEntwicklung Interaktiver Anwendungen&quot
                 </Text>
                 <Text size="xs" maw={"36em"}>
                   Unterstützen von Studenten bei der Entwicklung von Spielen mit
@@ -262,7 +262,7 @@ const Page: FunctionComponent<PageProps> = () => {
                   September 2021 - März 2022
                 </Text>
                 <Text size="xs" mt={4}>
-                  Tutor "Unity Engine"
+                  Tutor &quotUnity Engine&quot
                 </Text>
                 <Text size="xs" maw={"36em"}>
                   Unterstützen von Studenten bei der Entwicklung von Spielen mit
