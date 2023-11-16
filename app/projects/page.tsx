@@ -1,4 +1,4 @@
-import { Center, Stack, Title } from "@mantine/core";
+import { Box, Center, Stack, Title } from "@mantine/core";
 import React, { FunctionComponent } from "react";
 import ProjectCard from "@/components/project-component";
 
@@ -19,9 +19,11 @@ const Page: FunctionComponent<PageProps> = () => {
   return (
     <Center>
       <Stack align="center">
-        <Title order={2} mt={50}>
-          Games
-        </Title>
+        <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+          <Center>
+            <Title order={2}>Games</Title>
+          </Center>
+        </Box>
         <Stack>
           <ProjectCard
             title="Unthroned"
@@ -117,10 +119,14 @@ const Page: FunctionComponent<PageProps> = () => {
             link={"https://atmogd.github.io/BomberMan/html/Game.html"}
           />
         </Stack>
-
-        <Title order={2} mt={50}>
+        <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+          <Center>
+            <Title order={2}>3D Modelle</Title>
+          </Center>
+        </Box>
+        {/* <Title order={2} mt={50}>
           3D Modelle
-        </Title>
+        </Title> */}
         <Stack>
           <ProjectCard
             title="Arc Reactor"

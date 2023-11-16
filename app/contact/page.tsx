@@ -40,48 +40,57 @@ const Page: FunctionComponent<PageProps> = () => {
 
   return (
     <Center>
-      <Box w={500} m={50}>
-        <Title m={25}>
+      <Stack>
+        <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+          <Center>
+            <Title order={2}>Nachricht</Title>
+          </Center>
+        </Box>
+        <Center>
+          <Box w={500} m={0}>
+            {/* <Title m={25}>
           Nachricht <br />
-        </Title>
-        <form onSubmit={sendEmail}>
-          <TextInput
-            m={25}
-            withAsterisk
-            placeholder="Name"
-            {...form.getInputProps("name")}
-          />
-          <TextInput
-            m={25}
-            withAsterisk
-            placeholder="Email"
-            {...form.getInputProps("email")}
-          />
-          <TextInput
-            m={25}
-            withAsterisk
-            placeholder="Nachricht"
-            {...form.getInputProps("message")}
-          />
+        </Title> */}
+            <form onSubmit={sendEmail}>
+              <TextInput
+                m={25}
+                withAsterisk
+                placeholder="Name"
+                {...form.getInputProps("name")}
+              />
+              <TextInput
+                m={25}
+                withAsterisk
+                placeholder="Email"
+                {...form.getInputProps("email")}
+              />
+              <TextInput
+                m={25}
+                withAsterisk
+                placeholder="Nachricht"
+                {...form.getInputProps("message")}
+              />
 
-          <Group justify="flex-end" m={25}>
-            <Button type="submit" onSubmit={sendEmail}>
-              Submit
-            </Button>
-          </Group>
-        </form>
-      </Box>
+              <Group justify="flex-end" m={25}>
+                <Button type="submit" onSubmit={sendEmail}>
+                  Submit
+                </Button>
+              </Group>
+            </form>
+          </Box>
+        </Center>
 
-      <Modal size={"36em"} opened={opened} onClose={close} title="" centered>
-        <Stack justify="center" align="center">
-          <Title m={15}>Email gesendet 🎉</Title>
-          <IconSend size={64} style={{ margin: 15 }} />
-          <Text m={15}>
-            Vielen Dank für die Nachricht auch wenn ich sie nicht lesen werde
-            weil das Formular nicht funktioniert. Aber hey, der Wille zählt!
-          </Text>
-        </Stack>
-      </Modal>
+        <Modal size={"36em"} opened={opened} onClose={close} title="" centered>
+          <Stack justify="center" align="center">
+            <Title m={15}>Email gesendet 🎉</Title>
+            <IconSend size={64} style={{ margin: 15 }} />
+            <Text m={15}>
+              Vielen Dank für die Nachricht auch wenn ich sie nicht lesen werde
+              weil das Formular nicht funktioniert. Aber hey, der Wille zählt!
+            </Text>
+          </Stack>
+        </Modal>
+      </Stack>
     </Center>
   );
 };

@@ -26,6 +26,7 @@ import {
   IconMailFilled,
   IconMapPinFilled,
 } from "@tabler/icons-react";
+import TransitionWrapper from "./transition-wrapper";
 
 interface PageProps {}
 

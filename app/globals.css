@@ -63,4 +63,19 @@ body {
   position: absolute;
   right: 24px;
   bottom: 24px;
+  animation: arrow-animation 1.5s ease-in-out infinite;
+}
+
+@keyframes arrow-animation {
+  0% {
+    bottom: 24px;
+  }
+
+  50% {
+    bottom: 32px;
+  }
+
+  100% {
+    bottom: 24px;
+  }
 }

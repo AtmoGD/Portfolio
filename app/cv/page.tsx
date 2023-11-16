@@ -1,6 +1,15 @@
 "use client";
 
-import { Timeline, Text, Title, Stack, Box, Group, Badge } from "@mantine/core";
+import {
+  Timeline,
+  Text,
+  Title,
+  Stack,
+  Box,
+  Group,
+  Badge,
+  Center,
+} from "@mantine/core";
 import {
   IconCircleOff,
   IconCodeDots,
@@ -14,8 +23,13 @@ interface PageProps {}
 const Page: FunctionComponent<PageProps> = () => {
   return (
     <Stack align="center">
+      <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+        <Center>
+          <Title order={2}>Lebenslauf</Title>
+        </Center>
+      </Box>
       <Stack>
-        <Group align="start" justify="left" ml={100} mt={150} mb={250}>
+        <Group align="start" justify="left" ml={100} mt={0} mb={250}>
           <Box maw={"20em"} mr={50}>
             <Title mt={15} mb={15} order={3}>
               Skills
