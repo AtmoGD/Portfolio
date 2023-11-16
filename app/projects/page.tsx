@@ -1,4 +1,4 @@
-import { Center, Group, Stack, Title } from "@mantine/core";
+import { Center, Stack, Title } from "@mantine/core";
 import React, { FunctionComponent } from "react";
 import ProjectCard from "@/components/project-component";
 

@@ -22,7 +22,6 @@ import {
   IconBrandGithub,
   IconBrandItch,
   IconBrandLinkedin,
-  IconBrandSketch,
   IconCalendar,
   IconMailFilled,
   IconMapPinFilled,
