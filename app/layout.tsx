@@ -9,7 +9,6 @@ import {
   createTheme,
   MantineColorsTuple,
 } from "@mantine/core";
-import TransitionWrapper from "@/components/transition-wrapper";
 
 export const metadata = {
   title: "Dennis Hawran",

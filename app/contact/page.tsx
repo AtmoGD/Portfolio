@@ -41,16 +41,13 @@ const Page: FunctionComponent<PageProps> = () => {
   return (
     <Center>
       <Stack>
-        <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+        <Box className="titleBar">
           <Center>
             <Title order={2}>Nachricht</Title>
           </Center>
         </Box>
         <Center>
           <Box w={500} m={0}>
-            {/* <Title m={25}>
-          Nachricht <br />
-        </Title> */}
             <form onSubmit={sendEmail}>
               <TextInput
                 m={25}
@@ -79,7 +76,6 @@ const Page: FunctionComponent<PageProps> = () => {
             </form>
           </Box>
         </Center>
-
         <Modal size={"36em"} opened={opened} onClose={close} title="" centered>
           <Stack justify="center" align="center">
             <Title m={15}>Email gesendet 🎉</Title>

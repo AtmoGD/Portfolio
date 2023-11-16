@@ -26,7 +26,6 @@ import {
   IconMailFilled,
   IconMapPinFilled,
 } from "@tabler/icons-react";
-import TransitionWrapper from "./transition-wrapper";
 
 interface PageProps {}
 
@@ -83,7 +82,6 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
                         alt="Dunno"
                       ></Image>
                     </AspectRatio>
-                    {/* <IconBrandSketch size={50} /> */}
                   </Link>
                   <Link href={"https://github.com/AtmoGD"} target="_blank">
                     <IconBrandGithub size={50} color="black" />

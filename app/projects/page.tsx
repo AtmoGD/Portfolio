@@ -19,7 +19,7 @@ const Page: FunctionComponent<PageProps> = () => {
   return (
     <Center>
       <Stack align="center">
-        <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+        <Box className="titleBar">
           <Center>
             <Title order={2}>Games</Title>
           </Center>
@@ -119,14 +119,11 @@ const Page: FunctionComponent<PageProps> = () => {
             link={"https://atmogd.github.io/BomberMan/html/Game.html"}
           />
         </Stack>
-        <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+        <Box className="titleBar">
           <Center>
             <Title order={2}>3D Modelle</Title>
           </Center>
         </Box>
-        {/* <Title order={2} mt={50}>
-          3D Modelle
-        </Title> */}
         <Stack>
           <ProjectCard
             title="Arc Reactor"

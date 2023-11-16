@@ -23,7 +23,7 @@ interface PageProps {}
 const Page: FunctionComponent<PageProps> = () => {
   return (
     <Stack align="center">
-      <Box bg={"#f7eaea"} w={"100vw"} p={25}>
+      <Box className="titleBar">
         <Center>
           <Title order={2}>Lebenslauf</Title>
         </Center>

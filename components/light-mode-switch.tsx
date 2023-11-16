@@ -1,21 +1,13 @@
 "use client";
 
 import {
-  AspectRatio,
-  Image,
   Switch,
   rem,
-  useComputedColorScheme,
   useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
 import { IconMoonStars, IconSun } from "@tabler/icons-react";
 import React, { FunctionComponent } from "react";
-import NextImage from "next/image";
-import cx from "clsx";
-
-import germanImage from "@/assets/de.svg";
-import englishImage from "@/assets/us.svg";
 
 interface PageProps {}
 // Global State Management um die Sprache zu wechseln und das andere Package für das ändern der Strings

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import NextImage, { StaticImageData } from "next/image";
 import {
   AspectRatio,
@@ -13,7 +13,6 @@ import {
   Badge,
   Button,
 } from "@mantine/core";
-import Link from "next/link";
 import { IconArrowRight } from "@tabler/icons-react";
 
 interface PageProps {
