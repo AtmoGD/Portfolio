@@ -2,6 +2,7 @@
 
 import React, { FunctionComponent, useState } from "react";
 import profileImgSrc from "@/assets/profile.jpg";
+import sketchfabIcon from "@/assets/sketchfab.svg";
 import NextImage from "next/image";
 import TabSection from "./tab-section-component";
 import Link from "next/link";
@@ -72,13 +73,20 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
 
                 <Group>
                   <Link href={"https://atmogd.itch.io/"} target="_blank">
-                    <IconBrandItch size={50} />
+                    <IconBrandItch size={50} color="black" />
                   </Link>
                   <Link href={"https://sketchfab.com/atmo_gd"} target="_blank">
-                    <IconBrandSketch size={50} />
+                    <AspectRatio ratio={1 / 1} h={40} w={40}>
+                      <Image
+                        src={sketchfabIcon}
+                        component={NextImage}
+                        alt="Dunno"
+                      ></Image>
+                    </AspectRatio>
+                    {/* <IconBrandSketch size={50} /> */}
                   </Link>
                   <Link href={"https://github.com/AtmoGD"} target="_blank">
-                    <IconBrandGithub size={50} />
+                    <IconBrandGithub size={50} color="black" />
                   </Link>
                   <Link
                     href={
@@ -86,7 +94,7 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
                     }
                     target="_blank"
                   >
-                    <IconBrandLinkedin size={50} />
+                    <IconBrandLinkedin size={50} color="black" />
                   </Link>
                 </Group>
               </Stack>
