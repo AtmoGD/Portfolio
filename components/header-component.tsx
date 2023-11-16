@@ -99,8 +99,8 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
             </Group>
           </Group>
         </Stack>
-        <IconArrowDown size={60} className="headerArrow" />
       </Center>
+      <IconArrowDown size={60} className="headerArrow" />
       <TabSection />
     </Stack>
   );
