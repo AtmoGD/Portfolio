@@ -1,7 +1,7 @@
 "use client";
 
-import React, { FunctionComponent, useState } from "react";
-import profileImgSrc from "@/assets/profile.jpg";
+import React, { FunctionComponent } from "react";
+import profileImgSrc from "@/assets/profile_compressed.jpg";
 import NextImage from "next/image";
 import TabSection from "./tab-section-component";
 import Link from "next/link";
@@ -30,10 +30,18 @@ import {
 interface PageProps {}
 
 const HeaderComponent: FunctionComponent<PageProps> = () => {
-  const [birthday] = useState(new Date(1996, 6, 12));
-  const [age] = useState(
-    new Date().getUTCFullYear() - birthday.getUTCFullYear()
-  );
+
+  // Thanks to: https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
+  function getAge(dateString :string) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
 
   return (
     <Stack gap={0}>
@@ -41,7 +49,7 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
         <Stack align="center">
           <Group justify="center">
             <Group justify="center">
-              <AspectRatio ratio={1 / 1} w={200} mx="auto">
+              <AspectRatio ratio={1 / 1} w={200} mx={"auto"}>
                 <Image
                   component={NextImage}
                   src={profileImgSrc}
@@ -62,7 +70,7 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
 
                 <Group>
                   <IconCalendar size={24} />
-                  <Text> 12.06.1996 ({age})</Text>
+                  <Text> 12.06.1996 ({getAge("1996-06-12")})</Text>
                 </Group>
 
                 <Group>
@@ -79,13 +87,6 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
                     <IconBrandItch size={50} />
                   </Link>
                   <Link
-                    href={"https://sketchfab.com/atmo_gd"}
-                    target="_blank"
-                    className="headerIcon"
-                  >
-                    <IconCube size={50} />
-                  </Link>
-                  <Link
                     href={"https://github.com/AtmoGD"}
                     target="_blank"
                     className="headerIcon"
@@ -100,6 +101,13 @@ const HeaderComponent: FunctionComponent<PageProps> = () => {
                     className="headerIcon"
                   >
                     <IconBrandLinkedin size={50} />
+                  </Link>
+                  <Link
+                    href={"https://sketchfab.com/atmo_gd"}
+                    target="_blank"
+                    className="headerIcon"
+                  >
+                    <IconCube size={50} />
                   </Link>
                 </Group>
               </Stack>

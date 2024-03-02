@@ -16,6 +16,7 @@ interface PageProps {}
 const LightModeSwitch: FunctionComponent<PageProps> = () => {
   const theme = useMantineTheme();
   const { setColorScheme } = useMantineColorScheme();
+
   const sunIcon = (
     <IconSun
       style={{ width: rem(16), height: rem(16) }}
@@ -37,6 +38,7 @@ const LightModeSwitch: FunctionComponent<PageProps> = () => {
       <Switch
         size="md"
         color="dark.4"
+        m={10}
         onLabel={sunIcon}
         offLabel={moonIcon}
         onChange={(event) =>

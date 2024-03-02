@@ -37,7 +37,7 @@ const ProjectCard: FunctionComponent<PageProps> = ({
   return (
     <Box p={25}>
       <Group>
-        <AspectRatio ratio={1 / 1} w={250}>
+        <AspectRatio ratio={1 / 1} w={300}>
           <Image
             component={NextImage}
             src={image}

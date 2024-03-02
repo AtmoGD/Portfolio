@@ -20,8 +20,12 @@ import pumpkinHarvestImage from "@/assets/PumpkinHarvest@0.25x.png";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import TransitionWrapper from "@/components/transition-wrapper";
+import { redirect, usePathname } from "next/navigation";
 
 export default function Home() {
+  const path = usePathname();
+  redirect("/projects");
+
   return (
     <TransitionWrapper>
       <Center>
@@ -32,7 +36,7 @@ export default function Home() {
             </Center>
           </Box>
           <Center>
-            <Box maw={"36em"} mt={0} mb={250}>
+            <Box maw={"36em"} mt={0} mb={350}>
               <Carousel
                 slideSize="100%"
                 height={"100%"}
