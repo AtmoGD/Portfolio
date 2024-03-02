@@ -12,10 +12,11 @@ interface PageProps {}
 
 const TabSection: FunctionComponent<PageProps> = () => {
   const { t } = useTranslation();
+
   const path = usePathname();
+
   if (typeof window === "undefined") return null;
   let smallViewport = window.innerWidth < 768;
-  // let smallViewport = false;
 
   const innerContent = (
     <>
@@ -66,7 +67,7 @@ const TabSection: FunctionComponent<PageProps> = () => {
 
   if (smallViewport) {
     return (
-      <Stack justify="center" align="center" className="tabBar">
+      <Stack justify="center" align="center" className="tabBar" pb={20}>
         {innerContent}
       </Stack>
     );
