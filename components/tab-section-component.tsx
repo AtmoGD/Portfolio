@@ -20,15 +20,15 @@ const TabSection: FunctionComponent<PageProps> = () => {
 
   const innerContent = (
     <>
-      {/* <NavLink
+      <NavLink
         style={{ borderRadius: "8px", textAlign: "center", fontWeight: "bold" }}
         component={Link}
         href="/"
-        label="Home"
+        label={t("aboutMeTitle")}
         active={path === "/"}
         maw={"10em"}
         m={15}
-      /> */}
+      />
 
       <NavLink
         style={{ borderRadius: "8px", textAlign: "center", fontWeight: "bold" }}
