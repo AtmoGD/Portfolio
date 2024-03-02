@@ -13,7 +13,8 @@ interface PageProps {}
 const TabSection: FunctionComponent<PageProps> = () => {
   const { t } = useTranslation();
   const path = usePathname();
-  let smallViewport = window.innerWidth < 768;
+  // let smallViewport = window.innerWidth < 768;
+  let smallViewport = false;
 
   const innerContent = (
     <>
