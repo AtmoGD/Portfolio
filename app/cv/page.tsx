@@ -16,6 +16,9 @@ import {
   IconMapPinFilled,
   IconSchool,
   IconBriefcase,
+  IconCircle,
+  IconMusic,
+  IconCodeCircle,
 } from "@tabler/icons-react";
 import React, { FunctionComponent } from "react";
 
@@ -78,29 +81,7 @@ const Page: FunctionComponent<PageProps> = () => {
 
             <Group justify="flex-start">
               <Group w={"3em"}>
-                <Text>Blender</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
                 <Text>Unreal</Text>
-              </Group>
-              <Group>
-                <IconCodeDots />
-                <IconCodeDots />
-                <IconCodeDots />
-              </Group>
-            </Group>
-
-            <Group justify="flex-start">
-              <Group w={"3em"}>
-                <Text>Python</Text>
               </Group>
               <Group>
                 <IconCodeDots />
@@ -116,8 +97,73 @@ const Page: FunctionComponent<PageProps> = () => {
               <Group>
                 <IconCodeDots />
                 <IconCodeDots />
+                <IconCodeDots />
               </Group>
             </Group>
+
+            <Group justify="flex-start">
+              <Group w={"3em"}>
+                <Text>Blender</Text>
+              </Group>
+              <Group>
+                <IconCodeDots />
+                <IconCodeDots />
+              </Group>
+            </Group>
+
+            <Group justify="flex-start">
+              <Group w={"3em"}>
+                <Text>Python</Text>
+              </Group>
+              <Group>
+                <IconCodeDots />
+                <IconCodeDots />
+              </Group>
+            </Group>
+
+            {/* <Group align="start" justify="flex-start" maw={"72em"}>
+              <Box maw={"20em"}>
+                <Title mt={15} mb={15} order={3}>
+                  Hobbys
+                </Title>
+                <Group>
+                  <IconCodeCircle />
+                  <Text>Programmieren</Text>
+                </Group>
+
+                <Group>
+                  <IconMusic />
+                  <Text>Musik (Trompete & Schlagzeug)</Text>
+                </Group>
+              </Box>
+
+              <Box maw={"20em"}>
+                <Title mt={15} mb={15} order={3}>
+                  Ehrenämter
+                </Title>
+                <Group>
+                  <IconCircle />
+                  <Text>Fachschaftsmitglied</Text>
+                </Group>
+
+                <Group>
+                  <IconCircle />
+                  <Text>Ausbildungsbotschafter</Text>
+                </Group>
+
+                <Group>
+                  <IconCircle />
+                  <Text>Uniformwart der Stadtmusik Rheinfelden</Text>
+                </Group>
+
+                <Group>
+                  <IconCircle />
+                  <Text pl={5}>
+                    Game Design Workshops im Jugendhilfswerk Freiburg
+                  </Text>
+                </Group>
+              </Box>
+            </Group> */}
           </Box>
           <Stack>
             <Title order={2}>{t("educationTitle")}</Title>
@@ -305,41 +351,6 @@ const Page: FunctionComponent<PageProps> = () => {
               </Timeline.Item>
             </Timeline>
           </Stack>
-        </Group>
-        <Group align="start" justify="flex-start" maw={"72em"}>
-          {/* <Box maw={"20em"}>
-            <Title mt={15} mb={15} order={3}>Hobbys</Title>
-            <Group>
-              <IconCodeCircle /><Text >Programmieren</Text>
-            </Group>
-
-            <Group>
-              <IconMusic /><Text >Musik (Trompete & Schlagzeug)</Text>
-            </Group>
-          </Box> */}
-
-          {/* <Box maw={"20em"}>
-            <Title mt={15} mb={15} order={3}>Ehrenämter</Title>
-            <Group>
-              <IconCircle />
-              <Text>Fachschaftsmitglied</Text>
-            </Group>
-
-            <Group>
-              <IconCircle />
-              <Text>Ausbildungsbotschafter</Text>
-            </Group>
-
-            <Group>
-              <IconCircle />
-              <Text>Uniformwart der Stadtmusik Rheinfelden</Text>
-            </Group>
-
-            <Group>
-              <IconCircle />
-              <Text>Game Design Workshops im Jugendhilfswerk Freiburg</Text>
-            </Group>
-          </Box> */}
         </Group>
       </Stack>
     </Stack>
