@@ -36,7 +36,7 @@ const Page: FunctionComponent<PageProps> = () => {
         </Center>
       </Box>
       <Stack>
-        <Group align="start" justify="left" ml={100} mt={0} mb={250}>
+        <Group align="start" justify="left" ml={20} mr={20} mt={0} mb={250}>
           <Box maw={"20em"} mr={50}>
             <Title mt={15} mb={15} order={3}>
               Skills
