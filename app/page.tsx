@@ -41,7 +41,7 @@ export default function Home() {
           </Box>
           <Center>
             <Stack>
-              <Center mb={150} mt={50}>
+              <Center mb={150} mt={50} ml={"1.5em"} mr={"1.5em"}>
                 <Box maw={"50em"}>
                   <Group justify="center">
                     <IconCoffee style={{ width: rem(80), height: rem(80) }} />
