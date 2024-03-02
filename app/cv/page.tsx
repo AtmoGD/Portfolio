@@ -180,12 +180,12 @@ const Page: FunctionComponent<PageProps> = () => {
                 bullet={<IconSchool size={12} />}
                 title="Global Safety Textiles"
               >
-                <Badge>Ausbildung</Badge>
+                <Badge>{t("apprenticeship")}</Badge>
                 <Text c="dimmed" size="sm">
                   2011 - 2014
                 </Text>
                 <Text size="md" mt={4}>
-                  {t("productionMechanic")}
+                  {t("productionMechanicTextile")}
                 </Text>
                 <IconCircleOff size={12} />
                 <Text size="xs" mt={4} component="span">
@@ -196,13 +196,13 @@ const Page: FunctionComponent<PageProps> = () => {
 
               <Timeline.Item
                 bullet={<IconSchool size={12} />}
-                title="Schillerschule Rheinfelden"
+                title={t("schillerSchool")}
               >
                 <Text c="dimmed" size="sm">
                   2004 - 2011
                 </Text>
                 <Text size="md" mt={4}>
-                  Hauptschule
+                  {t("secondarySchool")}
                 </Text>
                 <IconCircleOff size={12} />
                 <Text size="xs" mt={4} component="span">
@@ -213,13 +213,13 @@ const Page: FunctionComponent<PageProps> = () => {
 
               <Timeline.Item
                 bullet={<IconSchool size={12} />}
-                title="Schillerschule Rheinfelden"
+                title={t("schillerSchool")}
               >
                 <Text c="dimmed" size="sm">
                   2001 - 2004
                 </Text>
                 <Text size="md" mt={4}>
-                  Grundschule
+                  {t("primarySchool")}
                 </Text>
               </Timeline.Item>
             </Timeline>
@@ -231,64 +231,61 @@ const Page: FunctionComponent<PageProps> = () => {
             <Timeline active={3} bulletSize={24} lineWidth={2} reverseActive>
               <Timeline.Item
                 bullet={<IconMapPinFilled size={12} />}
-                title="Universität Hohenheim"
+                title={t("universityHohenheim")}
               >
                 <Text c="dimmed" size="sm">
-                  März 2021 - <b>heute</b>
+                  {t("march")} 2021 - <b>{t("today")}</b>
                 </Text>
                 <Text size="md" mt={4}>
-                  Werksstudent
+                  {t("workingStudent")}
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Entwickeln eines Chatbots spezialisiert auf die Lehre
+                  {t("workingStudentDescription")}
                 </Text>
               </Timeline.Item>
 
               <Timeline.Item
                 bullet={<IconBriefcase size={12} />}
-                title="Hochschule Furtwangen"
+                title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  September 2021 - März 2022
+                  {t("september")} 2021 - {t("march")} 2022
                 </Text>
                 <Text size="md" mt={4}>
-                  Tutor "Unity Engine"
+                  {t("tutorUnity")}
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Unterstützen von Studenten bei der Entwicklung von Spielen mit
-                  der Unity Engine
+                  {t("tutorUnityDescription")}
                 </Text>
               </Timeline.Item>
 
               <Timeline.Item
                 bullet={<IconBriefcase size={12} />}
-                title="Hochschule Furtwangen"
+                title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  September 2020 - August 2021
+                  {t("september")} 2020 - {t("august")} 2021
                 </Text>
                 <Text size="md" mt={4}>
-                  Tutor "Entwicklung Interaktiver Anwendungen"&quot"
+                  {t("tutorInteractiveApps")}
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Unterstützen von Studenten bei der Entwicklung von Spielen mit
-                  der FUDGE Engine
+                  {t("tutorInteractiveAppsDescription")}
                 </Text>
               </Timeline.Item>
 
               <Timeline.Item
                 bullet={<IconBriefcase size={12} />}
-                title="Hochschule Furtwangen"
+                title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  März 2020 - August 2020
+                  {t("march")} 2020 - {t("august")} 2020
                 </Text>
                 <Text size="md" mt={4}>
-                  Praktikum im Spiellabor
+                  {t("internshipGamelab")}
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Organisation des Spielelabors, unterstützen von Studierenden
-                  und entwicklung verschiedener Anwendungen
+                  {t("internshipGamelabDescription")}
                 </Text>
               </Timeline.Item>
 
@@ -297,14 +294,13 @@ const Page: FunctionComponent<PageProps> = () => {
                 title="Global Safety Textiles"
               >
                 <Text c="dimmed" size="sm">
-                  September 2014 - Juli 2016
+                  {t("september")} 2014 - {t("july")} 2016
                 </Text>
                 <Text size="md" mt={4}>
-                  Produktionsmechaniker
+                  {t("productionMechanic")}
                 </Text>
                 <Text size="xs" maw={"36em"}>
-                  Programmieren und Reparieren von CNC Nähmaschinen und Laser
-                  Cuttern
+                  {t("productionMechanicDescription")}
                 </Text>
               </Timeline.Item>
             </Timeline>
