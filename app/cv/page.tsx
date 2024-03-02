@@ -16,9 +16,9 @@ import {
   IconMapPinFilled,
   IconSchool,
   IconBriefcase,
-  IconCircle,
-  IconMusic,
-  IconCodeCircle,
+  // IconCircle,
+  // IconMusic,
+  // IconCodeCircle,
 } from "@tabler/icons-react";
 import React, { FunctionComponent } from "react";
 
