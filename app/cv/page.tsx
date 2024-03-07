@@ -280,7 +280,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 title={t("universityHohenheim")}
               >
                 <Text c="dimmed" size="sm">
-                  {t("march")} 2021 - <b>{t("today")}</b>
+                  {t("march")} 2022 - <b>{t("today")}</b>
                 </Text>
                 <Text size="md" mt={4}>
                   {t("workingStudent")}
@@ -295,7 +295,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  {t("september")} 2021 - {t("march")} 2022
+                  {t("april")} 2021 - {t("march")} 2022
                 </Text>
                 <Text size="md" mt={4}>
                   {t("tutorUnity")}
@@ -310,7 +310,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  {t("september")} 2020 - {t("august")} 2021
+                  {t("october")} 2020 - {t("march")} 2021
                 </Text>
                 <Text size="md" mt={4}>
                   {t("tutorInteractiveApps")}
