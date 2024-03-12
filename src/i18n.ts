@@ -96,7 +96,7 @@ i18n.use(initReactI18next).init({
                 productionMechanic: "Produktionsmechaniker",
                 productionMechanicDescription: "Programmieren und Reparieren von CNC Nähmaschinen und Laser Cuttern",
                 schillerSchool: "Schillerschule Rheinfelden",
-                secondarySchool: "Realschule",
+                secondarySchool: "Hauptschule",
                 primarySchool: "Grundschule",
                 universityHohenheim: "Universität Hohenheim",
                 today: "Heute",
