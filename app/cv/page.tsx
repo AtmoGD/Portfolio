@@ -295,7 +295,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  {t("april")} 2021 - {t("march")} 2022
+                  {t("march")} 2021 - {t("february")} 2022
                 </Text>
                 <Text size="md" mt={4}>
                   {t("tutorUnity")}
@@ -310,7 +310,7 @@ const Page: FunctionComponent<PageProps> = () => {
                 title={t("universityFurtwangen")}
               >
                 <Text c="dimmed" size="sm">
-                  {t("october")} 2020 - {t("march")} 2021
+                  {t("september")} 2020 - {t("february")} 2021
                 </Text>
                 <Text size="md" mt={4}>
                   {t("tutorInteractiveApps")}

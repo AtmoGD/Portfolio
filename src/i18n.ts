@@ -77,6 +77,7 @@ i18n.use(initReactI18next).init({
                 lastProjectsTitle: "Last Projects",
                 october: "October",
                 april: "April",
+                february: "February",
             }
         },
         de: {
@@ -148,6 +149,7 @@ i18n.use(initReactI18next).init({
                 lastProjectsTitle: "Letzte Projekte",
                 october: "Oktober",
                 april: "April",
+                february: "Februar",
             }
         }
     }
