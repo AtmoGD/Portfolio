@@ -48,6 +48,16 @@ export const projects: Project[] = [
       "Released publicly on itch.io",
       "Delivered stable gameplay loop under student project constraints",
     ],
+    narrative: {
+      context:
+        "Built in a student team production cycle with fixed submission deadlines and rotating contributor availability.",
+      challenge:
+        "Combat readability dropped quickly whenever new enemy behaviors were added, which risked late-stage balancing churn.",
+      approach:
+        "I split combat state handling into clearer modules (player state, enemy reaction, global encounter flow) and added lightweight debug hooks so designers could tune timing without code rewrites.",
+      impact:
+        "The team shipped on time with fewer regressions in late polish, and we kept combat changes predictable through final balancing.",
+    },
     links: {
       playUrl: "https://atmogd.itch.io/unthroned",
     },
@@ -70,6 +80,16 @@ export const projects: Project[] = [
       "Validated gameplay concepts through rapid iteration",
     ],
     outcomes: ["Produced a working VR teaser", "Informed bachelor-thesis-adjacent exploration"],
+    narrative: {
+      context:
+        "Prototype created to test whether motion-driven interactions could feel precise enough for a larger VR concept.",
+      challenge:
+        "Early interactions felt floaty and inconsistent between test users, especially during grab-and-release actions.",
+      approach:
+        "I iterated on interaction timing, hand-state transitions, and feedback cues, then compared short test sessions to isolate where tracking noise hurt player confidence.",
+      impact:
+        "The teaser demonstrated stable interaction quality and gave a concrete technical baseline for further thesis-related experimentation.",
+    },
     links: {
       videoUrl: "https://youtu.be/Wh6ieci--3E",
     },
@@ -92,6 +112,16 @@ export const projects: Project[] = [
       "Kept implementation lean for rapid delivery",
     ],
     outcomes: ["Public itch.io release", "Demonstrated high-speed execution"],
+    narrative: {
+      context:
+        "Developed in a jam timeframe where every feature decision had immediate schedule impact.",
+      challenge:
+        "The core mechanic was fun in isolation but became confusing when multiple hazards stacked on screen.",
+      approach:
+        "I reduced mechanic overlap, simplified input edge cases, and prioritized feedback readability over adding new systems.",
+      impact:
+        "We released a complete, understandable build during the jam window with strong first-play clarity.",
+    },
     links: {
       playUrl: "https://atmogd.itch.io/witch-way",
     },
@@ -111,6 +141,16 @@ export const projects: Project[] = [
       "Refined feedback timing for better player clarity",
     ],
     outcomes: ["Playable public build"],
+    narrative: {
+      context:
+        "A compact personal project used to sharpen juice and responsiveness in a simple harvest loop.",
+      challenge:
+        "Initial pacing felt flat because action feedback and scoring cadence did not reinforce player momentum.",
+      approach:
+        "I tuned spawn rhythm, pickup timing windows, and audiovisual responses so the loop rewarded consistent play without complexity creep.",
+      impact:
+        "Resulted in a cleaner minute-to-minute loop and a public build that communicated mechanics quickly.",
+    },
     links: {
       playUrl: "https://atmogd.itch.io/pumpkin-harvest",
     },
@@ -130,6 +170,16 @@ export const projects: Project[] = [
       "Explored alternative control and balancing strategies",
     ],
     outcomes: ["Validated mechanic concept and technical direction"],
+    narrative: {
+      context:
+        "Experiment to test whether gravity modifiers could create a fresh competitive twist on familiar pong behavior.",
+      challenge:
+        "Without constraints, gravity effects produced chaotic rallies that felt random rather than skill-based.",
+      approach:
+        "I iterated on force caps, rebound rules, and arena tuning to keep matches readable while preserving the novelty of variable gravity.",
+      impact:
+        "Established a workable prototype rule set and clear limits for future expansion or ML-assisted balancing.",
+    },
     links: {
       playUrl: "https://atmogd.itch.io/gravity-pong",
     },

@@ -37,10 +37,17 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
       <section className="card stack-md">
         <h2>Context</h2>
-        <p>
-          This template highlights delivery context, responsibilities, and implementation decisions. For each
-          project, tailor this section with production constraints (team size, timeline, risk) and project goals.
-        </p>
+        <p>{project.narrative.context}</p>
+      </section>
+
+      <section className="card stack-md">
+        <h2>Challenge</h2>
+        <p>{project.narrative.challenge}</p>
+      </section>
+
+      <section className="card stack-md">
+        <h2>Approach</h2>
+        <p>{project.narrative.approach}</p>
       </section>
 
       <section className="card stack-md">
@@ -68,6 +75,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <li key={result}>{result}</li>
           ))}
         </ul>
+        <p>{project.narrative.impact}</p>
       </section>
 
       <section className="card stack-md">

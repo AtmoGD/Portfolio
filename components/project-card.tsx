@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/src/types/project";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -63,9 +64,9 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="link-row">
-        <a href={`/case-study/${project.slug}`} className="text-link">
+        <Link href={`/case-study/${project.slug}`} className="text-link">
           Case study
-        </a>
+        </Link>
         {project.links.playUrl ? (
           <a href={project.links.playUrl} target="_blank" rel="noreferrer" className="text-link">
             Play

@@ -9,6 +9,13 @@ export interface ProjectLinks {
   detailUrl?: string;
 }
 
+export interface ProjectNarrative {
+  context: string;
+  challenge: string;
+  approach: string;
+  impact: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -21,6 +28,7 @@ export interface Project {
   roles: string[];
   contributions: string[];
   outcomes: string[];
+  narrative: ProjectNarrative;
   cover?: StaticImageData;
   links: ProjectLinks;
 }
