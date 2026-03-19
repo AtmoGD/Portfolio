@@ -39,6 +39,20 @@ export const projects: Project[] = [
     cover: unthronedImage,
     stack: ["Unity", "C#", "System Design"],
     roles: ["Gameplay Programmer", "Systems Designer"],
+    proof: {
+      role: "Gameplay & systems owner",
+      timeline: "5-month student production",
+      teamSize: "7-person cross-discipline team",
+      impact: "Shipped on time with fewer late-stage combat regressions",
+    },
+    ownership: {
+      owned: [
+        "Combat state architecture and encounter flow",
+        "Debug hooks for balancing and tuning",
+        "Core game-state reliability during polish",
+      ],
+      collaboratedWith: ["Game design", "QA playtest peers", "Audio/FX contributors"],
+    },
     contributions: [
       "Implemented and iterated core combat/game-state systems",
       "Set up architecture patterns to keep feature work stable",
@@ -47,6 +61,22 @@ export const projects: Project[] = [
     outcomes: [
       "Released publicly on itch.io",
       "Delivered stable gameplay loop under student project constraints",
+    ],
+    evidence: [
+      {
+        title: "Public gameplay footage",
+        type: "video",
+        sourceUrl: "https://www.youtube.com/embed/Wh6ieci--3E",
+        caption: "Representative combat and pacing footage from the release window.",
+        supports: "Supports claim: stable, readable combat loop through final balancing.",
+      },
+      {
+        title: "Release build screenshot",
+        type: "image",
+        sourceUrl: unthronedImage.src,
+        caption: "In-game encounter readability in shipped build.",
+        supports: "Supports claim: feedback hierarchy remained clear under pressure.",
+      },
     ],
     narrative: {
       context:
@@ -74,12 +104,42 @@ export const projects: Project[] = [
     cover: oasisImage,
     stack: ["Unreal Engine", "VR", "Motion Capture"],
     roles: ["Technical Developer", "Prototype Engineer"],
+    proof: {
+      role: "Interaction systems prototyper",
+      timeline: "1 semester prototype cycle",
+      teamSize: "4-person prototype team",
+      impact: "Validated a stable interaction baseline for thesis-adjacent work",
+    },
+    ownership: {
+      owned: [
+        "Hand-state transition logic and timing",
+        "Interaction feedback cues and iteration loop",
+        "Technical prototype integration for VR teaser",
+      ],
+      collaboratedWith: ["3D art", "Playtest participants"],
+    },
     contributions: [
       "Built core interaction flows and technical prototype foundations",
       "Integrated motion-focused interaction behaviors",
       "Validated gameplay concepts through rapid iteration",
     ],
     outcomes: ["Produced a working VR teaser", "Informed bachelor-thesis-adjacent exploration"],
+    evidence: [
+      {
+        title: "VR teaser walkthrough",
+        type: "video",
+        sourceUrl: "https://www.youtube.com/embed/Wh6ieci--3E",
+        caption: "Short prototype walkthrough showing grab-and-release behavior.",
+        supports: "Supports claim: interaction quality reached a stable confidence threshold.",
+      },
+      {
+        title: "Prototype still",
+        type: "image",
+        sourceUrl: oasisImage.src,
+        caption: "Prototype environment and embodied interaction context.",
+        supports: "Supports claim: system integrated cleanly with final teaser scene.",
+      },
+    ],
     narrative: {
       context:
         "Prototype created to test whether motion-driven interactions could feel precise enough for a larger VR concept.",
@@ -106,12 +166,35 @@ export const projects: Project[] = [
     cover: witchWayImage,
     stack: ["Unity", "C#", "Game Jam"],
     roles: ["Gameplay Programmer"],
+    proof: {
+      role: "Gameplay loop owner",
+      timeline: "48-hour game jam",
+      teamSize: "3-person jam team",
+      impact: "Delivered complete build with strong first-play clarity",
+    },
+    ownership: {
+      owned: [
+        "Core mechanics implementation",
+        "Input and hazard readability tuning",
+        "Final build stability for submission",
+      ],
+      collaboratedWith: ["Jam designer", "2D artist"],
+    },
     contributions: [
       "Scoped and delivered a complete gameplay loop inside jam constraints",
       "Balanced controls and moment-to-moment readability",
       "Kept implementation lean for rapid delivery",
     ],
     outcomes: ["Public itch.io release", "Demonstrated high-speed execution"],
+    evidence: [
+      {
+        title: "Shipped jam build",
+        type: "image",
+        sourceUrl: witchWayImage.src,
+        caption: "Final jam build frame showing mechanic clarity under hazard pressure.",
+        supports: "Supports claim: system readability prioritized over feature sprawl.",
+      },
+    ],
     narrative: {
       context:
         "Developed in a jam timeframe where every feature decision had immediate schedule impact.",
@@ -136,11 +219,33 @@ export const projects: Project[] = [
     cover: pumpkinHarvestImage,
     stack: ["Unity", "C#", "Gameplay"],
     roles: ["Gameplay Programmer"],
+    proof: {
+      role: "Solo developer",
+      timeline: "1-week hobby sprint",
+      teamSize: "1 person",
+      impact: "Improved pacing and feedback rhythm in final public build",
+    },
+    ownership: {
+      owned: [
+        "Complete gameplay loop implementation",
+        "Cadence, pickup, and scoring polish",
+        "Release packaging and deployment",
+      ],
+    },
     contributions: [
       "Implemented player loop and tuning passes",
       "Refined feedback timing for better player clarity",
     ],
     outcomes: ["Playable public build"],
+    evidence: [
+      {
+        title: "Gameplay still",
+        type: "image",
+        sourceUrl: pumpkinHarvestImage.src,
+        caption: "Moment-to-moment harvesting loop from public version.",
+        supports: "Supports claim: tighter cadence and clearer reward feedback.",
+      },
+    ],
     narrative: {
       context:
         "A compact personal project used to sharpen juice and responsiveness in a simple harvest loop.",
@@ -165,11 +270,33 @@ export const projects: Project[] = [
     cover: gravityPongImage,
     stack: ["Unity", "Machine Learning", "Gameplay"],
     roles: ["Developer"],
+    proof: {
+      role: "Prototype mechanic designer/developer",
+      timeline: "2-week experiment",
+      teamSize: "1 person",
+      impact: "Defined viable ruleset for readable gravity-based rallies",
+    },
+    ownership: {
+      owned: [
+        "Physics constraint and rebound tuning",
+        "Arena parameter experimentation",
+        "Prototype balancing rules",
+      ],
+    },
     contributions: [
       "Implemented gravity-dependent paddle/ball logic",
       "Explored alternative control and balancing strategies",
     ],
     outcomes: ["Validated mechanic concept and technical direction"],
+    evidence: [
+      {
+        title: "Prototype frame",
+        type: "image",
+        sourceUrl: gravityPongImage.src,
+        caption: "Readability-focused gravity behavior in an experimental rally.",
+        supports: "Supports claim: constraints reduced randomness while keeping novelty.",
+      },
+    ],
     narrative: {
       context:
         "Experiment to test whether gravity modifiers could create a fresh competitive twist on familiar pong behavior.",

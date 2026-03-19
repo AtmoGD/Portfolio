@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             placeholder="blur"
           />
         ) : null}
-        <div>
+        <div className="stack-md">
           <p className="eyebrow">
             {project.year} · {project.status}
           </p>
@@ -24,9 +24,28 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
+      <dl className="proof-row" aria-label="Project proof at a glance">
+        <div>
+          <dt>Role</dt>
+          <dd>{project.proof.role}</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>{project.proof.timeline}</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>{project.proof.teamSize}</dd>
+        </div>
+        <div>
+          <dt>Impact</dt>
+          <dd>{project.proof.impact}</dd>
+        </div>
+      </dl>
+
       <div className="meta-grid">
         <div>
-          <h4>Role</h4>
+          <h4>Roles</h4>
           <ul>
             {project.roles.map((role) => (
               <li key={role}>{role}</li>
