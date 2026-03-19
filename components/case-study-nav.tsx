@@ -2,6 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+const getScrollBehavior = () => {
+  if (typeof window === "undefined") return "smooth";
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+};
+
 interface TocSection {
   id: string;
   label: string;
@@ -75,7 +80,9 @@ export default function CaseStudyNav({ sections }: { sections: TocSection[] }) {
           onChange={(event) => {
             const targetId = event.target.value;
             setActiveSection(targetId);
-            document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            document
+              .getElementById(targetId)
+              ?.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
           }}
         >
           {sections.map((section) => (
