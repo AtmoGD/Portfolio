@@ -8,7 +8,10 @@
   --brand: #6ee7ff;
   --brand-soft: rgba(110, 231, 255, 0.12);
   --radius: 16px;
+  --radius-sm: 12px;
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.2);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.34);
 }
 
 * {
@@ -100,6 +103,7 @@ h2,
 h3,
 h4 {
   line-height: 1.2;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
@@ -113,6 +117,7 @@ h2 {
 
 p {
   margin: 0;
+  max-width: 70ch;
 }
 
 ul {
@@ -143,13 +148,14 @@ ul {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: clamp(1rem, 2vw, 1.4rem);
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .card:hover {
   transform: translateY(-2px);
   border-color: #3e5277;
+  box-shadow: var(--shadow);
 }
 
 .hero {
@@ -260,6 +266,175 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.proof-row {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+}
+
+.proof-row > div {
+  background: rgba(10, 14, 24, 0.55);
+  border: 1px solid #2a3650;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.8rem;
+}
+
+.proof-row dt {
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.proof-row dd {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.case-layout {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  align-items: start;
+}
+
+.case-nav {
+  position: sticky;
+  top: 88px;
+  display: none;
+  gap: 0.9rem;
+}
+
+.case-nav-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.case-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.case-nav-link {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--muted);
+  border-left: 2px solid transparent;
+  padding: 0.32rem 0.55rem;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.case-nav-link:hover,
+.case-nav-link:focus-visible,
+.case-nav-link.is-active {
+  color: var(--text);
+  border-color: var(--brand);
+  background: rgba(110, 231, 255, 0.08);
+}
+
+.case-jump {
+  display: grid;
+  gap: 0.5rem;
+  position: sticky;
+  top: 88px;
+}
+
+.case-jump select {
+  background: #121b2b;
+  color: var(--text);
+  border: 1px solid #31425f;
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+}
+
+.impact-strip {
+  border-color: #35537a;
+}
+
+.evidence-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.evidence-card {
+  border: 1px solid #2a3650;
+  border-radius: var(--radius-sm);
+  background: rgba(10, 14, 24, 0.55);
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.evidence-media {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #334662;
+  background: #0d1522;
+  aspect-ratio: 16 / 9;
+}
+
+.evidence-media iframe,
+.evidence-image {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.evidence-play {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, rgba(7, 12, 20, 0.7), rgba(7, 12, 20, 0.95));
+  display: grid;
+  place-content: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.evidence-play span:first-child {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.claim-link {
+  border-left: 3px solid var(--brand);
+  padding-left: 0.6rem;
+  font-size: 0.92rem;
+}
+
+@media (min-width: 781px) {
+  .case-nav {
+    display: grid;
+  }
+
+  .case-jump {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .case-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .case-nav,
+  .case-jump {
+    position: static;
+  }
+}
+
 @media (max-width: 780px) {
   .project-head {
     grid-template-columns: 1fr;
@@ -269,5 +444,24 @@ ul {
     align-items: flex-start;
     flex-direction: column;
     padding-block: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }
