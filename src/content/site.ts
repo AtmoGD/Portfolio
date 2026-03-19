@@ -5,25 +5,156 @@ import witchWayImage from "@/assets/WitchWay.png";
 import pumpkinHarvestImage from "@/assets/PumpkinHarvest@0.25x.png";
 import oasisImage from "@/assets/Oasis.jpg";
 import gravityPongImage from "@/assets/GravityPong.png";
+import aureaImage from "@/assets/Aurea.png";
+import cozyWinterMarketImage from "@/assets/CozyWinterMarket.png";
+import bombermanImage from "@/assets/Bomb.png";
+import arcReactorImage from "@/assets/Arc.png";
+import mjolnirImage from "@/assets/Hammer.png";
+import type { Localized } from "@/src/i18n";
 
 export const profile = {
   name: "Dennis Hawran",
-  title: "Gameplay & Systems Developer",
-  location: "Augsburg, Germany",
+  title: {
+    en: "Gameplay & Systems Developer",
+    de: "Gameplay- & Systems-Entwickler",
+  } as Localized,
+  location: {
+    en: "Augsburg, Germany",
+    de: "Augsburg, Deutschland",
+  } as Localized,
   email: "dennishawran@gmail.com",
-  intro:
-    "I design and implement playable systems that feel clear for players and maintainable for teams.",
-  valuePoints: [
-    "Playable prototypes fast",
-    "Clear ownership and contribution visibility",
-    "Strong Unity/C# foundation with Unreal experience",
-  ],
+  intro: {
+    en: "I design and implement playable systems that feel clear for players and maintainable for teams.",
+    de: "Ich entwickle spielbare Systeme, die für Spieler klar wirken und für Teams langfristig wartbar bleiben.",
+  } as Localized,
+  valuePoints: {
+    en: [
+      "Playable prototypes fast",
+      "Clear ownership and contribution visibility",
+      "Strong Unity/C# foundation with Unreal experience",
+    ],
+    de: [
+      "Schnelle, spielbare Prototypen",
+      "Klare Ownership und transparente Beiträge",
+      "Starkes Unity/C# Fundament mit Unreal-Erfahrung",
+    ],
+  } as Localized<string[]>,
   links: {
     github: "https://github.com/AtmoGD",
     linkedin: "https://www.linkedin.com/in/dennis-hawran-30497b19a/",
     itch: "https://atmogd.itch.io/",
     sketchfab: "https://sketchfab.com/atmo_gd",
   },
+};
+
+export const aboutContent = {
+  summary: {
+    en: "I’m a gameplay-focused developer with strong Unity/C# foundations and practical Unreal/VR exposure. I enjoy translating design intent into clean, testable systems and making contribution boundaries visible so teams and recruiters can quickly understand impact.",
+    de: "Ich bin ein gameplay-fokussierter Entwickler mit starkem Unity/C#-Fundament und praktischer Unreal/VR-Erfahrung. Ich übersetze Design-Intention in saubere, testbare Systeme und mache Beiträge sichtbar, damit Teams und Recruiter Wirkung schnell erkennen können.",
+  } as Localized,
+  strengths: {
+    en: [
+      "Gameplay systems architecture and implementation",
+      "Rapid prototyping with disciplined scope control",
+      "Cross-functional collaboration with designers and artists",
+      "Documentation and handover quality for maintainability",
+    ],
+    de: [
+      "Architektur und Implementierung von Gameplay-Systemen",
+      "Schnelles Prototyping mit sauberem Scope-Management",
+      "Interdisziplinäre Zusammenarbeit mit Design und Art",
+      "Dokumentation und Übergabequalität für Wartbarkeit",
+    ],
+  } as Localized<string[]>,
+};
+
+export const cvContent = {
+  education: [
+    {
+      period: "2022 – 2024",
+      title: {
+        en: "M.A. Interactive Media Systems (Game Development) · University of Augsburg",
+        de: "M.A. Interaktive Mediensysteme (Game Development) · Hochschule Augsburg",
+      } as Localized,
+      details: {
+        en: ["Focus on game development, prototyping, and applied interaction systems."],
+        de: ["Schwerpunkt auf Game Development, Prototyping und interaktiven Systemen."],
+      } as Localized<string[]>,
+    },
+    {
+      period: "2019 – 2022",
+      title: {
+        en: "B.Sc. Media Informatics · Furtwangen University",
+        de: "B.Sc. Medieninformatik · Hochschule Furtwangen",
+      } as Localized,
+      details: {
+        en: ["Core modules in programming, interactive applications, and technical media production."],
+        de: ["Kernmodule in Programmierung, interaktiven Anwendungen und technischer Medienproduktion."],
+      } as Localized<string[]>,
+    },
+  ],
+  work: [
+    {
+      period: "03/2022 – Today",
+      title: {
+        en: "Working Student · University of Hohenheim",
+        de: "Werkstudent · Universität Hohenheim",
+      } as Localized,
+      details: {
+        en: ["Development of a teaching-focused chatbot.", "Product iteration with practical academic constraints."],
+        de: ["Entwicklung eines lehrfokussierten Chatbots.", "Produktiteration unter realen akademischen Rahmenbedingungen."],
+      } as Localized<string[]>,
+    },
+    {
+      period: "09/2021 – 02/2024",
+      title: {
+        en: "Tutor · Unity Engine",
+        de: "Tutor · Unity Engine",
+      } as Localized,
+      details: {
+        en: ["Supported students in gameplay implementation and debugging workflows."],
+        de: ["Unterstützung von Studierenden bei Gameplay-Implementierung und Debugging."],
+      } as Localized<string[]>,
+    },
+    {
+      period: "08/2020 – 02/2024",
+      title: {
+        en: "Tutor · Development of Interactive Applications (FUDGE)",
+        de: "Tutor · Entwicklung Interaktiver Anwendungen (FUDGE)",
+      } as Localized,
+      details: {
+        en: ["Guided project teams from concept to playable prototype."],
+        de: ["Begleitung von Projektteams von der Idee bis zum spielbaren Prototyp."],
+      } as Localized<string[]>,
+    },
+    {
+      period: "07/2021 – 02/2024",
+      title: {
+        en: "Internship · GameLab, Furtwangen University",
+        de: "Praktikum · GameLab, Hochschule Furtwangen",
+      } as Localized,
+      details: {
+        en: ["Lab organization, student support, and prototype implementation."],
+        de: ["Labororganisation, Studierenden-Support und Prototyp-Implementierung."],
+      } as Localized<string[]>,
+    },
+  ],
+  foundations: [
+    {
+      period: "2014 – 2016",
+      title: {
+        en: "Advanced technical college certificate · Vocational College Weil am Rhein",
+        de: "Allgemeine Fachhochschulreife · Berufskolleg Weil am Rhein",
+      } as Localized,
+    },
+    {
+      period: "2012 – 2014",
+      title: {
+        en: "Apprenticeship: Production Mechanic Textile",
+        de: "Ausbildung: Produktionsmechaniker Textil",
+      } as Localized,
+    },
+  ],
 };
 
 export const projects: Project[] = [
@@ -309,6 +440,152 @@ export const projects: Project[] = [
     },
     links: {
       playUrl: "https://atmogd.itch.io/gravity-pong",
+    },
+  },
+  {
+    slug: "aurea",
+    title: "Aurea",
+    tagline: "Augmented reality multiplayer concept for mobile",
+    summary: "AR student project focused on low-poly style, shared interaction, and accessible onboarding.",
+    year: "2021",
+    status: "Prototype",
+    cover: aureaImage,
+    stack: ["Unity", "AR", "Mobile"],
+    roles: ["Gameplay Programmer", "Technical Artist"],
+    proof: {
+      role: "Core gameplay and AR integration",
+      timeline: "Semester project",
+      teamSize: "4-person student team",
+      impact: "Delivered a complete multiplayer AR slice",
+    },
+    ownership: {
+      owned: ["AR setup and interaction flow", "Core gameplay loop", "Model integration and optimization"],
+    },
+    contributions: ["Implemented mobile AR interactions", "Shaped core loop pacing", "Integrated production assets"],
+    outcomes: ["Playable multiplayer prototype", "Validated AR concept for social gameplay"],
+    evidence: [{ title: "Aurea prototype", type: "image", sourceUrl: aureaImage.src, caption: "Prototype frame.", supports: "Supports claim: complete AR vertical slice." }],
+    narrative: {
+      context: "Student project to explore AR-first multiplayer interactions on smartphone devices.",
+      challenge: "Maintain spatial clarity and stable performance while supporting real-time AR interactions.",
+      approach: "Built a lightweight interaction architecture and optimized asset setup for reliable mobile behavior.",
+      impact: "The team delivered a fully playable prototype with clear onboarding and stable core interactions.",
+    },
+    links: {},
+  },
+  {
+    slug: "cozy-winter-market",
+    title: "Cozy Winter Market",
+    tagline: "Relaxed builder loop centered on atmosphere and progression",
+    summary: "A cozy management prototype where decoration and layout choices drive visitor behavior and economy.",
+    year: "2021",
+    status: "Prototype",
+    cover: cozyWinterMarketImage,
+    stack: ["Unity", "Game Design", "Simulation"],
+    roles: ["Gameplay Programmer"],
+    proof: {
+      role: "Gameplay loop owner",
+      timeline: "Short student prototype sprint",
+      teamSize: "Small student team",
+      impact: "Established a complete decorate-build-earn progression loop",
+    },
+    ownership: { owned: ["Economy loop setup", "Placement and progression logic", "Balancing pass"] },
+    contributions: ["Implemented progression systems", "Balanced customer-spend behavior", "Connected decoration to reward pacing"],
+    outcomes: ["Playable cozy prototype", "Validated low-pressure progression model"],
+    evidence: [{ title: "Cozy Winter Market frame", type: "image", sourceUrl: cozyWinterMarketImage.src, caption: "Prototype scene.", supports: "Supports claim: completed decorate-and-grow loop." }],
+    narrative: {
+      context: "Prototype focused on calm pacing and easy-to-understand management gameplay.",
+      challenge: "Keep progression satisfying without introducing complexity spikes.",
+      approach: "Coupled decoration density and shop upgrades to a clear income-feedback system.",
+      impact: "Resulted in a readable, relaxing loop with visible player-driven growth.",
+    },
+    links: {},
+  },
+  {
+    slug: "bomberman",
+    title: "Bomberman",
+    tagline: "Classic ruleset recreation in a custom engine course",
+    summary: "Course project rebuilding Bomberman mechanics with FUDGE engine constraints and clean system logic.",
+    year: "2020",
+    status: "Prototype",
+    cover: bombermanImage,
+    stack: ["FUDGE Engine", "TypeScript", "Gameplay"],
+    roles: ["Gameplay Programmer"],
+    proof: {
+      role: "Mechanics and systems implementation",
+      timeline: "Semester module",
+      teamSize: "Student team",
+      impact: "Delivered a faithful and playable clone baseline",
+    },
+    ownership: { owned: ["Bomb and explosion logic", "Grid movement systems", "Collision and timing behavior"] },
+    contributions: ["Implemented core Bomberman interactions", "Built tile-based destruction rules", "Polished round readability"],
+    outcomes: ["Playable clone with classic rules"],
+    evidence: [{ title: "Bomberman prototype", type: "image", sourceUrl: bombermanImage.src, caption: "In-engine gameplay frame.", supports: "Supports claim: complete core loop implementation." }],
+    narrative: {
+      context: "Built in an interactive applications course using the FUDGE engine.",
+      challenge: "Recreate a known ruleset while handling deterministic timing and map interactions.",
+      approach: "Separated movement, explosion, and tile logic into predictable systems.",
+      impact: "Produced a stable and understandable clone suitable for course evaluation.",
+    },
+    links: {},
+  },
+  {
+    slug: "arc-reactor",
+    title: "Arc Reactor",
+    tagline: "PBR hard-surface prop built for game-ready presentation",
+    summary: "Student 3D asset project focused on modeling precision, clean topology, and texture presentation.",
+    year: "2020",
+    status: "Shipped",
+    cover: arcReactorImage,
+    stack: ["Blender", "Substance Painter", "3D Modeling"],
+    roles: ["3D Artist"],
+    proof: {
+      role: "Modeling and texturing",
+      timeline: "Asset production assignment",
+      teamSize: "1 person",
+      impact: "Delivered game-ready showcase asset",
+    },
+    ownership: { owned: ["High/low-poly modeling", "UV setup and baking", "PBR material workflow"] },
+    contributions: ["Created hard-surface model", "Produced textured presentation render"],
+    outcomes: ["Published model showcase"],
+    evidence: [{ title: "Arc Reactor model", type: "image", sourceUrl: arcReactorImage.src, caption: "Asset presentation frame.", supports: "Supports claim: complete game-asset pipeline execution." }],
+    narrative: {
+      context: "Modeling assignment with focus on real-time-ready asset quality.",
+      challenge: "Preserve detail and material readability within practical poly limits.",
+      approach: "Applied clean topology, efficient UV layout, and controlled PBR values.",
+      impact: "Final asset reached a presentation quality suitable for portfolio use.",
+    },
+    links: {
+      detailUrl: "https://sketchfab.com/atmo_gd",
+    },
+  },
+  {
+    slug: "mjolnir",
+    title: "Mjölnir",
+    tagline: "Stylized hero prop with game-asset production workflow",
+    summary: "Student prop project focused on shape language, material definition, and reliable export pipeline.",
+    year: "2020",
+    status: "Shipped",
+    cover: mjolnirImage,
+    stack: ["Blender", "Substance Painter", "3D Modeling"],
+    roles: ["3D Artist"],
+    proof: {
+      role: "Modeling and texturing",
+      timeline: "Asset production assignment",
+      teamSize: "1 person",
+      impact: "Produced complete stylized hero prop",
+    },
+    ownership: { owned: ["Model and silhouette pass", "Material authoring", "Portfolio presentation"] },
+    contributions: ["Built complete prop from blockout to texture", "Prepared game-ready export"],
+    outcomes: ["Published portfolio-ready model"],
+    evidence: [{ title: "Mjölnir model", type: "image", sourceUrl: mjolnirImage.src, caption: "Asset showcase frame.", supports: "Supports claim: full model-to-presentation execution." }],
+    narrative: {
+      context: "Student task to create a full game asset from concept to presentation.",
+      challenge: "Balance stylization with material readability and believable scale.",
+      approach: "Iterated on silhouette and detail density, then finalized in a PBR texturing workflow.",
+      impact: "Resulted in a clean, portfolio-ready hero prop model.",
+    },
+    links: {
+      detailUrl: "https://sketchfab.com/atmo_gd",
     },
   },
 ];

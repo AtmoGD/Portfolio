@@ -1,18 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/src/types/project";
+import { useI18n } from "@/src/i18n";
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { t } = useI18n();
+
   return (
     <article className="card project-card">
       <div className="project-head">
         {project.cover ? (
-          <Image
-            src={project.cover}
-            alt={`${project.title} cover`}
-            className="project-cover"
-            placeholder="blur"
-          />
+          <Image src={project.cover} alt={`${project.title} cover`} className="project-cover" placeholder="blur" />
         ) : null}
         <div className="stack-md">
           <p className="eyebrow">
@@ -26,26 +26,26 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       <dl className="proof-row" aria-label="Project proof at a glance">
         <div>
-          <dt>Role</dt>
+          <dt>{t("role")}</dt>
           <dd>{project.proof.role}</dd>
         </div>
         <div>
-          <dt>Timeline</dt>
+          <dt>{t("timeline")}</dt>
           <dd>{project.proof.timeline}</dd>
         </div>
         <div>
-          <dt>Team</dt>
+          <dt>{t("team")}</dt>
           <dd>{project.proof.teamSize}</dd>
         </div>
         <div>
-          <dt>Impact</dt>
+          <dt>{t("impact")}</dt>
           <dd>{project.proof.impact}</dd>
         </div>
       </dl>
 
       <div className="meta-grid">
         <div>
-          <h4>Roles</h4>
+          <h4>{t("roles")}</h4>
           <ul>
             {project.roles.map((role) => (
               <li key={role}>{role}</li>
@@ -53,7 +53,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </ul>
         </div>
         <div>
-          <h4>Stack</h4>
+          <h4>{t("stack")}</h4>
           <div className="chip-row">
             {project.stack.map((item) => (
               <span className="chip" key={item}>
@@ -65,7 +65,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div>
-        <h4>Contribution</h4>
+        <h4>{t("contribution")}</h4>
         <ul>
           {project.contributions.map((point) => (
             <li key={point}>{point}</li>
@@ -74,7 +74,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div>
-        <h4>Outcome</h4>
+        <h4>{t("outcome")}</h4>
         <ul>
           {project.outcomes.map((result) => (
             <li key={result}>{result}</li>
@@ -84,21 +84,21 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       <div className="link-row">
         <Link href={`/case-study/${project.slug}`} className="text-link">
-          Case study
+          {t("caseStudy")}
         </Link>
         {project.links.playUrl ? (
           <a href={project.links.playUrl} target="_blank" rel="noreferrer" className="text-link">
-            Play
+            {t("play")}
           </a>
         ) : null}
         {project.links.videoUrl ? (
           <a href={project.links.videoUrl} target="_blank" rel="noreferrer" className="text-link">
-            Watch
+            {t("watch")}
           </a>
         ) : null}
         {project.links.repoUrl ? (
           <a href={project.links.repoUrl} target="_blank" rel="noreferrer" className="text-link">
-            Code
+            {t("code")}
           </a>
         ) : null}
       </div>

@@ -1,15 +1,18 @@
+"use client";
+
 import ProjectCard from "@/components/project-card";
 import { projects } from "@/src/content/site";
+import { useI18n } from "@/src/i18n";
 
 export default function ProjectsPage() {
+  const { t } = useI18n();
+
   return (
     <section className="stack-lg">
       <div className="section-heading">
-        <p className="eyebrow">Projects</p>
-        <h1>Playable systems, prototypes, and shipped experiments</h1>
-        <p className="muted">
-          Recruiter-first view: each project shows role, technical contribution, and outcomes.
-        </p>
+        <p className="eyebrow">{t("navProjects")}</p>
+        <h1>{t("projectsHeader")}</h1>
+        <p className="muted">{t("projectsSub")}</p>
       </div>
 
       <div className="stack-lg">

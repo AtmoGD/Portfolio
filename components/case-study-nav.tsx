@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useI18n } from "@/src/i18n";
 
 const getScrollBehavior = () => {
   if (typeof window === "undefined") return "smooth";
@@ -13,6 +14,7 @@ interface TocSection {
 }
 
 export default function CaseStudyNav({ sections }: { sections: TocSection[] }) {
+  const { t } = useI18n();
   const [activeSection, setActiveSection] = useState(sections[0]?.id ?? "");
 
   useEffect(() => {
@@ -53,16 +55,15 @@ export default function CaseStudyNav({ sections }: { sections: TocSection[] }) {
     <>
       <nav className="case-nav card" aria-label="Case study sections">
         <div className="case-nav-header">
-          <p className="eyebrow">On this page</p>
-          <p className="muted">Progress: {progress}%</p>
+          <p className="eyebrow">{t("onThisPage")}</p>
+          <p className="muted">
+            {t("progress")}: {progress}%
+          </p>
         </div>
         <ol className="case-nav-list">
           {sections.map((section) => (
             <li key={section.id}>
-              <a
-                href={`#${section.id}`}
-                className={`case-nav-link ${activeSection === section.id ? "is-active" : ""}`}
-              >
+              <a href={`#${section.id}`} className={`case-nav-link ${activeSection === section.id ? "is-active" : ""}`}>
                 {section.label}
               </a>
             </li>
@@ -72,7 +73,7 @@ export default function CaseStudyNav({ sections }: { sections: TocSection[] }) {
 
       <div className="case-jump card" role="region" aria-label="Jump to section">
         <label htmlFor="case-jump-select" className="eyebrow">
-          Jump to section
+          {t("jumpToSection")}
         </label>
         <select
           id="case-jump-select"
@@ -80,9 +81,7 @@ export default function CaseStudyNav({ sections }: { sections: TocSection[] }) {
           onChange={(event) => {
             const targetId = event.target.value;
             setActiveSection(targetId);
-            document
-              .getElementById(targetId)
-              ?.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
+            document.getElementById(targetId)?.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
           }}
         >
           {sections.map((section) => (

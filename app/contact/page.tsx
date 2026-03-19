@@ -1,19 +1,22 @@
+"use client";
+
 import { profile } from "@/src/content/site";
+import { useI18n } from "@/src/i18n";
 
 export default function ContactPage() {
+  const { t } = useI18n();
+
   return (
     <section className="stack-lg">
       <header className="section-heading">
-        <p className="eyebrow">Contact</p>
-        <h1>Let’s talk about gameplay, systems, and product-ready prototypes</h1>
-        <p className="muted">Reliable channels only for MVP.</p>
+        <p className="eyebrow">{t("navContact")}</p>
+        <h1>{t("contactTitle")}</h1>
+        <p className="muted">{t("contactSub")}</p>
       </header>
 
       <article className="card stack-md">
-        <h2>Best way to reach me</h2>
-        <p>
-          Email is preferred for opportunities and project discussions. I usually respond within 1–2 business days.
-        </p>
+        <h2>{t("bestReach")}</h2>
+        <p>{t("bestReachCopy")}</p>
         <div className="link-row">
           <a href={`mailto:${profile.email}`} className="button">
             {profile.email}
@@ -22,7 +25,7 @@ export default function ContactPage() {
       </article>
 
       <article className="card stack-md">
-        <h2>Professional links</h2>
+        <h2>{t("professionalLinks")}</h2>
         <div className="link-row">
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">
             LinkedIn

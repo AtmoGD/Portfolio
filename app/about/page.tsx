@@ -1,42 +1,43 @@
-import { profile } from "@/src/content/site";
+"use client";
+
+import Link from "next/link";
+import { aboutContent, profile } from "@/src/content/site";
+import { localize, useI18n } from "@/src/i18n";
 
 const timeline = [
-  { period: "2022 – Present", title: "Working Student · University of Hohenheim" },
-  { period: "2022 – 2024", title: "M.A. Interactive Media Systems · University of Augsburg" },
-  { period: "2019 – 2022", title: "B.Sc. Media Informatics · University of Furtwangen" },
-  { period: "2020 – 2022", title: "Unity Tutor & GameLab Internship" },
+  { period: "2022 – Present", title: { en: "Working Student · University of Hohenheim", de: "Werkstudent · Universität Hohenheim" } },
+  { period: "2022 – 2024", title: { en: "M.A. Interactive Media Systems · University of Augsburg", de: "M.A. Interaktive Mediensysteme · Hochschule Augsburg" } },
+  { period: "2019 – 2022", title: { en: "B.Sc. Media Informatics · University of Furtwangen", de: "B.Sc. Medieninformatik · Hochschule Furtwangen" } },
+  { period: "2020 – 2022", title: { en: "Unity Tutor & GameLab Internship", de: "Unity Tutor & GameLab Praktikum" } },
 ];
 
 export default function AboutPage() {
+  const { language, t } = useI18n();
+
   return (
     <section className="stack-lg">
       <header className="section-heading">
-        <p className="eyebrow">About</p>
-        <h1>Technical gameplay profile with production-aware execution</h1>
-        <p className="muted">{profile.location}</p>
+        <p className="eyebrow">{t("about")}</p>
+        <h1>{t("aboutTitle")}</h1>
+        <p className="muted">{localize(profile.location, language)}</p>
       </header>
 
       <article className="card stack-md">
-        <h2>Summary</h2>
-        <p>
-          I’m a gameplay-focused developer with strong Unity/C# foundations and practical Unreal/VR exposure. I
-          enjoy translating design intent into clean, testable systems and making contribution boundaries visible so
-          teams and recruiters can quickly understand impact.
-        </p>
+        <h2>{t("summary")}</h2>
+        <p>{localize(aboutContent.summary, language)}</p>
       </article>
 
       <article className="card stack-md">
-        <h2>Core strengths</h2>
+        <h2>{t("coreStrengths")}</h2>
         <ul>
-          <li>Gameplay systems architecture and implementation</li>
-          <li>Rapid prototyping with disciplined scope control</li>
-          <li>Cross-functional collaboration with designers and artists</li>
-          <li>Documentation and handover quality for maintainability</li>
+          {localize(aboutContent.strengths, language).map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </article>
 
       <article className="card stack-md">
-        <h2>Skills</h2>
+        <h2>{t("skills")}</h2>
         <div className="meta-grid">
           <div>
             <h4>Engines</h4>
@@ -51,7 +52,7 @@ export default function AboutPage() {
             <p>Git, Blender, Substance Painter, Motion Capture Pipelines</p>
           </div>
           <div>
-            <h4>Focus</h4>
+            <h4>{t("focus")}</h4>
             <p>Playable systems, interaction quality, prototype-to-delivery flow</p>
           </div>
         </div>
@@ -61,11 +62,21 @@ export default function AboutPage() {
         <h2>Timeline</h2>
         <ul>
           {timeline.map((item) => (
-            <li key={item.title}>
-              <strong>{item.period}</strong> — {item.title}
+            <li key={item.period + item.title.en}>
+              <strong>{item.period}</strong> — {localize(item.title, language)}
             </li>
           ))}
         </ul>
+      </article>
+
+      <article className="card stack-md">
+        <h2>{t("detailedCv")}</h2>
+        <p>{t("detailedCvTeaser")}</p>
+        <div className="link-row">
+          <Link className="button" href="/cv">
+            {t("openCv")}
+          </Link>
+        </div>
       </article>
     </section>
   );

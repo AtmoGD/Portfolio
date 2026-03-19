@@ -94,6 +94,23 @@ a {
   background: var(--surface-strong);
 }
 
+.lang-switch {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.lang-switch .nav-link {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.lang-switch .nav-link.is-active {
+  color: var(--text);
+  background: var(--surface-strong);
+}
+
 .page-content {
   padding-block: 2rem 5rem;
 }

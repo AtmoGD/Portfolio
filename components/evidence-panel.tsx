@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { ProjectEvidence } from "@/src/types/project";
+import { useI18n } from "@/src/i18n";
 
 export default function EvidencePanel({ evidence }: { evidence: ProjectEvidence[] }) {
+  const { t } = useI18n();
   const [playing, setPlaying] = useState<Record<string, boolean>>({});
 
   if (!evidence.length) return null;
@@ -35,11 +37,11 @@ export default function EvidencePanel({ evidence }: { evidence: ProjectEvidence[
                       type="button"
                       className="evidence-play"
                       onClick={() => setPlaying((state) => ({ ...state, [item.title]: true }))}
-                      aria-label={`Play evidence: ${item.title}`}
+                      aria-label={`${t("playEvidence")}: ${item.title}`}
                       aria-describedby={captionId}
                     >
                       <span>▶</span>
-                      <span>Play evidence</span>
+                      <span>{t("playEvidence")}</span>
                     </button>
                   )
                 ) : (

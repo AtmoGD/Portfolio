@@ -1,62 +1,30 @@
 "use client";
 
-import { Switch, rem } from "@mantine/core";
-import Image from "next/image";
-import React, { FunctionComponent } from "react";
+import { useI18n } from "@/src/i18n";
 
-import i18n from "@/src/i18n";
-
-interface PageProps {}
-
-const flagSize = 14;
-
-const LanguageSwitch: FunctionComponent<PageProps> = () => {
-  const enFlag = (
-    <Image
-      src="/us.svg"
-      width={flagSize}
-      height={flagSize}
-      alt="English"
-      style={{ borderRadius: "50%" }}
-    />
-  );
-
-  const deFlag = (
-    <Image
-      src="/de.svg"
-      width={flagSize}
-      height={flagSize}
-      alt="Deutsch"
-      style={{ borderRadius: "50%" }}
-    />
-  );
+export default function LanguageSwitch() {
+  const { language, setLanguage, t } = useI18n();
 
   return (
-    <div>
-      <Switch
-        size="md"
-        color="dark.4"
-        m={10}
-        thumbIcon={null}
-        checked={i18n.language === "en"}
-        onLabel={enFlag}
-        offLabel={deFlag}
-        aria-label="Switch language between German and English"
-        styles={{
-          trackLabel: {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: rem(14),
-            height: rem(14),
-          },
-        }}
-        onChange={(event) =>
-          i18n.changeLanguage(event.currentTarget.checked ? "en" : "de")
-        }
-      />
+    <div className="lang-switch" role="group" aria-label="Language switch">
+      <button
+        type="button"
+        className={`nav-link ${language === "de" ? "is-active" : ""}`}
+        onClick={() => setLanguage("de")}
+        aria-label={t("switchToGerman")}
+        aria-pressed={language === "de"}
+      >
+        DE
+      </button>
+      <button
+        type="button"
+        className={`nav-link ${language === "en" ? "is-active" : ""}`}
+        onClick={() => setLanguage("en")}
+        aria-label={t("switchToEnglish")}
+        aria-pressed={language === "en"}
+      >
+        EN
+      </button>
     </div>
   );
-};
-
-export default LanguageSwitch;
+}

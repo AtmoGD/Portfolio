@@ -1,18 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import ProjectCard from "@/components/project-card";
 import { featuredProjects, profile } from "@/src/content/site";
+import { localize, useI18n } from "@/src/i18n";
 
 export default function HomePage() {
+  const { language, t } = useI18n();
+
   return (
     <div className="stack-xl">
       <section className="hero card">
-        <p className="eyebrow">Gameplay engineering portfolio</p>
+        <p className="eyebrow">{t("heroEyebrow")}</p>
         <h1>{profile.name}</h1>
-        <p className="lead">{profile.title}</p>
-        <p>{profile.intro}</p>
+        <p className="lead">{localize(profile.title, language)}</p>
+        <p>{localize(profile.intro, language)}</p>
 
         <div className="chip-row" aria-label="Value highlights">
-          {profile.valuePoints.map((point) => (
+          {localize(profile.valuePoints, language).map((point) => (
             <span className="chip" key={point}>
               {point}
             </span>
@@ -21,18 +26,18 @@ export default function HomePage() {
 
         <div className="link-row">
           <Link className="button" href="/projects">
-            Explore projects
+            {t("exploreProjects")}
           </Link>
           <Link className="button button-secondary" href="/contact">
-            Contact
+            {t("contactLead")}
           </Link>
         </div>
       </section>
 
       <section className="stack-lg">
         <div className="section-heading">
-          <p className="eyebrow">Selected systems</p>
-          <h2>Work with clear ownership and measurable contribution</h2>
+          <p className="eyebrow">{t("selectedSystems")}</p>
+          <h2>{t("selectedSystemsTitle")}</h2>
         </div>
 
         <div className="stack-lg">
