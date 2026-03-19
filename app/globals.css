@@ -30,6 +30,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
 .container {
   width: min(1100px, 92vw);
   margin-inline: auto;
@@ -84,7 +89,6 @@ a {
 .nav-link:focus-visible {
   color: var(--text);
   background: var(--surface-strong);
-  outline: none;
 }
 
 .page-content {
@@ -204,7 +208,6 @@ ul {
 .button:hover,
 .button:focus-visible {
   background: #93f0ff;
-  outline: none;
 }
 
 .button-secondary {
@@ -221,7 +224,13 @@ ul {
 .text-link:hover,
 .text-link:focus-visible {
   color: #a9f3ff;
-  outline: none;
+}
+
+.nav-link:focus-visible,
+.button:focus-visible,
+.button-secondary:focus-visible,
+.text-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(110, 231, 255, 0.24);
 }
 
 .link-row {
