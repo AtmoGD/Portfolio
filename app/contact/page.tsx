@@ -1,5 +1,6 @@
 "use client";
 
+import DualCta from "@/components/dual-cta";
 import { profile } from "@/src/content/site";
 import { useI18n } from "@/src/i18n";
 
@@ -41,6 +42,8 @@ export default function ContactPage() {
           </a>
         </div>
       </article>
+
+      <DualCta compact />
     </section>
   );
 }

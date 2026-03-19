@@ -15,8 +15,12 @@ const text = {
     navContact: "Contact",
     switchToGerman: "Switch language to German",
     switchToEnglish: "Switch language to English",
-    heroEyebrow: "Gameplay engineering portfolio",
+    heroEyebrow: "Gameplay systems developer",
     exploreProjects: "Explore projects",
+    contactIntro: "Book a 15-min intro",
+    heroHeadline: "I build gameplay systems that ship and stay maintainable.",
+    heroSubline: "Fast prototypes, clear ownership, and measurable outcomes for recruiter-ready case studies.",
+    heroImpactStripLabel: "Impact snapshot",
     selectedSystems: "Selected systems",
     selectedSystemsTitle: "Work with clear ownership and measurable contribution",
     contactLead: "Contact",
@@ -59,6 +63,7 @@ const text = {
     caseImpactAtGlance: "Impact at a glance",
     context: "Context",
     challenge: "Challenge",
+    action: "Action",
     approach: "Approach",
     ownership: "Ownership",
     implementationHighlights: "Implementation highlights",
@@ -82,8 +87,12 @@ const text = {
     navContact: "Kontakt",
     switchToGerman: "Sprache auf Deutsch umstellen",
     switchToEnglish: "Sprache auf Englisch umstellen",
-    heroEyebrow: "Gameplay-Engineering Portfolio",
+    heroEyebrow: "Gameplay-Systeme Entwickler",
     exploreProjects: "Projekte ansehen",
+    contactIntro: "15-Min Intro buchen",
+    heroHeadline: "Ich entwickle Gameplay-Systeme, die lieferbar und wartbar bleiben.",
+    heroSubline: "Schnelle Prototypen, klare Ownership und messbare Ergebnisse für recruiter-taugliche Case Studies.",
+    heroImpactStripLabel: "Impact Snapshot",
     selectedSystems: "Ausgewählte Systeme",
     selectedSystemsTitle: "Arbeit mit klarer Ownership und messbarem Beitrag",
     contactLead: "Kontakt",
@@ -126,6 +135,7 @@ const text = {
     caseImpactAtGlance: "Wirkung auf einen Blick",
     context: "Kontext",
     challenge: "Herausforderung",
+    action: "Aktion",
     approach: "Vorgehen",
     ownership: "Ownership",
     implementationHighlights: "Implementierungs-Highlights",
@@ -173,7 +183,30 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<I18nContextValue>(
     () => ({
       language,
-      setLanguage: setLanguageState,
+      setLanguage: (nextLanguage) => {
+        if (nextLanguage === language) {
+          return;
+        }
+
+        const active = typeof document !== "undefined" ? (document.activeElement as HTMLElement | null) : null;
+        const previousY = typeof window !== "undefined" ? window.scrollY : 0;
+
+        if (typeof document !== "undefined") {
+          document.documentElement.classList.add("is-language-transition");
+        }
+
+        setLanguageState(nextLanguage);
+
+        if (typeof window !== "undefined") {
+          window.requestAnimationFrame(() => {
+            window.scrollTo({ top: previousY, behavior: "auto" });
+            active?.focus({ preventScroll: true });
+            window.setTimeout(() => {
+              document.documentElement.classList.remove("is-language-transition");
+            }, 180);
+          });
+        }
+      },
       t: (key) => text[language][key],
     }),
     [language],

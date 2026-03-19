@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import DualCta from "@/components/dual-cta";
 import { aboutContent, profile } from "@/src/content/site";
 import { localize, useI18n } from "@/src/i18n";
 
@@ -78,6 +79,8 @@ export default function AboutPage() {
           </Link>
         </div>
       </article>
+
+      <DualCta compact />
     </section>
   );
 }

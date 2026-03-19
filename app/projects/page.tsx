@@ -1,5 +1,6 @@
 "use client";
 
+import DualCta from "@/components/dual-cta";
 import ProjectCard from "@/components/project-card";
 import { projects } from "@/src/content/site";
 import { useI18n } from "@/src/i18n";
@@ -14,6 +15,8 @@ export default function ProjectsPage() {
         <h1>{t("projectsHeader")}</h1>
         <p className="muted">{t("projectsSub")}</p>
       </div>
+
+      <DualCta compact />
 
       <div className="stack-lg">
         {projects.map((project) => (

@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import ProjectCard from "@/components/project-card";
+import DualCta from "@/components/dual-cta";
 import { featuredProjects, profile } from "@/src/content/site";
 import { localize, useI18n } from "@/src/i18n";
 
@@ -10,28 +10,22 @@ export default function HomePage() {
 
   return (
     <div className="stack-xl">
-      <section className="hero card">
+      <section className="hero card enter-rise" data-enter="1">
         <p className="eyebrow">{t("heroEyebrow")}</p>
-        <h1>{profile.name}</h1>
-        <p className="lead">{localize(profile.title, language)}</p>
+        <h1>{t("heroHeadline")}</h1>
+        <p className="lead">{t("heroSubline")}</p>
+        <p className="muted">{profile.name} · {localize(profile.title, language)}</p>
         <p>{localize(profile.intro, language)}</p>
 
-        <div className="chip-row" aria-label="Value highlights">
+        <div className="impact-strip" aria-label={t("heroImpactStripLabel")}>
           {localize(profile.valuePoints, language).map((point) => (
-            <span className="chip" key={point}>
+            <span className="impact-pill" key={point}>
               {point}
             </span>
           ))}
         </div>
 
-        <div className="link-row">
-          <Link className="button" href="/projects">
-            {t("exploreProjects")}
-          </Link>
-          <Link className="button button-secondary" href="/contact">
-            {t("contactLead")}
-          </Link>
-        </div>
+        <DualCta />
       </section>
 
       <section className="stack-lg">
@@ -42,7 +36,7 @@ export default function HomePage() {
 
         <div className="stack-lg">
           {featuredProjects.map((project) => (
-            <ProjectCard project={project} key={project.slug} />
+            <ProjectCard project={project} key={project.slug} featuredSnapshot />
           ))}
         </div>
       </section>
