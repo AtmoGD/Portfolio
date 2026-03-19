@@ -6,10 +6,10 @@ import { notFound } from "next/navigation";
 import CaseStudyNav from "@/components/case-study-nav";
 import EvidencePanel from "@/components/evidence-panel";
 import { projects } from "@/src/content/site";
-import { useI18n } from "@/src/i18n";
+import { localizeWithFallback, useI18n } from "@/src/i18n";
 
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
   const project = projects.find((item) => item.slug === params.slug);
 
   if (!project) {
@@ -34,8 +34,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         <header className="card stack-md">
           <p className="eyebrow">{t("caseStudy")}</p>
           <h1>{project.title}</h1>
-          <p className="lead">{project.tagline}</p>
-          <p>{project.summary}</p>
+          <p className="lead">{localizeWithFallback(project.tagline, language)}</p>
+          <p>{localizeWithFallback(project.summary, language)}</p>
           <p className="muted">
             {project.year} · {project.status}
           </p>
@@ -50,36 +50,36 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <dl className="proof-row">
             <div>
               <dt>{t("role")}</dt>
-              <dd>{project.proof.role}</dd>
+              <dd>{localizeWithFallback(project.proof.role, language)}</dd>
             </div>
             <div>
               <dt>{t("timeline")}</dt>
-              <dd>{project.proof.timeline}</dd>
+              <dd>{localizeWithFallback(project.proof.timeline, language)}</dd>
             </div>
             <div>
               <dt>{t("team")}</dt>
-              <dd>{project.proof.teamSize}</dd>
+              <dd>{localizeWithFallback(project.proof.teamSize, language)}</dd>
             </div>
             <div>
               <dt>{t("impact")}</dt>
-              <dd>{project.proof.impact}</dd>
+              <dd>{localizeWithFallback(project.proof.impact, language)}</dd>
             </div>
           </dl>
         </section>
 
         <section id="context" className="card stack-md">
           <h2>{t("context")}</h2>
-          <p>{project.narrative.context}</p>
+          <p>{localizeWithFallback(project.narrative.context, language)}</p>
         </section>
 
         <section id="challenge" className="card stack-md">
           <h2>{t("challenge")}</h2>
-          <p>{project.narrative.challenge}</p>
+          <p>{localizeWithFallback(project.narrative.challenge, language)}</p>
         </section>
 
         <section id="approach" className="card stack-md">
           <h2>{t("approach")}</h2>
-          <p>{project.narrative.approach}</p>
+          <p>{localizeWithFallback(project.narrative.approach, language)}</p>
         </section>
 
         <section id="ownership" className="card stack-md">
@@ -89,7 +89,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               <h3>{t("directOwnership")}</h3>
               <ul>
                 {project.ownership.owned.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={String(localizeWithFallback(item, language))}>{localizeWithFallback(item, language)}</li>
                 ))}
               </ul>
             </div>
@@ -98,7 +98,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 <h3>{t("keyCollaborators")}</h3>
                 <ul>
                   {project.ownership.collaboratedWith.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={String(localizeWithFallback(item, language))}>{localizeWithFallback(item, language)}</li>
                   ))}
                 </ul>
               </div>
@@ -110,7 +110,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <h2>{t("implementationHighlights")}</h2>
           <ul>
             {project.contributions.map((point) => (
-              <li key={point}>{point}</li>
+              <li key={String(localizeWithFallback(point, language))}>{localizeWithFallback(point, language)}</li>
             ))}
           </ul>
         </section>
@@ -125,10 +125,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <h2>{t("outcomes")}</h2>
           <ul>
             {project.outcomes.map((result) => (
-              <li key={result}>{result}</li>
+              <li key={String(localizeWithFallback(result, language))}>{localizeWithFallback(result, language)}</li>
             ))}
           </ul>
-          <p>{project.narrative.impact}</p>
+          <p>{localizeWithFallback(project.narrative.impact, language)}</p>
         </section>
 
         <section id="links" className="card stack-md">

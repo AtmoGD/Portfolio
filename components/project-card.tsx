@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/src/types/project";
-import { useI18n } from "@/src/i18n";
+import { localizeWithFallback, useI18n } from "@/src/i18n";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
 
   return (
     <article className="card project-card">
@@ -19,27 +19,27 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.year} · {project.status}
           </p>
           <h3>{project.title}</h3>
-          <p className="muted">{project.tagline}</p>
-          <p>{project.summary}</p>
+          <p className="muted">{localizeWithFallback(project.tagline, language)}</p>
+          <p>{localizeWithFallback(project.summary, language)}</p>
         </div>
       </div>
 
       <dl className="proof-row" aria-label="Project proof at a glance">
         <div>
           <dt>{t("role")}</dt>
-          <dd>{project.proof.role}</dd>
+          <dd>{localizeWithFallback(project.proof.role, language)}</dd>
         </div>
         <div>
           <dt>{t("timeline")}</dt>
-          <dd>{project.proof.timeline}</dd>
+          <dd>{localizeWithFallback(project.proof.timeline, language)}</dd>
         </div>
         <div>
           <dt>{t("team")}</dt>
-          <dd>{project.proof.teamSize}</dd>
+          <dd>{localizeWithFallback(project.proof.teamSize, language)}</dd>
         </div>
         <div>
           <dt>{t("impact")}</dt>
-          <dd>{project.proof.impact}</dd>
+          <dd>{localizeWithFallback(project.proof.impact, language)}</dd>
         </div>
       </dl>
 
@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <h4>{t("roles")}</h4>
           <ul>
             {project.roles.map((role) => (
-              <li key={role}>{role}</li>
+              <li key={String(localizeWithFallback(role, language))}>{localizeWithFallback(role, language)}</li>
             ))}
           </ul>
         </div>
@@ -68,7 +68,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h4>{t("contribution")}</h4>
         <ul>
           {project.contributions.map((point) => (
-            <li key={point}>{point}</li>
+            <li key={String(localizeWithFallback(point, language))}>{localizeWithFallback(point, language)}</li>
           ))}
         </ul>
       </div>
@@ -77,7 +77,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h4>{t("outcome")}</h4>
         <ul>
           {project.outcomes.map((result) => (
-            <li key={result}>{result}</li>
+            <li key={String(localizeWithFallback(result, language))}>{localizeWithFallback(result, language)}</li>
           ))}
         </ul>
       </div>

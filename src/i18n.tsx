@@ -198,3 +198,15 @@ export type Localized<T = string> = {
 export function localize<T>(value: Localized<T>, language: Language): T {
   return value[language];
 }
+
+/**
+ * Allows progressive i18n migration for content data.
+ * If a value is still plain (English-first legacy strings), we return it as-is.
+ * If it is localized, we resolve the current language.
+ */
+export function localizeWithFallback<T>(value: T | Localized<T>, language: Language): T {
+  if (typeof value === "object" && value !== null && "en" in value && "de" in value) {
+    return (value as Localized<T>)[language];
+  }
+  return value as T;
+}
