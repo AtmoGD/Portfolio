@@ -78,6 +78,8 @@ const text = {
     directOwnership: "Direct ownership",
     keyCollaborators: "Key collaborators",
     playEvidence: "Play evidence",
+    projectProofAtGlance: "Project proof at a glance",
+    challengeActionOutcomeSnapshot: "Challenge action outcome snapshot",
   },
   de: {
     navHome: "Start",
@@ -150,6 +152,8 @@ const text = {
     directOwnership: "Direkte Ownership",
     keyCollaborators: "Wichtige Zusammenarbeit",
     playEvidence: "Evidenz abspielen",
+    projectProofAtGlance: "Projektbeweis auf einen Blick",
+    challengeActionOutcomeSnapshot: "Snapshot aus Herausforderung, Aktion und Ergebnis",
   },
 };
 

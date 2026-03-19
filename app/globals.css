@@ -361,7 +361,10 @@ ul {
   color: var(--muted);
   border-left: 2px solid transparent;
   padding: 0.32rem 0.55rem;
-  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+  transition:
+    color var(--motion-fast) var(--ease-standard),
+    border-color var(--motion-fast) var(--ease-standard),
+    background var(--motion-fast) var(--ease-standard);
 }
 
 .case-nav-link:hover,

@@ -67,7 +67,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
         </div>
       </div>
 
-      <dl className="proof-row" aria-label="Project proof at a glance">
+      <dl className="proof-row" aria-label={t("projectProofAtGlance")}>
         <div>
           <dt>{t("role")}</dt>
           <dd>{localizeWithFallback(project.proof.role, language)}</dd>
@@ -87,7 +87,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
       </dl>
 
       {featuredSnapshot ? (
-        <section className="snapshot-grid" aria-label="Challenge action outcome snapshot">
+        <section className="snapshot-grid" aria-label={t("challengeActionOutcomeSnapshot")}>
           {snapshot.map((item) => (
             <article key={item.label} className="snapshot-item">
               <h4>{item.label}</h4>
