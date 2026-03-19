@@ -1,181 +1,46 @@
-"use client";
-
-import {
-  Image,
-  AspectRatio,
-  Center,
-  Box,
-  Stack,
-  rem,
-  Title,
-  Group,
-  Button,
-  NavLink,
-} from "@mantine/core";
-
-import { Carousel } from "@mantine/carousel";
-import NextImage from "next/image";
-
-import witchWayImage from "@/assets/WitchWay.png";
-import unthronedImage from "@/assets/Unthroned.png";
-import pumpkinHarvestImage from "@/assets/PumpkinHarvest@0.25x.png";
-
-import { IconArrowLeft, IconArrowRight, IconCoffee } from "@tabler/icons-react";
 import Link from "next/link";
-import TransitionWrapper from "@/components/transition-wrapper";
-import { redirect, usePathname } from "next/navigation";
+import ProjectCard from "@/components/project-card";
+import { featuredProjects, profile } from "@/src/content/site";
 
-import { useTranslation } from "react-i18next";
-
-export default function Home() {
-  const { t } = useTranslation();
-
+export default function HomePage() {
   return (
-    <TransitionWrapper>
-      <Center>
-        <Stack>
-          <Box className="titleBar">
-            <Center>
-              <Title order={2}>{t("aboutMeTitle")}</Title>
-            </Center>
-          </Box>
-          <Center>
-            <Stack>
-              <Center mb={150} mt={50} ml={"1.5em"} mr={"1.5em"}>
-                <Box maw={"50em"}>
-                  <Group justify="center">
-                    <IconCoffee style={{ width: rem(80), height: rem(80) }} />
-                    <p
-                      style={{
-                        textAlign: "center",
-                        paddingBottom: "2rem",
-                        whiteSpace: "pre-line",
-                      }}
-                    >
-                      {t("aboutMeText")}
-                    </p>
+    <div className="stack-xl">
+      <section className="hero card">
+        <p className="eyebrow">Gameplay engineering portfolio</p>
+        <h1>{profile.name}</h1>
+        <p className="lead">{profile.title}</p>
+        <p>{profile.intro}</p>
 
-                    <Group justify="center" align="center">
-                      <Button
-                        rightSection={<IconArrowRight size={16} />}
-                        component={Link}
-                        href={"/projects"}
-                        w={"25em"}
-                      >
-                        {t("projectsTitle")}
-                      </Button>
+        <div className="chip-row" aria-label="Value highlights">
+          {profile.valuePoints.map((point) => (
+            <span className="chip" key={point}>
+              {point}
+            </span>
+          ))}
+        </div>
 
-                      <Button
-                        rightSection={<IconArrowRight size={16} />}
-                        component={Link}
-                        href={"/cv"}
-                        w={"25em"}
-                      >
-                        {t("cvTitle")}
-                      </Button>
-                    </Group>
-                  </Group>
-                </Box>
-              </Center>
-              {/* <Box className="titleBar" mb={30}>
-                <Center>
-                  <Title order={2}>{t("lastProjectsTitle")}</Title>
-                </Center>
-              </Box>
-              <Center>
-                <Box maw={"36em"} mt={0} mb={150}>
-                  <Carousel
-                    slideSize="100%"
-                    height={"100%"}
-                    w={"36em"}
-                    loop
-                    nextControlIcon={
-                      <Box
-                        bg={"red"}
-                        style={{
-                          width: rem(38),
-                          height: rem(38),
-                          borderRadius: 5,
-                        }}
-                      >
-                        <IconArrowRight
-                          color="white"
-                          style={{
-                            width: rem(32),
-                            height: rem(32),
-                            marginTop: 3,
-                            marginLeft: 3,
-                          }}
-                        />
-                      </Box>
-                    }
-                    previousControlIcon={
-                      <Box
-                        bg={"red"}
-                        style={{
-                          width: rem(38),
-                          height: rem(38),
-                          borderRadius: 5,
-                        }}
-                      >
-                        <IconArrowLeft
-                          color="white"
-                          style={{
-                            width: rem(32),
-                            height: rem(32),
-                            marginTop: 3,
-                            marginLeft: 3,
-                          }}
-                        />
-                      </Box>
-                    }
-                  >
-                    <Carousel.Slide>
-                      <Link href={"/projects"}>
-                        <AspectRatio ratio={630 / 500} w={"36em"} mx="auto">
-                          <Image
-                            component={NextImage}
-                            src={witchWayImage}
-                            alt="Profile Image"
-                            radius={"0%"}
-                            w={"36em"}
-                          />
-                        </AspectRatio>
-                      </Link>
-                    </Carousel.Slide>
-                    <Carousel.Slide>
-                      <Link href={"/projects"}>
-                        <AspectRatio ratio={630 / 500} w={"36em"} mx="auto">
-                          <Image
-                            component={NextImage}
-                            src={unthronedImage}
-                            alt="Profile Image"
-                            radius={"0%"}
-                            w={"36em"}
-                          />
-                        </AspectRatio>
-                      </Link>
-                    </Carousel.Slide>
-                    <Carousel.Slide>
-                      <Link href={"/projects"}>
-                        <AspectRatio ratio={630 / 500} w={"36em"}>
-                          <Image
-                            component={NextImage}
-                            src={pumpkinHarvestImage}
-                            alt="Profile Image"
-                            radius={"0%"}
-                            w={"36em"}
-                          />
-                        </AspectRatio>
-                      </Link>
-                    </Carousel.Slide>
-                  </Carousel>
-                </Box>
-              </Center> */}
-            </Stack>
-          </Center>
-        </Stack>
-      </Center>
-    </TransitionWrapper>
+        <div className="link-row">
+          <Link className="button" href="/projects">
+            Explore projects
+          </Link>
+          <Link className="button button-secondary" href="/contact">
+            Contact
+          </Link>
+        </div>
+      </section>
+
+      <section className="stack-lg">
+        <div className="section-heading">
+          <p className="eyebrow">Selected systems</p>
+          <h2>Work with clear ownership and measurable contribution</h2>
+        </div>
+
+        <div className="stack-lg">
+          {featuredProjects.map((project) => (
+            <ProjectCard project={project} key={project.slug} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

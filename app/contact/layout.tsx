@@ -1,7 +1,3 @@
-"use client";
-
-import TransitionWrapper from "@/components/transition-wrapper";
-
-export default function RootLayout({ children }: any) {
-  return <TransitionWrapper>{children}</TransitionWrapper>;
+export default function ContactLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

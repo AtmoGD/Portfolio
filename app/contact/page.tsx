@@ -1,94 +1,43 @@
-"use client";
+import { profile } from "@/src/content/site";
 
-import {
-  Box,
-  Button,
-  Text,
-  Group,
-  TextInput,
-  Title,
-  Center,
-  Modal,
-  Stack,
-} from "@mantine/core";
-import { useForm } from "@mantine/form";
-import { useDisclosure } from "@mantine/hooks";
-import { IconSend } from "@tabler/icons-react";
-import React, { FunctionComponent } from "react";
-
-interface PageProps {}
-
-const Page: FunctionComponent<PageProps> = () => {
-  const [opened, { open, close }] = useDisclosure(false);
-
-  const form = useForm({
-    initialValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-
-    validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
-    },
-  });
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-    open();
-  };
-
+export default function ContactPage() {
   return (
-    <Center>
-      <Stack>
-        <Box className="titleBar">
-          <Center>
-            <Title order={2}>Nachricht</Title>
-          </Center>
-        </Box>
-        <Center>
-          <Box w={500} m={0}>
-            <form onSubmit={sendEmail}>
-              <TextInput
-                m={25}
-                withAsterisk
-                placeholder="Name"
-                {...form.getInputProps("name")}
-              />
-              <TextInput
-                m={25}
-                withAsterisk
-                placeholder="Email"
-                {...form.getInputProps("email")}
-              />
-              <TextInput
-                m={25}
-                withAsterisk
-                placeholder="Nachricht"
-                {...form.getInputProps("message")}
-              />
+    <section className="stack-lg">
+      <header className="section-heading">
+        <p className="eyebrow">Contact</p>
+        <h1>Let’s talk about gameplay, systems, and product-ready prototypes</h1>
+        <p className="muted">Reliable channels only for MVP.</p>
+      </header>
 
-              <Group justify="flex-end" m={25}>
-                <Button type="submit" onSubmit={sendEmail}>
-                  Submit
-                </Button>
-              </Group>
-            </form>
-          </Box>
-        </Center>
-        <Modal size={"36em"} opened={opened} onClose={close} title="" centered>
-          <Stack justify="center" align="center">
-            <Title m={15}>Email gesendet 🎉</Title>
-            <IconSend size={64} style={{ margin: 15 }} />
-            <Text m={15}>
-              Vielen Dank für die Nachricht auch wenn ich sie nicht lesen werde
-              weil das Formular nicht funktioniert. Aber hey, der Wille zählt!
-            </Text>
-          </Stack>
-        </Modal>
-      </Stack>
-    </Center>
+      <article className="card stack-md">
+        <h2>Best way to reach me</h2>
+        <p>
+          Email is preferred for opportunities and project discussions. I usually respond within 1–2 business days.
+        </p>
+        <div className="link-row">
+          <a href={`mailto:${profile.email}`} className="button">
+            {profile.email}
+          </a>
+        </div>
+      </article>
+
+      <article className="card stack-md">
+        <h2>Professional links</h2>
+        <div className="link-row">
+          <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">
+            LinkedIn
+          </a>
+          <a href={profile.links.github} target="_blank" rel="noreferrer" className="text-link">
+            GitHub
+          </a>
+          <a href={profile.links.itch} target="_blank" rel="noreferrer" className="text-link">
+            itch.io
+          </a>
+          <a href={profile.links.sketchfab} target="_blank" rel="noreferrer" className="text-link">
+            Sketchfab
+          </a>
+        </div>
+      </article>
+    </section>
   );
-};
-
-export default Page;
+}
