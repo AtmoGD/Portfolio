@@ -33,9 +33,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     cardRef.current?.style.setProperty(name, value);
   }
 
-  function handlePointerMove(event: ReactPointerEvent<HTMLElement>) {
-    if (!supportsFinePointer()) return;
-
+  function updateSpotlight(event: ReactPointerEvent<HTMLElement>) {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -43,15 +41,27 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     const px = x / rect.width;
     const py = y / rect.height;
 
+    setStyleVar("--spotlight-x", `${x}px`);
+    setStyleVar("--spotlight-y", `${y}px`);
+    setStyleVar("--tilt-x", `${((0.5 - py) * 2.2).toFixed(2)}deg`);
+    setStyleVar("--tilt-y", `${((px - 0.5) * 2.2).toFixed(2)}deg`);
+  }
+
+  function handlePointerEnter(event: ReactPointerEvent<HTMLElement>) {
+    if (!supportsFinePointer()) return;
+    updateSpotlight(event);
+  }
+
+  function handlePointerMove(event: ReactPointerEvent<HTMLElement>) {
+    if (!supportsFinePointer()) return;
+
+    const card = event.currentTarget;
     if (rafRef.current !== null) {
       cancelAnimationFrame(rafRef.current);
     }
 
     rafRef.current = requestAnimationFrame(() => {
-      setStyleVar("--spotlight-x", `${x}px`);
-      setStyleVar("--spotlight-y", `${y}px`);
-      setStyleVar("--tilt-x", `${((0.5 - py) * 2.2).toFixed(2)}deg`);
-      setStyleVar("--tilt-y", `${((px - 0.5) * 2.2).toFixed(2)}deg`);
+      updateSpotlight(event);
       rafRef.current = null;
     });
   }
@@ -71,6 +81,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     <article
       ref={cardRef}
       className="card project-card stack-md enter-rise"
+      onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}
       onPointerLeave={resetTilt}
       onBlur={resetTilt}
@@ -96,6 +107,10 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
         <div>
           <dt>{t("timeline")}</dt>
           <dd>{localizeWithFallback(project.proof.timeline, language)}</dd>
+        </div>
+        <div>
+          <dt>{t("contribution")}</dt>
+          <dd>{localizeWithFallback(project.contributions[0], language)}</dd>
         </div>
         <div>
           <dt>{t("outcome")}</dt>

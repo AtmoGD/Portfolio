@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { Route } from "next";
 import LanguageSwitch from "@/components/language-switch";
@@ -8,6 +9,7 @@ import { localize, useI18n } from "@/src/i18n";
 
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const { language, t } = useI18n();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const navItems: Array<{ href: Route; label: string }> = [
     { href: "/", label: t("navHome") },
@@ -17,27 +19,77 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     { href: "/contact", label: t("navContact") },
   ];
 
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    document.body.style.overflow = isMobileNavOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileNavOpen]);
+
   return (
     <div className="site-root">
       <header className="site-header">
         <div className="container nav-row">
-          <Link href="/" className="brand">
-            <span className="brand-mark" aria-hidden="true">
-              ◉
-            </span>
-            <span>{profile.name}</span>
-          </Link>
+          <div className="top-bar-main">
+            <Link href="/" className="brand" onClick={() => setIsMobileNavOpen(false)}>
+              <span className="brand-mark" aria-hidden="true">
+                ◉
+              </span>
+              <span>{profile.name}</span>
+            </Link>
 
-          <nav aria-label="Main navigation" className="top-nav">
+            <button
+              type="button"
+              className="menu-toggle"
+              aria-expanded={isMobileNavOpen}
+              aria-controls="mobile-nav-drawer"
+              onClick={() => setIsMobileNavOpen((prev) => !prev)}
+            >
+              <span aria-hidden="true">☰</span>
+              <span className="sr-only">{t("openMenu")}</span>
+            </button>
+          </div>
+
+          <div className="nav-desktop-area">
+            <nav aria-label="Main navigation" className="top-nav" data-desktop>
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href} className="nav-link">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <LanguageSwitch />
+          </div>
+        </div>
+      </header>
+
+      <div
+        className={`mobile-nav-overlay ${isMobileNavOpen ? "is-open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isMobileNavOpen}
+        id="mobile-nav-drawer"
+      >
+        <div className="mobile-nav-backdrop" onClick={() => setIsMobileNavOpen(false)} />
+        <aside className="mobile-nav-drawer">
+          <div className="mobile-nav-head">
+            <p className="muted">{profile.name}</p>
+            <button type="button" className="menu-close" aria-label={t("closeMenu")} onClick={() => setIsMobileNavOpen(false)}>
+              ×
+            </button>
+          </div>
+          <LanguageSwitch />
+          <nav aria-label="Main navigation" className="mobile-nav-links">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="nav-link">
+              <Link key={item.href} href={item.href} className="nav-link" onClick={() => setIsMobileNavOpen(false)}>
                 {item.label}
               </Link>
             ))}
-            <LanguageSwitch />
           </nav>
-        </div>
-      </header>
+        </aside>
+      </div>
 
       <main className="container page-content">
         <div className="stack-sm">
