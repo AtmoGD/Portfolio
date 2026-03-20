@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Route } from "next";
 import LanguageSwitch from "@/components/language-switch";
@@ -10,6 +10,9 @@ import { localize, useI18n } from "@/src/i18n";
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const { language, t } = useI18n();
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const lastFocusedElementRef = useRef<HTMLElement | null>(null);
 
   const navItems: Array<{ href: Route; label: string }> = [
     { href: "/", label: t("navHome") },
@@ -26,6 +29,38 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     return () => {
       document.body.style.overflow = "";
     };
+  }, [isMobileNavOpen]);
+
+  useEffect(() => {
+    if (!isMobileNavOpen || typeof document === "undefined") return;
+
+    lastFocusedElementRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsMobileNavOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMobileNavOpen]);
+
+  useEffect(() => {
+    if (isMobileNavOpen) return;
+
+    const target = lastFocusedElementRef.current;
+    if (target && document.contains(target)) {
+      target.focus();
+    } else {
+      menuToggleRef.current?.focus();
+    }
+    lastFocusedElementRef.current = null;
   }, [isMobileNavOpen]);
 
   return (
@@ -46,6 +81,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
               aria-expanded={isMobileNavOpen}
               aria-controls="mobile-nav-drawer"
               onClick={() => setIsMobileNavOpen((prev) => !prev)}
+              ref={menuToggleRef}
             >
               <span aria-hidden="true">☰</span>
               <span className="sr-only">{t("openMenu")}</span>
@@ -71,12 +107,30 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         aria-modal="true"
         aria-hidden={!isMobileNavOpen}
         id="mobile-nav-drawer"
+        onClick={() => setIsMobileNavOpen(false)}
+        onPointerDown={() => setIsMobileNavOpen(false)}
       >
-        <div className="mobile-nav-backdrop" onClick={() => setIsMobileNavOpen(false)} />
-        <aside className="mobile-nav-drawer">
+        <div
+          className="mobile-nav-backdrop"
+          data-testid="mobile-nav-backdrop"
+          aria-hidden="true"
+          onClick={() => setIsMobileNavOpen(false)}
+          onPointerDown={() => setIsMobileNavOpen(false)}
+        />
+        <aside
+          className="mobile-nav-drawer"
+          onClick={(event) => event.stopPropagation()}
+          onPointerDown={(event) => event.stopPropagation()}
+        >
           <div className="mobile-nav-head">
             <p className="muted">{profile.name}</p>
-            <button type="button" className="menu-close" aria-label={t("closeMenu")} onClick={() => setIsMobileNavOpen(false)}>
+            <button
+              type="button"
+              className="menu-close"
+              aria-label={t("closeMenu")}
+              onClick={() => setIsMobileNavOpen(false)}
+              ref={closeButtonRef}
+            >
               ×
             </button>
           </div>

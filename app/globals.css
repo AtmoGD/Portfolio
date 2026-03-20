@@ -194,10 +194,12 @@ a {
   position: absolute;
   inset: 0;
   background: rgba(2, 4, 8, 0.55);
+  z-index: 0;
 }
 
 .mobile-nav-drawer {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   width: min(84vw, 320px);

@@ -48,6 +48,24 @@ test.describe('Projects mobile progressive disclosure', () => {
   });
 });
 
+test.describe('Mobile navigation drawer', () => {
+  test.use({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+
+  test('opens and closes via backdrop tap', async ({ page }) => {
+    await page.goto('/');
+
+    const menuToggle = page.locator('.menu-toggle');
+    await expect(menuToggle).toBeVisible();
+    await menuToggle.click();
+
+    await expect(menuToggle).toHaveAttribute('aria-expanded', 'true');
+
+    await page.locator('.mobile-nav-backdrop').dispatchEvent('pointerdown');
+
+    await expect(menuToggle).toHaveAttribute('aria-expanded', 'false');
+  });
+});
+
 test.describe('Project card interaction by input mode', () => {
   test('desktop hover/fine pointer activates spotlight + tilt state', async ({ page }) => {
     await page.goto('/projects');
