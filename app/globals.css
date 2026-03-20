@@ -611,7 +611,7 @@ ul {
   inset: 0;
   pointer-events: none;
   background: radial-gradient(220px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px), rgba(126, 235, 255, 0.12), transparent 70%);
-  opacity: 0;
+  opacity: var(--spotlight-opacity, 0);
   transition: opacity var(--motion-base) var(--ease-standard);
 }
 
@@ -620,7 +620,8 @@ ul {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project-card:hover::after {
+  .project-card:hover::after,
+  .project-card[data-hovering="true"]::after {
     opacity: 1;
   }
 }

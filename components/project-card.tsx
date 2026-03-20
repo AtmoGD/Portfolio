@@ -5,10 +5,61 @@ import type { MouseEvent as ReactMouseEvent, PointerEvent as ReactPointerEvent }
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/src/types/project";
-import { localizeWithFallback, useI18n } from "@/src/i18n";
+import { localizeWithFallback, useI18n, type Language } from "@/src/i18n";
 
 const INTERACTION_QUERY = "(hover: hover) and (pointer: fine)";
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function inferStoryFrame(project: Project, language: Language): { label: { en: string; de: string }; copy: string } {
+  const stack = project.stack.join(" ").toLowerCase();
+  const timeline = localizeWithFallback(project.proof.timeline, language).toLowerCase();
+  const summary = localizeWithFallback(project.summary, language).toLowerCase();
+
+  if (stack.includes("jam") || timeline.includes("jam") || summary.includes("jam")) {
+    return {
+      label: { en: "Jam pressure", de: "Jam-Druck" },
+      copy: "jam",
+    };
+  }
+
+  if (stack.includes("blender") || stack.includes("3d") || stack.includes("substance")) {
+    return {
+      label: { en: "Asset pipeline", de: "Asset-Pipeline" },
+      copy: "asset",
+    };
+  }
+
+  if (project.status === "Prototype") {
+    return {
+      label: { en: "Prototype goal", de: "Prototyp-Ziel" },
+      copy: "prototype",
+    };
+  }
+
+  return {
+    label: { en: "System focus", de: "Systemfokus" },
+    copy: "system",
+  };
+}
+
+function storyCopy(frame: string, language: Language) {
+  const copy = {
+    en: {
+      jam: "Time-boxed delivery with ruthless scope cuts, then polish where player readability matters most.",
+      asset: "End-to-end production pass from blockout/high-poly through optimization and presentation-ready output.",
+      prototype: "Fast validation loop: isolate one interaction risk, iterate quickly, keep findings reusable.",
+      system: "Gameplay systems built for predictable iteration, stable integration, and clean handoff under production pressure.",
+    },
+    de: {
+      jam: "Zeitlich harte Box: Scope konsequent reduzieren, dann dort polieren, wo Spiel-Lesbarkeit am meisten zählt.",
+      asset: "Durchgängiger Produktionspass vom Blockout/High-Poly über Optimierung bis zum präsentationsreifen Output.",
+      prototype: "Schneller Validierungszyklus: ein Interaktionsrisiko isolieren, zügig iterieren, Erkenntnisse wiederverwendbar halten.",
+      system: "Gameplay-Systeme für planbare Iteration, stabile Integration und saubere Übergaben unter Produktionsdruck.",
+    },
+  };
+
+  return copy[language][frame as keyof (typeof copy)["en"]];
+}
 
 export default function ProjectCard({ project, featuredSnapshot = false }: { project: Project; featuredSnapshot?: boolean }) {
   const { language, t } = useI18n();
@@ -21,14 +72,15 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     cardRef.current.dataset.pointer = isCoarse ? "coarse" : "fine";
   }, []);
 
-  const snapshot = useMemo(
-    () => [
-      { label: t("challenge"), copy: localizeWithFallback(project.narrative.challenge, language) },
+  const snapshot = useMemo(() => {
+    const frame = inferStoryFrame(project, language);
+
+    return [
+      { label: frame.label[language], copy: storyCopy(frame.copy, language) },
       { label: t("action"), copy: localizeWithFallback(project.narrative.approach, language) },
       { label: t("outcome"), copy: localizeWithFallback(project.narrative.impact, language) },
-    ],
-    [language, project.narrative.approach, project.narrative.challenge, project.narrative.impact, t],
-  );
+    ];
+  }, [language, project, t]);
 
   function supportsFinePointer() {
     if (typeof window === "undefined") return false;
@@ -55,11 +107,16 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
 
   function handlePointerEnter(event: ReactPointerEvent<HTMLElement>) {
     if (!supportsFinePointer()) return;
+    event.currentTarget.dataset.hovering = "true";
+    event.currentTarget.style.setProperty("--spotlight-opacity", "1");
     updateSpotlight(event);
   }
 
   function handlePointerMove(event: ReactPointerEvent<HTMLElement>) {
     if (!supportsFinePointer()) return;
+
+    event.currentTarget.dataset.hovering = "true";
+    event.currentTarget.style.setProperty("--spotlight-opacity", "1");
 
     const card = event.currentTarget;
     if (rafRef.current !== null) {
@@ -77,10 +134,14 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
     }
-    cardRef.current?.style.removeProperty("--spotlight-x");
-    cardRef.current?.style.removeProperty("--spotlight-y");
-    cardRef.current?.style.removeProperty("--tilt-x");
-    cardRef.current?.style.removeProperty("--tilt-y");
+    if (cardRef.current) {
+      cardRef.current.dataset.hovering = "false";
+      cardRef.current.style.removeProperty("--spotlight-opacity");
+      cardRef.current.style.removeProperty("--spotlight-x");
+      cardRef.current.style.removeProperty("--spotlight-y");
+      cardRef.current.style.removeProperty("--tilt-x");
+      cardRef.current.style.removeProperty("--tilt-y");
+    }
   }
 
   return (

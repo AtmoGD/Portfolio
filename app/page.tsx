@@ -19,24 +19,6 @@ export default function HomePage() {
         </p>
         <p>{localize(profile.intro, language)}</p>
 
-        <section className="card quick-fit" aria-label={t("heroQuickFitLabel")}>
-          <h2>{t("heroQuickFitLabel")}</h2>
-          <dl className="proof-row">
-            <div>
-              <dt>{t("heroQuickFitRoleLabel")}</dt>
-              <dd>{t("heroQuickFitRoleValue")}</dd>
-            </div>
-            <div>
-              <dt>{t("heroQuickFitFocusLabel")}</dt>
-              <dd>{t("heroQuickFitFocusValue")}</dd>
-            </div>
-            <div>
-              <dt>{t("heroQuickFitOutcomeLabel")}</dt>
-              <dd>{t("heroQuickFitOutcomeValue")}</dd>
-            </div>
-          </dl>
-        </section>
-
         <div className="impact-strip" aria-label={t("heroImpactStripLabel")}>
           {localize(profile.valuePoints, language).map((point) => (
             <span className="impact-pill" key={point}>
@@ -44,8 +26,6 @@ export default function HomePage() {
             </span>
           ))}
         </div>
-
-        <DualCta primaryLabelKey="exploreProjects" secondaryLabelKey="contactIntro" />
       </section>
 
       <section className="stack-lg">
@@ -59,6 +39,26 @@ export default function HomePage() {
             <ProjectCard project={project} key={project.slug} featuredSnapshot />
           ))}
         </div>
+      </section>
+
+      <section className="card stack-md quick-fit" aria-label={t("heroQuickFitLabel")}>
+        <h2>{t("heroQuickFitLabel")}</h2>
+        <dl className="proof-row">
+          <div>
+            <dt>{t("heroQuickFitRoleLabel")}</dt>
+            <dd>{t("heroQuickFitRoleValue")}</dd>
+          </div>
+          <div>
+            <dt>{t("heroQuickFitFocusLabel")}</dt>
+            <dd>{t("heroQuickFitFocusValue")}</dd>
+          </div>
+          <div>
+            <dt>{t("heroQuickFitOutcomeLabel")}</dt>
+            <dd>{t("heroQuickFitOutcomeValue")}</dd>
+          </div>
+        </dl>
+
+        <DualCta primaryLabelKey="exploreProjects" secondaryLabelKey="contactIntro" />
       </section>
     </div>
   );

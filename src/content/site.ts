@@ -24,19 +24,19 @@ export const profile = {
   } as Localized,
   email: "dennishawran@gmail.com",
   intro: {
-    en: "I design and implement playable systems that feel clear for players and maintainable for teams.",
-    de: "Ich entwickle spielbare Systeme, die für Spieler klar wirken und für Teams langfristig wartbar bleiben.",
+    en: "I build gameplay and interaction systems from first prototype to stable delivery, with clear state logic and practical collaboration handoffs.",
+    de: "Ich entwickle Gameplay- und Interaktionssysteme vom ersten Prototyp bis zur stabilen Lieferung – mit klarer State-Logik und praxistauglichen Team-Übergaben.",
   } as Localized,
   valuePoints: {
     en: [
-      "Playable prototypes fast",
-      "Clear ownership and contribution visibility",
-      "Strong Unity/C# foundation with Unreal experience",
+      "Jam-speed prototyping without losing system clarity",
+      "Readable gameplay states and practical debug hooks",
+      "Unity/C# core, plus Unreal/VR integration experience",
     ],
     de: [
-      "Schnelle, spielbare Prototypen",
-      "Klare Verantwortungsbereiche und transparente Beiträge",
-      "Starkes Unity/C#-Fundament mit Unreal-Erfahrung",
+      "Jam-schnelles Prototyping ohne Verlust an Systemklarheit",
+      "Lesbare Gameplay-States und praxisnahe Debug-Hooks",
+      "Unity/C# im Kern, ergänzt um Unreal-/VR-Integrationserfahrung",
     ],
   } as Localized<string[]>,
   links: {
@@ -49,21 +49,21 @@ export const profile = {
 
 export const aboutContent = {
   summary: {
-    en: "I’m a gameplay-focused developer with strong Unity/C# foundations and practical Unreal/VR exposure. I enjoy translating design intent into clean, testable systems and making contribution boundaries visible so teams and recruiters can quickly understand impact.",
-    de: "Ich bin ein gameplay-fokussierter Entwickler mit starkem Unity/C#-Fundament und praktischer Unreal/VR-Erfahrung. Ich übersetze Design-Intention in saubere, testbare Systeme und mache Beiträge sichtbar, damit Teams und Recruiter Wirkung schnell erkennen können.",
+    en: "My path into game development was not linear: I started in technical production, moved through media informatics, and gradually specialized in gameplay and systems work. That mix shaped how I build — curious in exploration, disciplined in implementation, and collaborative when turning rough ideas into playable, maintainable features.",
+    de: "Mein Weg in die Spieleentwicklung war nicht linear: Ich komme aus technischer Produktion, bin über Medieninformatik gegangen und habe mich Schritt für Schritt auf Gameplay- und Systemarbeit spezialisiert. Diese Mischung prägt meine Arbeitsweise — neugierig in der Exploration, diszipliniert in der Umsetzung und kollaborativ, wenn aus groben Ideen spielbare, wartbare Features werden.",
   } as Localized,
   strengths: {
     en: [
-      "Gameplay systems architecture and implementation",
-      "Rapid prototyping with disciplined scope control",
-      "Cross-functional collaboration with designers and artists",
-      "Documentation and handover quality for maintainability",
+      "Jam mindset: scope fast, test early, keep the core loop playable",
+      "System thinking for gameplay states, interactions, and balancing hooks",
+      "Calm cross-discipline collaboration with design, art, and playtesting",
+      "Professional handoff quality through clear docs, naming, and maintainable structure",
     ],
     de: [
-      "Architektur und Implementierung von Gameplay-Systemen",
-      "Schnelles Prototyping mit sauberem Scope-Management",
-      "Interdisziplinäre Zusammenarbeit mit Design und Art",
-      "Dokumentation und Übergabequalität für Wartbarkeit",
+      "Jam-Mindset: schnell scopen, früh testen, den Core Loop spielbar halten",
+      "Systemisches Denken für Gameplay-States, Interaktionen und Balancing-Hooks",
+      "Ruhige interdisziplinäre Zusammenarbeit mit Design, Art und Playtesting",
+      "Professionelle Übergabequalität durch klare Doku, Benennung und wartbare Struktur",
     ],
   } as Localized<string[]>,
 };

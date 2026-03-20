@@ -38,6 +38,17 @@ export default function AboutPage() {
       </article>
 
       <article className="card stack-md">
+        <h2>{t("timelineTitle")}</h2>
+        <ul>
+          {timeline.map((item) => (
+            <li key={item.period + item.title.en}>
+              <strong>{item.period}</strong> — {localize(item.title, language)}
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      <article className="card stack-md">
         <h2>{t("skills")}</h2>
         <div className="meta-grid">
           <div>
@@ -54,20 +65,9 @@ export default function AboutPage() {
           </div>
           <div>
             <h4>{t("focus")}</h4>
-            <p>Playable systems, interaction quality, prototype-to-delivery flow</p>
+            <p>Gameplay systems, interaction quality, prototype-to-delivery flow</p>
           </div>
         </div>
-      </article>
-
-      <article className="card stack-md">
-        <h2>Timeline</h2>
-        <ul>
-          {timeline.map((item) => (
-            <li key={item.period + item.title.en}>
-              <strong>{item.period}</strong> — {localize(item.title, language)}
-            </li>
-          ))}
-        </ul>
       </article>
 
       <article className="card stack-md">
