@@ -9,7 +9,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "npm run build && playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:headed": "playwright test --headed",
+    "e2e:report": "playwright show-report",
+    "lh:collect": "npm run build && lhci collect",
+    "lh:assert": "lhci assert",
+    "lh:autorun": "npm run build && lhci autorun"
   },
   "dependencies": {
     "@mantine/carousel": "^7.2.2",
@@ -26,6 +33,8 @@
     "react-i18next": "^14.0.5"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.58.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
