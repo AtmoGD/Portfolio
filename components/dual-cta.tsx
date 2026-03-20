@@ -1,18 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { useI18n } from "@/src/i18n";
+import { type CopyKey, useI18n } from "@/src/i18n";
 
-export default function DualCta({ compact = false }: { compact?: boolean }) {
+interface DualCtaProps {
+  compact?: boolean;
+  primaryLabelKey?: CopyKey;
+  secondaryLabelKey?: CopyKey;
+}
+
+export default function DualCta({
+  compact = false,
+  primaryLabelKey = "exploreProjects",
+  secondaryLabelKey = "contactIntro",
+}: DualCtaProps) {
   const { t } = useI18n();
 
   return (
     <div className={`link-row dual-cta ${compact ? "is-compact" : ""}`}>
       <Link className="button" href="/projects">
-        {t("exploreProjects")}
+        {t(primaryLabelKey)}
       </Link>
       <Link className="button button-secondary" href="/contact">
-        {t("contactIntro")}
+        {t(secondaryLabelKey)}
       </Link>
     </div>
   );

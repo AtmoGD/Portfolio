@@ -36,6 +36,28 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <h1>{project.title}</h1>
           <p className="lead">{localizeWithFallback(project.tagline, language)}</p>
           <p>{localizeWithFallback(project.summary, language)}</p>
+          <div className="impact-strip" aria-label={t("outcomeOneLiner")}>
+            <strong>{t("outcomeOneLiner")}: </strong>
+            <span>{localizeWithFallback(project.proof.impact, language)}</span>
+          </div>
+          <dl className="proof-row" aria-label={t("caseImpactAtGlance")}>
+            <div>
+              <dt>{t("context")}</dt>
+              <dd>{localizeWithFallback(project.narrative.context, language)}</dd>
+            </div>
+            <div>
+              <dt>{t("team")}</dt>
+              <dd>{localizeWithFallback(project.proof.teamSize, language)}</dd>
+            </div>
+            <div>
+              <dt>{t("timeline")}</dt>
+              <dd>{localizeWithFallback(project.proof.timeline, language)}</dd>
+            </div>
+            <div>
+              <dt>{t("role")}</dt>
+              <dd>{localizeWithFallback(project.proof.role, language)}</dd>
+            </div>
+          </dl>
           <p className="muted">
             {project.year} · {project.status}
           </p>

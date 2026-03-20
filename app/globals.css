@@ -532,6 +532,24 @@ ul {
   color: var(--brand);
 }
 
+.quick-fit {
+  padding: 0.9rem;
+}
+
+.quick-fit h2 {
+  font-size: 1rem;
+}
+
+.intent-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.show-more-btn {
+  width: fit-content;
+}
+
 .enter-rise {
   animation: enter-rise var(--motion-slow) var(--ease-emphasis) both;
   animation-delay: calc(var(--enter-index, 0) * 70ms);

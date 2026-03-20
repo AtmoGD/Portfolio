@@ -14,8 +14,28 @@ export default function HomePage() {
         <p className="eyebrow">{t("heroEyebrow")}</p>
         <h1>{t("heroHeadline")}</h1>
         <p className="lead">{t("heroSubline")}</p>
-        <p className="muted">{profile.name} · {localize(profile.title, language)}</p>
+        <p className="muted">
+          {profile.name} · {localize(profile.title, language)} · {localize(profile.location, language)}
+        </p>
         <p>{localize(profile.intro, language)}</p>
+
+        <section className="card quick-fit" aria-label={t("heroQuickFitLabel")}>
+          <h2>{t("heroQuickFitLabel")}</h2>
+          <dl className="proof-row">
+            <div>
+              <dt>{t("heroQuickFitRoleLabel")}</dt>
+              <dd>{t("heroQuickFitRoleValue")}</dd>
+            </div>
+            <div>
+              <dt>{t("heroQuickFitFocusLabel")}</dt>
+              <dd>{t("heroQuickFitFocusValue")}</dd>
+            </div>
+            <div>
+              <dt>{t("heroQuickFitOutcomeLabel")}</dt>
+              <dd>{t("heroQuickFitOutcomeValue")}</dd>
+            </div>
+          </dl>
+        </section>
 
         <div className="impact-strip" aria-label={t("heroImpactStripLabel")}>
           {localize(profile.valuePoints, language).map((point) => (
@@ -25,7 +45,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        <DualCta />
+        <DualCta primaryLabelKey="exploreProjects" secondaryLabelKey="contactIntro" />
       </section>
 
       <section className="stack-lg">

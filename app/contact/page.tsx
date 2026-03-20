@@ -26,6 +26,35 @@ export default function ContactPage() {
       </article>
 
       <article className="card stack-md">
+        <h2>{t("availabilityTitle")}</h2>
+        <p>{t("availabilityCopy")}</p>
+      </article>
+
+      <section className="intent-grid" aria-label={t("contactLead")}>
+        <article className="card stack-md">
+          <h2>{t("recruiterPath")}</h2>
+          <p>{t("recruiterPathCopy")}</p>
+          <a href={`mailto:${profile.email}?subject=Recruiter%20Inquiry`} className="text-link primary-cta-link">
+            {t("contactIntro")}
+          </a>
+        </article>
+        <article className="card stack-md">
+          <h2>{t("hiringPath")}</h2>
+          <p>{t("hiringPathCopy")}</p>
+          <a href={`mailto:${profile.email}?subject=Hiring%20Manager%20Inquiry`} className="text-link primary-cta-link">
+            {t("contactIntro")}
+          </a>
+        </article>
+        <article className="card stack-md">
+          <h2>{t("collaborationPath")}</h2>
+          <p>{t("collaborationPathCopy")}</p>
+          <a href={`mailto:${profile.email}?subject=Collaboration%20Inquiry`} className="text-link primary-cta-link">
+            {t("contactIntro")}
+          </a>
+        </article>
+      </section>
+
+      <article className="card stack-md">
         <h2>{t("professionalLinks")}</h2>
         <div className="link-row">
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">
@@ -43,7 +72,7 @@ export default function ContactPage() {
         </div>
       </article>
 
-      <DualCta compact />
+      <DualCta compact primaryLabelKey="exploreProjects" secondaryLabelKey="contactIntro" />
     </section>
   );
 }

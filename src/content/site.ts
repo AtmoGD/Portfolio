@@ -35,8 +35,8 @@ export const profile = {
     ],
     de: [
       "Schnelle, spielbare Prototypen",
-      "Klare Ownership und transparente Beiträge",
-      "Starkes Unity/C# Fundament mit Unreal-Erfahrung",
+      "Klare Verantwortungsbereiche und transparente Beiträge",
+      "Starkes Unity/C#-Fundament mit Unreal-Erfahrung",
     ],
   } as Localized<string[]>,
   links: {
