@@ -161,9 +161,9 @@ export const projects: Project[] = [
   {
     slug: "unthroned",
     title: "Unthroned",
-    tagline: "Arena combat built around responsive core systems",
+    tagline: "Twin-stick action meets base building and tower defense in a focused student project.",
     summary:
-      "A student production where I focused on robust gameplay systems and clean technical ownership.",
+      "Unthroned is a master-level student production combining twin-stick shooting with base building and tower defense. You play as Dave, a necromancer collecting souls to upgrade skills and strengthen your home base. I focused on robust gameplay and systems structure to keep balancing reliable through release on itch.io.",
     year: "2024",
     status: "Shipped",
     featured: true,
@@ -185,13 +185,13 @@ export const projects: Project[] = [
       collaboratedWith: ["Game design", "QA playtest peers", "Audio/FX contributors"],
     },
     contributions: [
-      "Implemented and iterated core combat/game-state systems",
-      "Set up architecture patterns to keep feature work stable",
-      "Collaborated across design and engineering to align scope",
+      "Implemented and iterated core gameplay and game-state logic",
+      "Built a system structure that kept feature integration stable and reduced regressions",
+      "Aligned with design and playtesting to improve combat readability and speed up tuning",
     ],
     outcomes: [
-      "Released publicly on itch.io",
-      "Delivered stable gameplay loop under student project constraints",
+      "Published publicly on itch.io",
+      "Delivered a stable core loop under student project time and scope constraints",
     ],
     evidence: [
       {
@@ -211,13 +211,13 @@ export const projects: Project[] = [
     ],
     narrative: {
       context:
-        "Built in a student team production cycle with fixed submission deadlines and rotating contributor availability.",
+        "Unthroned was built as a master-level student production with fixed deadlines and fluctuating team availability.",
       challenge:
-        "Combat readability dropped quickly whenever new enemy behaviors were added, which risked late-stage balancing churn.",
+        "Combat readability dropped quickly whenever new enemy behaviors were introduced, slowing balancing and polish.",
       approach:
-        "I split combat state handling into clearer modules (player state, enemy reaction, global encounter flow) and added lightweight debug hooks so designers could tune timing without code rewrites.",
+        "I split combat flow into clearer responsibilities (player state, enemy reaction, encounter flow) and added lightweight debug/tuning hooks for faster iteration without major rewrites.",
       impact:
-        "The team shipped on time with fewer regressions in late polish, and we kept combat changes predictable through final balancing.",
+        "The team could iterate predictably through release and keep gameplay stable through final delivery.",
     },
     links: {
       playUrl: "https://atmogd.itch.io/unthroned",
@@ -226,9 +226,9 @@ export const projects: Project[] = [
   {
     slug: "oasis",
     title: "Oasis",
-    tagline: "VR interaction prototype with embodied feedback",
+    tagline: "Controller-free VR interaction prototype for haptic room concepts",
     summary:
-      "A VR-focused project exploring interaction quality and technical feasibility in immersive spaces.",
+      "A study project prototype (WS 2021/22) exploring how controller-free interaction can feel reliable in VR and support future haptic-room installations.",
     year: "2023",
     status: "Prototype",
     featured: true,
@@ -250,11 +250,16 @@ export const projects: Project[] = [
       collaboratedWith: ["3D art", "Playtest participants"],
     },
     contributions: [
-      "Built core interaction flows and technical prototype foundations",
-      "Integrated motion-focused interaction behaviors",
-      "Validated gameplay concepts through rapid iteration",
+      "Implemented and iterated core grab-and-release interaction flows",
+      "Refined hand-state transitions and timing to reduce inconsistent interaction feel",
+      "Integrated feedback cues to improve user confidence during object handling",
+      "Supported technical integration of the interaction prototype into the teaser build",
     ],
-    outcomes: ["Produced a working VR teaser", "Informed bachelor-thesis-adjacent exploration"],
+    outcomes: [
+      "Delivered a functional VR teaser showcasing controller-free interaction goals",
+      "Established a reusable interaction baseline for subsequent thesis-adjacent exploration",
+      "Validated feasibility of the core interaction concept within a semester prototype scope",
+    ],
     evidence: [
       {
         title: "VR teaser walkthrough",
@@ -273,13 +278,13 @@ export const projects: Project[] = [
     ],
     narrative: {
       context:
-        "Prototype created to test whether motion-driven interactions could feel precise enough for a larger VR concept.",
+        "Created in a university study project (WS 2021/22) to explore controller-free VR interaction for a haptic-room concept.",
       challenge:
-        "Early interactions felt floaty and inconsistent between test users, especially during grab-and-release actions.",
+        "Early interaction felt inconsistent, especially in grab-and-release moments, making precision and trust harder for first-time users.",
       approach:
-        "I iterated on interaction timing, hand-state transitions, and feedback cues, then compared short test sessions to isolate where tracking noise hurt player confidence.",
+        "I iterated on hand-state transitions, timing windows, and in-world feedback cues, then integrated these changes into the teaser prototype for repeated playtesting.",
       impact:
-        "The teaser demonstrated stable interaction quality and gave a concrete technical baseline for further thesis-related experimentation.",
+        "The team produced a stable teaser and a practical interaction baseline that informed follow-up thesis-related VR work.",
     },
     links: {
       videoUrl: "https://youtu.be/Wh6ieci--3E",
@@ -288,9 +293,9 @@ export const projects: Project[] = [
   {
     slug: "witch-way",
     title: "Witch Way?",
-    tagline: "Game jam design with fast iteration and polish discipline",
+    tagline: "Fast-paced jam project built for readable chaos and quick iteration",
     summary:
-      "A short-cycle project where speed, clarity, and playful readability drove technical decisions.",
+      "A Cozy Fall Jam project where I focused on shipping a clear, playful core loop under extreme time pressure, with readability and control feel prioritized over feature sprawl.",
     year: "2022",
     status: "Shipped",
     featured: true,
@@ -300,7 +305,7 @@ export const projects: Project[] = [
     proof: {
       role: "Gameplay loop owner",
       timeline: "48-hour game jam",
-      teamSize: "3-person jam team",
+      teamSize: "5-person jam team",
       impact: "Delivered complete build with strong first-play clarity",
     },
     ownership: {
@@ -312,11 +317,11 @@ export const projects: Project[] = [
       collaboratedWith: ["Jam designer", "2D artist"],
     },
     contributions: [
-      "Scoped and delivered a complete gameplay loop inside jam constraints",
-      "Balanced controls and moment-to-moment readability",
-      "Kept implementation lean for rapid delivery",
+      "Scoped and delivered a complete gameplay loop within jam constraints",
+      "Reduced mechanic overlap to keep hazard readability high",
+      "Polished controls and feedback to maintain first-play clarity",
     ],
-    outcomes: ["Public itch.io release", "Demonstrated high-speed execution"],
+    outcomes: ["Published publicly on itch.io", "Shipped a complete, understandable jam build in 48 hours"],
     evidence: [
       {
         title: "Shipped jam build",
@@ -343,17 +348,18 @@ export const projects: Project[] = [
   {
     slug: "pumpkin-harvest",
     title: "Pumpkin Harvest",
-    tagline: "Small-scope loop emphasizing feel and timing",
-    summary: "A hobby/game-jam style build centered on tight feedback and approachable mechanics.",
+    tagline: "Cozy farming loop with clear feedback and low-pressure progression",
+    summary:
+      "A small game-jam project where players plant, water, harvest, and deliver pumpkins. The focus is a relaxing pace, readable interactions, and satisfying moment-to-moment feedback.",
     year: "2022",
     status: "Shipped",
     cover: pumpkinHarvestImage,
     stack: ["Unity", "C#", "Gameplay"],
     roles: ["Gameplay Programmer"],
     proof: {
-      role: "Solo developer",
-      timeline: "1-week hobby sprint",
-      teamSize: "1 person",
+      role: "Gameplay programmer",
+      timeline: "Cozy Fall Jam 2022",
+      teamSize: "2-person team",
       impact: "Improved pacing and feedback rhythm in final public build",
     },
     ownership: {
@@ -364,10 +370,14 @@ export const projects: Project[] = [
       ],
     },
     contributions: [
-      "Implemented player loop and tuning passes",
-      "Refined feedback timing for better player clarity",
+      "Implemented and tuned the core harvest loop (planting, watering, harvesting, delivery)",
+      "Polished interaction timing and feedback cadence for clearer player flow",
+      "Integrated progression touches (earnings-based upgrades such as fields/truck)",
     ],
-    outcomes: ["Playable public build"],
+    outcomes: [
+      "Shipped a public Cozy Fall Jam 2022 build on itch.io",
+      "Delivered a readable, low-pressure gameplay loop aligned with the game's cozy intent",
+    ],
     evidence: [
       {
         title: "Gameplay still",
@@ -378,14 +388,13 @@ export const projects: Project[] = [
       },
     ],
     narrative: {
-      context:
-        "A compact personal project used to sharpen juice and responsiveness in a simple harvest loop.",
+      context: "Built during Cozy Fall Jam 2022 as a compact cozy farming game.",
       challenge:
-        "Initial pacing felt flat because action feedback and scoring cadence did not reinforce player momentum.",
+        "Keep the loop relaxing while still making each action feel meaningful and responsive.",
       approach:
-        "I tuned spawn rhythm, pickup timing windows, and audiovisual responses so the loop rewarded consistent play without complexity creep.",
+        "Focused scope on one clear loop (grow and deliver pumpkins), then tuned timing, interaction readability, and progression beats.",
       impact:
-        "Resulted in a cleaner minute-to-minute loop and a public build that communicated mechanics quickly.",
+        "Resulted in a coherent public jam build with approachable mechanics and a calm, cozy player experience.",
     },
     links: {
       playUrl: "https://atmogd.itch.io/pumpkin-harvest",
@@ -394,8 +403,9 @@ export const projects: Project[] = [
   {
     slug: "gravity-pong",
     title: "Gravity Pong",
-    tagline: "Classic mechanic remix with physics-driven constraints",
-    summary: "Experimental project blending pong fundamentals with gravity-informed behavior.",
+    tagline: "Pong with shifting gravity and ML-driven opponents",
+    summary:
+      "A Unity prototype that reimagines Pong with randomly flipping gravity, rising ball speed, and optional AI paddles trained with Unity ML-Agents.",
     year: "2021",
     status: "Prototype",
     cover: gravityPongImage,
@@ -415,10 +425,14 @@ export const projects: Project[] = [
       ],
     },
     contributions: [
-      "Implemented gravity-dependent paddle/ball logic",
-      "Explored alternative control and balancing strategies",
+      "Implemented gravity-flip match logic with visual direction indicators for readability",
+      "Built and tuned core rally systems (rebound behavior, pacing, speed scaling)",
+      "Integrated ML-Agents-based paddle opponents and exposed difficulty-related behavior parameters",
     ],
-    outcomes: ["Validated mechanic concept and technical direction"],
+    outcomes: [
+      "Validated a playable gravity-variant Pong ruleset with clearer rally readability",
+      "Delivered local multiplayer and AI-opponent modes in a public prototype build",
+    ],
     evidence: [
       {
         title: "Prototype frame",
@@ -430,13 +444,13 @@ export const projects: Project[] = [
     ],
     narrative: {
       context:
-        "Experiment to test whether gravity modifiers could create a fresh competitive twist on familiar pong behavior.",
+        "Gravity Pong started as a compact Unity experiment to test whether a familiar arcade loop could stay readable under constantly changing physical conditions.",
       challenge:
-        "Without constraints, gravity effects produced chaotic rallies that felt random rather than skill-based.",
+        "Random gravity shifts can quickly feel unfair, especially when rally speed ramps up. The design challenge was to preserve surprise without turning matches into chaos.",
       approach:
-        "I iterated on force caps, rebound rules, and arena tuning to keep matches readable while preserving the novelty of variable gravity.",
+        "I combined timed gravity inversions with explicit top/bottom direction indicators, tuned bounce and speed behavior, and added AI paddles via Unity ML-Agents to test solo and competitive play patterns.",
       impact:
-        "Established a workable prototype rule set and clear limits for future expansion or ML-assisted balancing.",
+        "The prototype established a clear, replayable game feel for a gravity-driven Pong variant and demonstrated a practical base for further balancing and polish.",
     },
     links: {
       playUrl: "https://atmogd.itch.io/gravity-pong",
@@ -445,8 +459,9 @@ export const projects: Project[] = [
   {
     slug: "aurea",
     title: "Aurea",
-    tagline: "Augmented reality multiplayer concept for mobile",
-    summary: "AR student project focused on low-poly style, shared interaction, and accessible onboarding.",
+    tagline: "AR multiplayer prototype that brings low-poly game moments into your living room.",
+    summary:
+      "Aurea is a Unity-based student project exploring shared AR gameplay on smartphones. Built as a semester prototype in a 4-person team, it focuses on clear onboarding, stable interaction flow, and a stylized low-poly presentation.",
     year: "2021",
     status: "Prototype",
     cover: aureaImage,
@@ -461,50 +476,74 @@ export const projects: Project[] = [
     ownership: {
       owned: ["AR setup and interaction flow", "Core gameplay loop", "Model integration and optimization"],
     },
-    contributions: ["Implemented mobile AR interactions", "Shaped core loop pacing", "Integrated production assets"],
-    outcomes: ["Playable multiplayer prototype", "Validated AR concept for social gameplay"],
+    contributions: [
+      "Implemented mobile AR interaction flow and core gameplay logic",
+      "Integrated and optimized production assets for reliable device performance",
+      "Supported pacing and onboarding decisions for first-time AR users",
+    ],
+    outcomes: [
+      "Delivered a playable multiplayer AR prototype within semester scope",
+      "Validated that social interaction can be communicated clearly in a low-poly AR setup",
+    ],
     evidence: [{ title: "Aurea prototype", type: "image", sourceUrl: aureaImage.src, caption: "Prototype frame.", supports: "Supports claim: complete AR vertical slice." }],
     narrative: {
-      context: "Student project to explore AR-first multiplayer interactions on smartphone devices.",
-      challenge: "Maintain spatial clarity and stable performance while supporting real-time AR interactions.",
-      approach: "Built a lightweight interaction architecture and optimized asset setup for reliable mobile behavior.",
-      impact: "The team delivered a fully playable prototype with clear onboarding and stable core interactions.",
+      context:
+        "Created as a student project to test how shared AR interactions work on everyday smartphones.",
+      challenge:
+        "Keep interactions readable and performance stable while multiple players share an AR play space.",
+      approach:
+        "Built a lightweight AR interaction structure in Unity, integrated low-poly assets, and iterated onboarding to make first contact intuitive.",
+      impact:
+        "Resulted in a complete vertical slice that demonstrates feasible multiplayer AR moment-to-moment play.",
     },
     links: {},
   },
   {
     slug: "cozy-winter-market",
     title: "Cozy Winter Market",
-    tagline: "Relaxed builder loop centered on atmosphere and progression",
-    summary: "A cozy management prototype where decoration and layout choices drive visitor behavior and economy.",
+    tagline: "Cozy builder prototype with a clear build-and-decorate economy loop",
+    summary:
+      "A calm management prototype from Cozy Winter Jam 2022: players build their own Christmas market, expand with new buildings, and use decoration to raise visitor happiness—so customers spend more.",
     year: "2021",
     status: "Prototype",
     cover: cozyWinterMarketImage,
     stack: ["Unity", "Game Design", "Simulation"],
     roles: ["Gameplay Programmer"],
     proof: {
-      role: "Gameplay loop owner",
-      timeline: "Short student prototype sprint",
-      teamSize: "Small student team",
-      impact: "Established a complete decorate-build-earn progression loop",
+      role: "Gameplay loop owner (programming & level design)",
+      timeline: "Cozy Winter Jam 2022 prototype sprint",
+      teamSize: "Small jam team",
+      impact: "Delivered a complete build-and-decorate progression loop with visible economy feedback",
     },
     ownership: { owned: ["Economy loop setup", "Placement and progression logic", "Balancing pass"] },
-    contributions: ["Implemented progression systems", "Balanced customer-spend behavior", "Connected decoration to reward pacing"],
-    outcomes: ["Playable cozy prototype", "Validated low-pressure progression model"],
+    contributions: [
+      "Implemented the core progression loop (build → visitor growth → income)",
+      "Connected decoration choices to happiness and customer spending behavior",
+      "Built placement, edit, and delete logic for market objects",
+    ],
+    outcomes: [
+      "Playable cozy prototype with relaxed, low-pressure progression",
+      "Validated economy readability through customer and happiness feedback bars",
+    ],
     evidence: [{ title: "Cozy Winter Market frame", type: "image", sourceUrl: cozyWinterMarketImage.src, caption: "Prototype scene.", supports: "Supports claim: completed decorate-and-grow loop." }],
     narrative: {
-      context: "Prototype focused on calm pacing and easy-to-understand management gameplay.",
-      challenge: "Keep progression satisfying without introducing complexity spikes.",
-      approach: "Coupled decoration density and shop upgrades to a clear income-feedback system.",
-      impact: "Resulted in a readable, relaxing loop with visible player-driven growth.",
+      context:
+        "Built for Cozy Winter Jam 2022, with a focus on a relaxing atmosphere instead of high-pressure optimization.",
+      challenge:
+        "Keep progression motivating and readable without introducing complexity spikes.",
+      approach:
+        "Linked building expansion, decoration value, and visitor happiness in one clear loop: more development increased traffic, and higher happiness increased spending.",
+      impact:
+        "Resulted in a clear cozy management loop where player decisions visibly shaped market growth and revenue.",
     },
     links: {},
   },
   {
     slug: "bomberman",
     title: "Bomberman",
-    tagline: "Classic ruleset recreation in a custom engine course",
-    summary: "Course project rebuilding Bomberman mechanics with FUDGE engine constraints and clean system logic.",
+    tagline: "Classic Bomberman mechanics rebuilt in FUDGE Engine with deterministic gameplay systems.",
+    summary:
+      "University course project recreating the Bomberman core loop in FUDGE Engine: grid movement, bomb timing, destructible tiles, enemy pressure, score, and lives.",
     year: "2020",
     status: "Prototype",
     cover: bombermanImage,
@@ -517,52 +556,83 @@ export const projects: Project[] = [
       impact: "Delivered a faithful and playable clone baseline",
     },
     ownership: { owned: ["Bomb and explosion logic", "Grid movement systems", "Collision and timing behavior"] },
-    contributions: ["Implemented core Bomberman interactions", "Built tile-based destruction rules", "Polished round readability"],
-    outcomes: ["Playable clone with classic rules"],
+    contributions: [
+      "Implemented bomb placement, fuse timing, and explosion propagation.",
+      "Built grid-based movement and collision behavior for walls, boxes, and bombs.",
+      "Implemented core round loop logic including lives, scoring, and restart/game-over flow.",
+    ],
+    outcomes: [
+      "Playable browser prototype published via GitHub Pages.",
+      "Faithful Bomberman-style baseline validating core mechanics under course constraints.",
+    ],
     evidence: [{ title: "Bomberman prototype", type: "image", sourceUrl: bombermanImage.src, caption: "In-engine gameplay frame.", supports: "Supports claim: complete core loop implementation." }],
     narrative: {
-      context: "Built in an interactive applications course using the FUDGE engine.",
-      challenge: "Recreate a known ruleset while handling deterministic timing and map interactions.",
-      approach: "Separated movement, explosion, and tile logic into predictable systems.",
-      impact: "Produced a stable and understandable clone suitable for course evaluation.",
+      context:
+        "Built as part of the ‘Development of Interactive Applications’ course at Furtwangen University using the FUDGE Engine.",
+      challenge:
+        "Recreate a well-known rule set with clear timing, predictable collisions, and readable game-state feedback (lives, score, game-over).",
+      approach:
+        "Structured gameplay into separable systems (movement/collision, bombs/explosions, spawning/progression, UI feedback) and kept configuration data adjustable.",
+      impact:
+        "Delivered a stable, course-ready Bomberman clone prototype demonstrating complete loop implementation and publishable web deployment.",
     },
     links: {},
   },
   {
     slug: "arc-reactor",
     title: "Arc Reactor",
-    tagline: "PBR hard-surface prop built for game-ready presentation",
-    summary: "Student 3D asset project focused on modeling precision, clean topology, and texture presentation.",
+    tagline: "Hard-surface Arc Reactor prop with high/low-poly PBR workflow",
+    summary:
+      "Student 3D asset project: recreated Marvel's Arc Reactor as a complete hard-surface pipeline from high-poly sculpt to low-poly game-ready variant with baked PBR textures.",
     year: "2020",
     status: "Shipped",
     cover: arcReactorImage,
     stack: ["Blender", "Substance Painter", "3D Modeling"],
     roles: ["3D Artist"],
     proof: {
-      role: "Modeling and texturing",
-      timeline: "Asset production assignment",
+      role: "Modeling, texturing, and optimization pass (high/low-poly)",
+      timeline: "Student asset project (published Jul 2021)",
       teamSize: "1 person",
-      impact: "Delivered game-ready showcase asset",
+      impact: "Published both presentation and game-ready variants on Sketchfab",
     },
-    ownership: { owned: ["High/low-poly modeling", "UV setup and baking", "PBR material workflow"] },
-    contributions: ["Created hard-surface model", "Produced textured presentation render"],
-    outcomes: ["Published model showcase"],
+    ownership: {
+      owned: [
+        "High-poly hard-surface modeling",
+        "Low-poly derivation and optimization",
+        "UV setup, baking, and PBR material authoring",
+      ],
+    },
+    contributions: [
+      "Modeled and textured a high-poly Arc Reactor presentation asset",
+      "Built a low-poly companion version for real-time use",
+      "Executed UV, baking, and PBR material setup in Blender/Substance workflow",
+    ],
+    outcomes: [
+      "Published high-poly model on Sketchfab (CC BY, Jul 2021)",
+      "Published low-poly variant as separate Sketchfab model",
+      "Documented geometry budgets: ~123.7k tris (high-poly) and ~15.2k tris (low-poly)",
+    ],
     evidence: [{ title: "Arc Reactor model", type: "image", sourceUrl: arcReactorImage.src, caption: "Asset presentation frame.", supports: "Supports claim: complete game-asset pipeline execution." }],
     narrative: {
-      context: "Modeling assignment with focus on real-time-ready asset quality.",
-      challenge: "Preserve detail and material readability within practical poly limits.",
-      approach: "Applied clean topology, efficient UV layout, and controlled PBR values.",
-      impact: "Final asset reached a presentation quality suitable for portfolio use.",
+      context:
+        "Created as a student asset exercise to demonstrate a full game-asset production pipeline.",
+      challenge:
+        "Translate a recognizable sci-fi prop into clean hard-surface forms while producing both showcase and real-time versions.",
+      approach:
+        "Produced a high-poly source model, derived a low-poly counterpart, then finalized UVs, texture baking, and PBR materials for presentation.",
+      impact:
+        "Delivered an evidence-backed portfolio piece with public high/low-poly releases and measurable geometry budgets.",
     },
     links: {
-      detailUrl: "https://sketchfab.com/atmo_gd",
+      detailUrl: "https://sketchfab.com/3d-models/arc-reactor-tony-stark-high-poly-7c57e1f6b3034194a1e3c8abb3a49df2",
     },
   },
   {
     slug: "mjolnir",
     title: "Mjölnir",
-    tagline: "Stylized hero prop with game-asset production workflow",
-    summary: "Student prop project focused on shape language, material definition, and reliable export pipeline.",
+    tagline: "Student-built Mjölnir hero prop, from blockout to polished high-poly presentation",
+    summary:
+      "A study asset project focused on hard-surface modeling, material readability, and clean portfolio presentation on Sketchfab.",
     year: "2020",
     status: "Shipped",
     cover: mjolnirImage,
@@ -570,19 +640,37 @@ export const projects: Project[] = [
     roles: ["3D Artist"],
     proof: {
       role: "Modeling and texturing",
-      timeline: "Asset production assignment",
+      timeline: "Student asset project",
       teamSize: "1 person",
-      impact: "Produced complete stylized hero prop",
+      impact: "Delivered a complete hero-prop workflow from blockout to public presentation",
     },
-    ownership: { owned: ["Model and silhouette pass", "Material authoring", "Portfolio presentation"] },
-    contributions: ["Built complete prop from blockout to texture", "Prepared game-ready export"],
-    outcomes: ["Published portfolio-ready model"],
+    ownership: {
+      owned: [
+        "Blockout and silhouette refinement",
+        "Hard-surface detail pass",
+        "Material/texturing and final presentation",
+      ],
+    },
+    contributions: [
+      "Developed the model from initial blockout to final high-poly pass",
+      "Authored textures/materials for readable metal and leather surfaces",
+      "Prepared presentation-ready output and published the model viewer entry",
+    ],
+    outcomes: [
+      "Publicly published 3D model on Sketchfab",
+      "Demonstrated end-to-end individual asset workflow",
+      "Created a reusable portfolio piece for hard-surface prop work",
+    ],
     evidence: [{ title: "Mjölnir model", type: "image", sourceUrl: mjolnirImage.src, caption: "Asset showcase frame.", supports: "Supports claim: full model-to-presentation execution." }],
     narrative: {
-      context: "Student task to create a full game asset from concept to presentation.",
-      challenge: "Balance stylization with material readability and believable scale.",
-      approach: "Iterated on silhouette and detail density, then finalized in a PBR texturing workflow.",
-      impact: "Resulted in a clean, portfolio-ready hero prop model.",
+      context:
+        "Created as a student exercise to practice complete prop production and presentation quality.",
+      challenge:
+        "Maintain iconic shape readability and engraved detail while keeping forms clean and materials clearly separated.",
+      approach:
+        "Iterated on proportion and silhouette first, then refined hard-surface detail and finalized materials for viewer presentation.",
+      impact:
+        "Resulted in a complete, publicly visible hero-prop case demonstrating individual execution from modeling through final presentation.",
     },
     links: {
       detailUrl: "https://sketchfab.com/atmo_gd",
