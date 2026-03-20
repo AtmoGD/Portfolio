@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const baseURL = process.env.BASE_URL || 'http://127.0.0.1:3000';
-const outDir = path.resolve('artifacts/round6');
+const outDir = path.resolve(process.env.OUT_DIR || 'artifacts/round6');
 
 const viewports = [
   { name: 'mobile', width: 390, height: 844 },
