@@ -80,7 +80,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
               className="menu-toggle"
               aria-expanded={isMobileNavOpen}
               aria-controls="mobile-nav-drawer"
-              onClick={() => setIsMobileNavOpen((prev) => !prev)}
+              onClick={() => {
+                setIsMobileNavOpen(true);
+              }}
               ref={menuToggleRef}
             >
               <span aria-hidden="true">☰</span>
@@ -101,21 +103,14 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <div
-        className={`mobile-nav-overlay ${isMobileNavOpen ? "is-open" : ""}`}
-        role="dialog"
-        aria-modal="true"
-        aria-hidden={!isMobileNavOpen}
-        id="mobile-nav-drawer"
-        onClick={() => setIsMobileNavOpen(false)}
-        onPointerDown={() => setIsMobileNavOpen(false)}
-      >
+      <div className={`mobile-nav-overlay ${isMobileNavOpen ? "is-open" : ""}`} role="dialog" aria-modal="true" aria-hidden={!isMobileNavOpen} id="mobile-nav-drawer">
         <div
           className="mobile-nav-backdrop"
           data-testid="mobile-nav-backdrop"
           aria-hidden="true"
-          onClick={() => setIsMobileNavOpen(false)}
-          onPointerDown={() => setIsMobileNavOpen(false)}
+          onClick={() => {
+            setIsMobileNavOpen(false);
+          }}
         />
         <aside
           className="mobile-nav-drawer"

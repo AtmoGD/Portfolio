@@ -17,12 +17,15 @@ export default function ProjectsPage() {
   const otherProjects = useMemo(() => projects.filter((project) => !project.featured), []);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 780px)");
-    const apply = () => setIsMobile(mediaQuery.matches);
+    const apply = () => {
+      const compactByWidth = window.innerWidth <= 780;
+      const compactByPointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+      setIsMobile(compactByWidth || compactByPointer);
+    };
 
     apply();
-    mediaQuery.addEventListener("change", apply);
-    return () => mediaQuery.removeEventListener("change", apply);
+    window.addEventListener("resize", apply);
+    return () => window.removeEventListener("resize", apply);
   }, []);
 
   const visibleMoreProjects = !isMobile || showAll ? otherProjects : otherProjects.slice(0, MOBILE_COLLAPSED_COUNT);

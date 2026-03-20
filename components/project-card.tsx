@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useRef } from "react";
-import type { PointerEvent as ReactPointerEvent } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import type { MouseEvent as ReactMouseEvent, PointerEvent as ReactPointerEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/src/types/project";
@@ -14,6 +14,12 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
   const { language, t } = useI18n();
   const cardRef = useRef<HTMLElement | null>(null);
   const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!cardRef.current || typeof window === "undefined") return;
+    const isCoarse = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    cardRef.current.dataset.pointer = isCoarse ? "coarse" : "fine";
+  }, []);
 
   const snapshot = useMemo(
     () => [
@@ -33,7 +39,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     cardRef.current?.style.setProperty(name, value);
   }
 
-  function updateSpotlight(event: ReactPointerEvent<HTMLElement>) {
+  function updateSpotlight(event: ReactPointerEvent<HTMLElement> | ReactMouseEvent<HTMLElement>) {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -83,6 +89,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
       className="card project-card stack-md enter-rise"
       onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}
+      onMouseMove={handlePointerMove}
       onPointerLeave={resetTilt}
       onBlur={resetTilt}
       data-enter="2"
