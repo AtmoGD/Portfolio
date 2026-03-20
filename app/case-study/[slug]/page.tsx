@@ -16,16 +16,35 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
     notFound();
   }
 
+  const narrativeContext = localizeWithFallback(project.narrative.context, language);
+  const narrativeChallenge = localizeWithFallback(project.narrative.challenge, language);
+  const narrativeApproach = localizeWithFallback(project.narrative.approach, language);
+  const firstContribution = localizeWithFallback(project.contributions[0], language);
+  const firstOutcome = localizeWithFallback(project.outcomes[0], language);
+  const proofImpact = localizeWithFallback(project.proof.impact, language);
+
   const decisionBlocks = [
     {
-      decision: localizeWithFallback(project.contributions[0], language),
-      why: localizeWithFallback(project.narrative.challenge, language),
-      tradeoff: localizeWithFallback(project.outcomes[0], language),
+      decision:
+        language === "de"
+          ? `Ich habe zuerst ${firstContribution.toLowerCase()} priorisiert.`
+          : `I chose to prioritize ${firstContribution.charAt(0).toLowerCase() + firstContribution.slice(1)} first.`,
+      why: language === "de" ? `Auslöser war ein konkretes Risiko: ${narrativeChallenge}` : `The trigger was a concrete risk: ${narrativeChallenge}`,
+      tradeoff:
+        language === "de"
+          ? `Trade-off: weniger parallele Features, dafür ein stabiler Kern. Ergebnis: ${firstOutcome}`
+          : `Trade-off: fewer parallel features, but a steadier core. Result: ${firstOutcome}`,
     },
     {
-      decision: localizeWithFallback(project.narrative.approach, language),
-      why: localizeWithFallback(project.narrative.context, language),
-      tradeoff: localizeWithFallback(project.proof.impact, language),
+      decision:
+        language === "de"
+          ? `Danach habe ich den Ablauf so aufgebaut: ${narrativeApproach}`
+          : `Then I structured the flow like this: ${narrativeApproach}`,
+      why: language === "de" ? `Rahmen war: ${narrativeContext}` : `Constraints in this project were: ${narrativeContext}`,
+      tradeoff:
+        language === "de"
+          ? `Trade-off: höherer Aufwand früh im Setup, dafür deutlich planbarere Iteration später (${proofImpact}).`
+          : `Trade-off: more effort early in setup, in exchange for much more predictable iteration later (${proofImpact}).`,
     },
   ];
 
@@ -58,7 +77,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
         <section id="tl-dr" className="card case-tldr-bar" aria-label={t("caseTlDr")}>
           <h2>{t("caseTlDr")}</h2>
-          <p>{localizeWithFallback(project.proof.impact, language)}</p>
+          <p className="muted">{t("caseVoiceMarker")}</p>
+          <p>{proofImpact}</p>
         </section>
 
         {project.cover ? <Image src={project.cover} alt={`${project.title} screenshot`} className="case-image" placeholder="blur" /> : null}

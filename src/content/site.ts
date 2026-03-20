@@ -24,19 +24,19 @@ export const profile = {
   } as Localized,
   email: "dennishawran@gmail.com",
   intro: {
-    en: "I build gameplay and interaction systems from first prototype to stable delivery, with clear state logic and practical collaboration handoffs.",
-    de: "Ich entwickle Gameplay- und Interaktionssysteme vom ersten Prototyp bis zur stabilen Lieferung – mit klarer State-Logik und praxistauglichen Team-Übergaben.",
+    en: "I build gameplay and interaction systems from first prototype to final handoff — with clear state logic and practical teamwork.",
+    de: "Ich entwickle Gameplay- und Interaktionssysteme vom ersten Prototyp bis zur finalen Übergabe — mit klarer State-Logik und praxistauglicher Zusammenarbeit.",
   } as Localized,
   valuePoints: {
     en: [
-      "Jam-speed prototyping without losing system clarity",
-      "Readable gameplay states and practical debug hooks",
-      "Unity/C# core, plus Unreal/VR integration experience",
+      "Fast prototypes without messy systems",
+      "Readable gameplay states plus useful debug hooks",
+      "Unity/C# core with hands-on Unreal/VR experience",
     ],
     de: [
-      "Jam-schnelles Prototyping ohne Verlust an Systemklarheit",
-      "Lesbare Gameplay-States und praxisnahe Debug-Hooks",
-      "Unity/C# im Kern, ergänzt um Unreal-/VR-Integrationserfahrung",
+      "Schnelle Prototypen ohne System-Chaos",
+      "Lesbare Gameplay-States plus hilfreiche Debug-Hooks",
+      "Unity/C# als Kern mit praktischer Unreal-/VR-Erfahrung",
     ],
   } as Localized<string[]>,
   links: {
@@ -49,21 +49,21 @@ export const profile = {
 
 export const aboutContent = {
   summary: {
-    en: "My path into game development was not linear: I started in technical production, moved through media informatics, and gradually specialized in gameplay and systems work. That mix shaped how I build — curious in exploration, disciplined in implementation, and collaborative when turning rough ideas into playable, maintainable features.",
-    de: "Mein Weg in die Spieleentwicklung war nicht linear: Ich komme aus technischer Produktion, bin über Medieninformatik gegangen und habe mich Schritt für Schritt auf Gameplay- und Systemarbeit spezialisiert. Diese Mischung prägt meine Arbeitsweise — neugierig in der Exploration, diszipliniert in der Umsetzung und kollaborativ, wenn aus groben Ideen spielbare, wartbare Features werden.",
+    en: "My way into game development wasn’t linear: I started in technical production, moved through media informatics, then specialized in gameplay and systems. That mix still defines how I work — explore widely, implement cleanly, and turn rough ideas into playable features people can maintain.",
+    de: "Mein Weg in die Spieleentwicklung war nicht linear: Erst technische Produktion, dann Medieninformatik, danach der Fokus auf Gameplay und Systeme. Genau diese Mischung prägt meine Arbeit bis heute — breit erkunden, sauber umsetzen und aus groben Ideen spielbare Features machen, die auch später wartbar bleiben.",
   } as Localized,
   strengths: {
     en: [
-      "Jam mindset: scope fast, test early, keep the core loop playable",
-      "System thinking for gameplay states, interactions, and balancing hooks",
-      "Calm cross-discipline collaboration with design, art, and playtesting",
-      "Professional handoff quality through clear docs, naming, and maintainable structure",
+      "Jam mindset: cut scope early, keep the core loop playable",
+      "System thinking for gameplay states, interactions, and balancing",
+      "Calm collaboration with design, art, and playtesting",
+      "Clean handoff through clear naming, docs, and maintainable structure",
     ],
     de: [
-      "Jam-Mindset: schnell scopen, früh testen, den Core Loop spielbar halten",
-      "Systemisches Denken für Gameplay-States, Interaktionen und Balancing-Hooks",
-      "Ruhige interdisziplinäre Zusammenarbeit mit Design, Art und Playtesting",
-      "Professionelle Übergabequalität durch klare Doku, Benennung und wartbare Struktur",
+      "Jam-Mindset: Scope früh schneiden, Core Loop spielbar halten",
+      "Systemisches Denken für Gameplay-States, Interaktionen und Balancing",
+      "Ruhige Zusammenarbeit mit Design, Art und Playtesting",
+      "Saubere Übergaben durch klare Benennung, Doku und wartbare Struktur",
     ],
   } as Localized<string[]>,
 };

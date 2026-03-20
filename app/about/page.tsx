@@ -25,6 +25,7 @@ export default function AboutPage() {
 
       <article className="card stack-md">
         <h2>{t("summary")}</h2>
+        <p className="muted">{t("aboutVoiceMarker")}</p>
         <p>{localize(aboutContent.summary, language)}</p>
       </article>
 

@@ -13,6 +13,7 @@ export default function ContactPage() {
         <p className="eyebrow">{t("navContact")}</p>
         <h1>{t("contactTitle")}</h1>
         <p className="muted">{t("contactSub")}</p>
+        <p>{t("contactVoiceMarker")}</p>
       </header>
 
       <article className="card stack-md">

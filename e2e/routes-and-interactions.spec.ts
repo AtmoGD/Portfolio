@@ -88,23 +88,21 @@ test.describe('Project card interaction by input mode', () => {
     await page.mouse.move(box.x + 20, box.y + 20);
     await page.mouse.move(box.x + 120, box.y + 90);
 
-    const styles = await card.evaluate((el) => {
-      const style = (el as HTMLElement).style;
-      const computed = getComputedStyle(el as HTMLElement, '::after');
-      return {
-        tiltX: style.getPropertyValue('--tilt-x').trim(),
-        tiltY: style.getPropertyValue('--tilt-y').trim(),
-        spotlightX: style.getPropertyValue('--spotlight-x').trim(),
-        spotlightY: style.getPropertyValue('--spotlight-y').trim(),
-        afterOpacity: computed.opacity,
-      };
-    });
+    await expect.poll(async () => {
+      const state = await card.evaluate((el) => {
+        const style = (el as HTMLElement).style;
+        const computed = getComputedStyle(el as HTMLElement, '::after');
+        return {
+          tiltX: style.getPropertyValue('--tilt-x').trim(),
+          tiltY: style.getPropertyValue('--tilt-y').trim(),
+          spotlightX: style.getPropertyValue('--spotlight-x').trim(),
+          spotlightY: style.getPropertyValue('--spotlight-y').trim(),
+          afterOpacity: Number(computed.opacity),
+        };
+      });
 
-    expect(styles.tiltX).not.toBe('');
-    expect(styles.tiltY).not.toBe('');
-    expect(styles.spotlightX).not.toBe('');
-    expect(styles.spotlightY).not.toBe('');
-    expect(Number(styles.afterOpacity)).toBeGreaterThan(0);
+      return state.tiltX !== '' && state.tiltY !== '' && state.spotlightX !== '' && state.spotlightY !== '' && state.afterOpacity > 0;
+    }).toBeTruthy();
   });
 
   test('keyboard focus has visible focus state and does not depend on hover spotlight', async ({ page }) => {

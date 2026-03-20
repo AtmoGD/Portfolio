@@ -91,11 +91,10 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     cardRef.current?.style.setProperty(name, value);
   }
 
-  function updateSpotlight(event: ReactPointerEvent<HTMLElement> | ReactMouseEvent<HTMLElement>) {
-    const card = event.currentTarget;
+  function updateSpotlightAt(card: HTMLElement, clientX: number, clientY: number) {
     const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
     const px = x / rect.width;
     const py = y / rect.height;
 
@@ -107,24 +106,26 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
 
   function handlePointerEnter(event: ReactPointerEvent<HTMLElement>) {
     if (!supportsFinePointer()) return;
-    event.currentTarget.dataset.hovering = "true";
-    event.currentTarget.style.setProperty("--spotlight-opacity", "1");
-    updateSpotlight(event);
+    const card = event.currentTarget;
+    card.dataset.hovering = "true";
+    card.style.setProperty("--spotlight-opacity", "1");
+    updateSpotlightAt(card, event.clientX, event.clientY);
   }
 
-  function handlePointerMove(event: ReactPointerEvent<HTMLElement>) {
+  function handlePointerMove(event: ReactPointerEvent<HTMLElement> | ReactMouseEvent<HTMLElement>) {
     if (!supportsFinePointer()) return;
 
-    event.currentTarget.dataset.hovering = "true";
-    event.currentTarget.style.setProperty("--spotlight-opacity", "1");
-
     const card = event.currentTarget;
+    card.dataset.hovering = "true";
+    card.style.setProperty("--spotlight-opacity", "1");
+
+    const { clientX, clientY } = event;
     if (rafRef.current !== null) {
       cancelAnimationFrame(rafRef.current);
     }
 
     rafRef.current = requestAnimationFrame(() => {
-      updateSpotlight(event);
+      updateSpotlightAt(card, clientX, clientY);
       rafRef.current = null;
     });
   }
@@ -152,6 +153,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
       onPointerMove={handlePointerMove}
       onMouseMove={handlePointerMove}
       onPointerLeave={resetTilt}
+      onPointerCancel={resetTilt}
       onBlur={resetTilt}
       data-enter="2"
     >
