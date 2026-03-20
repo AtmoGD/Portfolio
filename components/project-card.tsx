@@ -100,8 +100,8 @@ export default function ProjectCard({ project, featuredSnapshot = false, teaser 
 
     setStyleVar("--spotlight-x", `${x}px`);
     setStyleVar("--spotlight-y", `${y}px`);
-    setStyleVar("--tilt-x", `${((0.5 - py) * 1.35).toFixed(2)}deg`);
-    setStyleVar("--tilt-y", `${((px - 0.5) * 1.35).toFixed(2)}deg`);
+    setStyleVar("--tilt-x", `${((0.5 - py) * 0.9).toFixed(2)}deg`);
+    setStyleVar("--tilt-y", `${((px - 0.5) * 0.9).toFixed(2)}deg`);
   }
 
   function handlePointerEnter(event: ReactPointerEvent<HTMLElement>) {

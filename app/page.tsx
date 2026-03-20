@@ -18,9 +18,9 @@ export default function HomePage() {
           <p className="eyebrow">{t("heroEyebrow")}</p>
           <h1 className="signal-line">{t("heroHeadline")}</h1>
           <p className="lead">{t("heroSubline")}</p>
-          <p className="muted">{t("homeVoiceMarker")}</p>
-          <p>{localize(profile.intro, language)}</p>
-          <div className="impact-strip" aria-label={t("heroImpactStripLabel")}>
+          <p className="muted hero-voice-marker">{t("homeVoiceMarker")}</p>
+          <p className="hero-intro-copy">{localize(profile.intro, language)}</p>
+          <div className="impact-strip hero-impact-strip" aria-label={t("heroImpactStripLabel")}>
             {localize(profile.valuePoints, language).map((point) => (
               <span className="impact-pill" key={point}>
                 {point}
