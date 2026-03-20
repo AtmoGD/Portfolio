@@ -9,41 +9,44 @@ export interface ProjectLinks {
   detailUrl?: string;
 }
 
+export type LocalizedText = { en: string; de: string };
+export type MaybeLocalizedText = string | LocalizedText;
+
 export interface ProjectNarrative {
-  context: string;
-  challenge: string;
-  approach: string;
-  impact: string;
+  context: MaybeLocalizedText;
+  challenge: MaybeLocalizedText;
+  approach: MaybeLocalizedText;
+  impact: MaybeLocalizedText;
 }
 
 export interface ProjectProof {
-  role: string;
-  timeline: string;
-  teamSize: string;
-  impact: string;
+  role: MaybeLocalizedText;
+  timeline: MaybeLocalizedText;
+  teamSize: MaybeLocalizedText;
+  impact: MaybeLocalizedText;
 }
 
 export interface ProjectOwnership {
-  owned: string[];
-  collaboratedWith?: string[];
+  owned: MaybeLocalizedText[];
+  collaboratedWith?: MaybeLocalizedText[];
 }
 
 export type EvidenceType = "video" | "image";
 
 export interface ProjectEvidence {
-  title: string;
+  title: MaybeLocalizedText;
   type: EvidenceType;
   sourceUrl: string;
   thumbnailUrl?: string;
-  caption: string;
-  supports: string;
+  caption: MaybeLocalizedText;
+  supports: MaybeLocalizedText;
 }
 
 export interface Project {
   slug: string;
   title: string;
-  tagline: string;
-  summary: string;
+  tagline: MaybeLocalizedText;
+  summary: MaybeLocalizedText;
   year: string;
   status: ProjectStatus;
   featured?: boolean;
@@ -51,8 +54,8 @@ export interface Project {
   roles: string[];
   proof: ProjectProof;
   ownership: ProjectOwnership;
-  contributions: string[];
-  outcomes: string[];
+  contributions: MaybeLocalizedText[];
+  outcomes: MaybeLocalizedText[];
   evidence: ProjectEvidence[];
   narrative: ProjectNarrative;
   cover?: StaticImageData;
