@@ -173,15 +173,15 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
           <dd>{localizeWithFallback(project.proof.role, language)}</dd>
         </div>
         <div>
+          <dt>{t("context")}</dt>
+          <dd>{localizeWithFallback(project.narrative.context, language)}</dd>
+        </div>
+        <div>
           <dt>{t("timeline")}</dt>
           <dd>{localizeWithFallback(project.proof.timeline, language)}</dd>
         </div>
         <div>
-          <dt>{t("contribution")}</dt>
-          <dd>{localizeWithFallback(project.contributions[0], language)}</dd>
-        </div>
-        <div>
-          <dt>{t("outcome")}</dt>
+          <dt>{t("outcomeMetric")}</dt>
           <dd>{localizeWithFallback(project.proof.impact, language)}</dd>
         </div>
       </dl>

@@ -16,11 +16,26 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
     notFound();
   }
 
+  const decisionBlocks = [
+    {
+      decision: localizeWithFallback(project.contributions[0], language),
+      why: localizeWithFallback(project.narrative.challenge, language),
+      tradeoff: localizeWithFallback(project.outcomes[0], language),
+    },
+    {
+      decision: localizeWithFallback(project.narrative.approach, language),
+      why: localizeWithFallback(project.narrative.context, language),
+      tradeoff: localizeWithFallback(project.proof.impact, language),
+    },
+  ];
+
   const sections = [
+    { id: "tl-dr", label: t("caseTlDr") },
     { id: "impact", label: t("impact") },
     { id: "context", label: t("context") },
     { id: "challenge", label: t("challenge") },
     { id: "approach", label: t("approach") },
+    { id: "decisions", label: t("decisionBlocks") },
     { id: "ownership", label: t("ownership") },
     { id: "highlights", label: t("implementationHighlights") },
     { id: "evidence", label: t("playableEvidence") },
@@ -36,36 +51,17 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <h1>{project.title}</h1>
           <p className="lead">{localizeWithFallback(project.tagline, language)}</p>
           <p>{localizeWithFallback(project.summary, language)}</p>
-          <div className="impact-strip" aria-label={t("outcomeOneLiner")}>
-            <strong>{t("outcomeOneLiner")}: </strong>
-            <span>{localizeWithFallback(project.proof.impact, language)}</span>
-          </div>
-          <dl className="proof-row" aria-label={t("caseImpactAtGlance")}>
-            <div>
-              <dt>{t("context")}</dt>
-              <dd>{localizeWithFallback(project.narrative.context, language)}</dd>
-            </div>
-            <div>
-              <dt>{t("team")}</dt>
-              <dd>{localizeWithFallback(project.proof.teamSize, language)}</dd>
-            </div>
-            <div>
-              <dt>{t("timeline")}</dt>
-              <dd>{localizeWithFallback(project.proof.timeline, language)}</dd>
-            </div>
-            <div>
-              <dt>{t("role")}</dt>
-              <dd>{localizeWithFallback(project.proof.role, language)}</dd>
-            </div>
-          </dl>
           <p className="muted">
             {project.year} · {project.status}
           </p>
         </header>
 
-        {project.cover ? (
-          <Image src={project.cover} alt={`${project.title} screenshot`} className="case-image" placeholder="blur" />
-        ) : null}
+        <section id="tl-dr" className="card case-tldr-bar" aria-label={t("caseTlDr")}>
+          <h2>{t("caseTlDr")}</h2>
+          <p>{localizeWithFallback(project.proof.impact, language)}</p>
+        </section>
+
+        {project.cover ? <Image src={project.cover} alt={`${project.title} screenshot`} className="case-image" placeholder="blur" /> : null}
 
         <section id="impact" className="card impact-strip" aria-labelledby="impact-heading">
           <h2 id="impact-heading">{t("caseImpactAtGlance")}</h2>
@@ -102,6 +98,22 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         <section id="approach" className="card stack-md">
           <h2>{t("approach")}</h2>
           <p>{localizeWithFallback(project.narrative.approach, language)}</p>
+        </section>
+
+        <section id="decisions" className="card stack-md" aria-label={t("decisionBlocks")}>
+          <h2>{t("decisionBlocks")}</h2>
+          <div className="decision-block-grid">
+            {decisionBlocks.map((item, index) => (
+              <article key={`${project.slug}-decision-${index}`} className="decision-block">
+                <h3>{t("decision")}</h3>
+                <p>{item.decision}</p>
+                <h3>{t("why")}</h3>
+                <p>{item.why}</p>
+                <h3>{t("tradeoff")}</h3>
+                <p>{item.tradeoff}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="ownership" className="card stack-md">

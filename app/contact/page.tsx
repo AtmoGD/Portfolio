@@ -25,31 +25,31 @@ export default function ContactPage() {
         </div>
       </article>
 
-      <article className="card stack-md">
+      <article className="card stack-md availability-callout">
         <h2>{t("availabilityTitle")}</h2>
         <p>{t("availabilityCopy")}</p>
       </article>
 
       <section className="intent-grid" aria-label={t("contactLead")}>
         <article className="card stack-md">
-          <h2>{t("recruiterPath")}</h2>
-          <p>{t("recruiterPathCopy")}</p>
-          <a href={`mailto:${profile.email}?subject=Recruiter%20Inquiry`} className="text-link primary-cta-link">
-            {t("contactIntro")}
+          <h2>{t("intentHiring")}</h2>
+          <p>{t("intentHiringCopy")}</p>
+          <a href={`mailto:${profile.email}?subject=Hiring%20Opportunity`} className="text-link primary-cta-link">
+            {t("contactIntentCta")}
           </a>
         </article>
         <article className="card stack-md">
-          <h2>{t("hiringPath")}</h2>
-          <p>{t("hiringPathCopy")}</p>
-          <a href={`mailto:${profile.email}?subject=Hiring%20Manager%20Inquiry`} className="text-link primary-cta-link">
-            {t("contactIntro")}
+          <h2>{t("intentCollaboration")}</h2>
+          <p>{t("intentCollaborationCopy")}</p>
+          <a href={`mailto:${profile.email}?subject=Collaboration%20Request`} className="text-link primary-cta-link">
+            {t("contactIntentCta")}
           </a>
         </article>
         <article className="card stack-md">
-          <h2>{t("collaborationPath")}</h2>
-          <p>{t("collaborationPathCopy")}</p>
-          <a href={`mailto:${profile.email}?subject=Collaboration%20Inquiry`} className="text-link primary-cta-link">
-            {t("contactIntro")}
+          <h2>{t("intentQuestion")}</h2>
+          <p>{t("intentQuestionCopy")}</p>
+          <a href={`mailto:${profile.email}?subject=Question`} className="text-link primary-cta-link">
+            {t("contactIntentCta")}
           </a>
         </article>
       </section>
