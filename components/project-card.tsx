@@ -1,15 +1,19 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import type { CSSProperties, MouseEvent } from "react";
+import { useMemo, useRef } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/src/types/project";
 import { localizeWithFallback, useI18n } from "@/src/i18n";
 
+const INTERACTION_QUERY = "(hover: hover) and (pointer: fine)";
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
 export default function ProjectCard({ project, featuredSnapshot = false }: { project: Project; featuredSnapshot?: boolean }) {
   const { language, t } = useI18n();
-  const [tiltStyle, setTiltStyle] = useState<Record<string, string>>({});
+  const cardRef = useRef<HTMLElement | null>(null);
+  const rafRef = useRef<number | null>(null);
 
   const snapshot = useMemo(
     () => [
@@ -20,10 +24,17 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     [language, project.narrative.approach, project.narrative.challenge, project.narrative.impact, t],
   );
 
-  function handleMove(event: MouseEvent<HTMLElement>) {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
+  function supportsFinePointer() {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia(INTERACTION_QUERY).matches && !window.matchMedia(REDUCED_MOTION_QUERY).matches;
+  }
+
+  function setStyleVar(name: string, value: string) {
+    cardRef.current?.style.setProperty(name, value);
+  }
+
+  function handlePointerMove(event: ReactPointerEvent<HTMLElement>) {
+    if (!supportsFinePointer()) return;
 
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -32,31 +43,41 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
     const px = x / rect.width;
     const py = y / rect.height;
 
-    setTiltStyle({
-      "--spotlight-x": `${x}px`,
-      "--spotlight-y": `${y}px`,
-      "--tilt-x": `${((0.5 - py) * 2.2).toFixed(2)}deg`,
-      "--tilt-y": `${((px - 0.5) * 2.2).toFixed(2)}deg`,
+    if (rafRef.current !== null) {
+      cancelAnimationFrame(rafRef.current);
+    }
+
+    rafRef.current = requestAnimationFrame(() => {
+      setStyleVar("--spotlight-x", `${x}px`);
+      setStyleVar("--spotlight-y", `${y}px`);
+      setStyleVar("--tilt-x", `${((0.5 - py) * 2.2).toFixed(2)}deg`);
+      setStyleVar("--tilt-y", `${((px - 0.5) * 2.2).toFixed(2)}deg`);
+      rafRef.current = null;
     });
   }
 
   function resetTilt() {
-    setTiltStyle({});
+    if (rafRef.current !== null) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+    cardRef.current?.style.removeProperty("--spotlight-x");
+    cardRef.current?.style.removeProperty("--spotlight-y");
+    cardRef.current?.style.removeProperty("--tilt-x");
+    cardRef.current?.style.removeProperty("--tilt-y");
   }
 
   return (
     <article
-      className="card project-card enter-rise"
-      style={tiltStyle as CSSProperties}
-      onMouseMove={handleMove}
-      onMouseLeave={resetTilt}
+      ref={cardRef}
+      className="card project-card stack-md enter-rise"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={resetTilt}
       onBlur={resetTilt}
       data-enter="2"
     >
       <div className="project-head">
-        {project.cover ? (
-          <Image src={project.cover} alt={`${project.title} cover`} className="project-cover" placeholder="blur" />
-        ) : null}
+        {project.cover ? <Image src={project.cover} alt={`${project.title} cover`} className="project-cover" placeholder="blur" /> : null}
         <div className="stack-md">
           <p className="eyebrow">
             {project.year} · {project.status}
@@ -93,16 +114,16 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
         </section>
       ) : (
         <>
-          <div className="meta-grid">
-            <div>
+          <div className="meta-grid card-meta">
+            <section className="card-section">
               <h4>{t("roles")}</h4>
               <ul>
                 {project.roles.map((role) => (
                   <li key={String(localizeWithFallback(role, language))}>{localizeWithFallback(role, language)}</li>
                 ))}
               </ul>
-            </div>
-            <div>
+            </section>
+            <section className="card-section">
               <h4>{t("stack")}</h4>
               <div className="chip-row">
                 {project.stack.map((item) => (
@@ -111,26 +132,26 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
                   </span>
                 ))}
               </div>
-            </div>
+            </section>
           </div>
 
-          <div>
+          <section className="card-section">
             <h4>{t("contribution")}</h4>
             <ul>
               {project.contributions.map((point) => (
                 <li key={String(localizeWithFallback(point, language))}>{localizeWithFallback(point, language)}</li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          <div>
+          <section className="card-section">
             <h4>{t("outcome")}</h4>
             <ul>
               {project.outcomes.map((result) => (
                 <li key={String(localizeWithFallback(result, language))}>{localizeWithFallback(result, language)}</li>
               ))}
             </ul>
-          </div>
+          </section>
         </>
       )}
 
