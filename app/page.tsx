@@ -16,8 +16,10 @@ export default function HomePage() {
       <section className="hero card home-workbench orbit-spot enter-rise" data-enter="1">
         <div className="workbench-main stack-md">
           <p className="eyebrow">{t("heroEyebrow")}</p>
-          <h1 className="signal-line">{t("heroHeadline")}</h1>
+          <h1 className="signal-line hero-headline-desktop">{t("heroHeadline")}</h1>
+          <h1 className="signal-line hero-headline-mobile">{t("heroHeadlineMobile")}</h1>
           <p className="lead">{t("heroSubline")}</p>
+          <p className="muted hero-trust-line">{localize(profile.title, language)} · {localize(profile.location, language)}</p>
           <p className="muted hero-voice-marker">{t("homeVoiceMarker")}</p>
           <p className="hero-intro-copy">{localize(profile.intro, language)}</p>
           <div className="impact-strip hero-impact-strip" aria-label={t("heroImpactStripLabel")}>

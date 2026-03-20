@@ -950,6 +950,11 @@ ul {
   font-weight: 700;
 }
 
+.hero-headline-mobile,
+.hero-trust-line {
+  display: none;
+}
+
 .hero .hero-intro-copy,
 .project-card p,
 .card-section li,
@@ -1069,12 +1074,31 @@ ul {
 
 @media (max-width: 640px) {
   .hero {
-    gap: var(--space-4);
-    padding: var(--space-4);
+    gap: var(--space-3);
+    padding: 0.875rem;
   }
 
   .hero .workbench-main {
-    gap: var(--space-3);
+    gap: 0.625rem;
+  }
+
+  .hero-headline-desktop {
+    display: none;
+  }
+
+  .hero-headline-mobile {
+    display: block;
+  }
+
+  .hero .lead {
+    font-size: 0.98rem;
+    line-height: 1.52;
+  }
+
+  .hero-trust-line {
+    display: block;
+    font-size: 0.87rem;
+    color: #d8cdf1;
   }
 
   .hero .hero-voice-marker,
@@ -1085,11 +1109,40 @@ ul {
   }
 
   .hero .dual-cta {
-    margin-top: var(--space-2);
+    margin-top: var(--space-1);
   }
 
   .hero .link-row {
-    gap: var(--space-2);
+    gap: 0.55rem;
+  }
+
+  .hero .dual-cta .button {
+    display: inline-flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 44px;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(108, 58, 201, 0.34);
+  }
+
+  .hero .dual-cta .button-secondary {
+    background: rgba(24, 15, 48, 0.48);
+    border-color: rgba(150, 114, 255, 0.34);
+    color: rgba(225, 216, 247, 0.86);
+    box-shadow: none;
+  }
+
+  .project-card p {
+    font-size: 0.98rem;
+    line-height: 1.66;
+  }
+
+  .project-card .project-head > .stack-md {
+    gap: 0.625rem;
+  }
+
+  .project-card .muted {
+    color: #ddd2f3;
   }
 }
 
