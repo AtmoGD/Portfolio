@@ -11,7 +11,7 @@ export default function ContactPage() {
     <section className="stack-lg">
       <header className="section-heading">
         <p className="eyebrow">{t("navContact")}</p>
-        <h1>{t("contactTitle")}</h1>
+        <h1 className="signal-line">{t("contactTitle")}</h1>
         <p className="muted">{t("contactSub")}</p>
         <p>{t("contactVoiceMarker")}</p>
       </header>
@@ -26,7 +26,7 @@ export default function ContactPage() {
         </div>
       </article>
 
-      <article className="card stack-md availability-callout">
+      <article className="card stack-md availability-callout orbit-spot">
         <h2>{t("availabilityTitle")}</h2>
         <p>{t("availabilityCopy")}</p>
       </article>

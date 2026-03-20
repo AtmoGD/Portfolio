@@ -75,8 +75,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           </p>
         </header>
 
-        <section id="tl-dr" className="card case-tldr-bar" aria-label={t("caseTlDr")}>
-          <h2>{t("caseTlDr")}</h2>
+        <section id="tl-dr" className="card case-tldr-bar orbit-spot" aria-label={t("caseTlDr")}>
+          <h2 className="signal-line">{t("caseTlDr")}</h2>
           <p className="muted">{t("caseVoiceMarker")}</p>
           <p>{proofImpact}</p>
         </section>

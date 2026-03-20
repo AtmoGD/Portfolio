@@ -61,7 +61,7 @@ function storyCopy(frame: string, language: Language) {
   return copy[language][frame as keyof (typeof copy)["en"]];
 }
 
-export default function ProjectCard({ project, featuredSnapshot = false }: { project: Project; featuredSnapshot?: boolean }) {
+export default function ProjectCard({ project, featuredSnapshot = false, teaser = false }: { project: Project; featuredSnapshot?: boolean; teaser?: boolean }) {
   const { language, t } = useI18n();
   const cardRef = useRef<HTMLElement | null>(null);
   const rafRef = useRef<number | null>(null);
@@ -100,8 +100,8 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
 
     setStyleVar("--spotlight-x", `${x}px`);
     setStyleVar("--spotlight-y", `${y}px`);
-    setStyleVar("--tilt-x", `${((0.5 - py) * 2.2).toFixed(2)}deg`);
-    setStyleVar("--tilt-y", `${((px - 0.5) * 2.2).toFixed(2)}deg`);
+    setStyleVar("--tilt-x", `${((0.5 - py) * 1.35).toFixed(2)}deg`);
+    setStyleVar("--tilt-y", `${((px - 0.5) * 1.35).toFixed(2)}deg`);
   }
 
   function handlePointerEnter(event: ReactPointerEvent<HTMLElement>) {
@@ -197,7 +197,9 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
             </article>
           ))}
         </section>
-      ) : (
+      ) : null}
+
+      {!teaser && !featuredSnapshot ? (
         <>
           <div className="meta-grid card-meta">
             <section className="card-section">
@@ -238,7 +240,7 @@ export default function ProjectCard({ project, featuredSnapshot = false }: { pro
             </ul>
           </section>
         </>
-      )}
+      ) : null}
 
       <div className="link-row card-cta-row">
         <Link href={`/case-study/${project.slug}`} className="text-link primary-cta-link">

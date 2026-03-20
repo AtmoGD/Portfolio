@@ -123,7 +123,7 @@ export default function ProjectsPage() {
           <h2>{t("featuredProjectsTitle")}</h2>
           <div className="stack-lg">
             {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+              <ProjectCard key={project.slug} project={project} teaser />
             ))}
           </div>
         </section>
@@ -133,7 +133,7 @@ export default function ProjectsPage() {
         <h2>{activeFilter === "all" ? t("moreProjectsTitle") : t("filteredResults")}</h2>
         <div className="stack-lg">
           {visibleMoreProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+            <ProjectCard key={project.slug} project={project} teaser />
           ))}
         </div>
         {visibleMoreProjects.length === 0 ? <p className="muted">{t("noProjectsForFilter")}</p> : null}
