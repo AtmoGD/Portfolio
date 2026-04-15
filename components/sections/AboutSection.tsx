@@ -32,13 +32,13 @@ export function AboutSection() {
     },
     {
       key: "yearsCoding",
-      value: "6",
+      value: "6+",
       icon: <Code2 className="w-4 h-4" />,
       accent: "cyan" as const,
     },
     {
       key: "projectsBuilt",
-      value: "20",
+      value: "20+",
       icon: <Rocket className="w-4 h-4" />,
       accent: "lime" as const,
     },
