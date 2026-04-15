@@ -51,6 +51,7 @@ const config: Config = {
         blink: "blink 1.1s steps(2,start) infinite",
         flicker: "flicker 3.5s infinite",
         scanlines: "scanlines 8s linear infinite",
+        "crt-roll": "crtRoll 7s linear infinite",
         "bounce-slow": "bounce 2.2s ease-in-out infinite",
         glitch: "glitch 2.4s infinite",
         "fade-in": "fadeIn 0.6s ease-out forwards",
@@ -70,6 +71,10 @@ const config: Config = {
         scanlines: {
           "0%": { backgroundPosition: "0 0" },
           "100%": { backgroundPosition: "0 100px" },
+        },
+        crtRoll: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100vh)" },
         },
         glitch: {
           "0%, 100%": { transform: "translate(0,0)" },

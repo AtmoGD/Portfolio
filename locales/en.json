@@ -265,7 +265,7 @@
     "found404": {
       "title": "Lost In Space",
       "desc": "Found a page that doesn't exist.",
-      "hint": "Take a wrong turn."
+      "hint": "Try visiting a URL that doesn't exist."
     },
     "bilingual": {
       "title": "Bilingual",

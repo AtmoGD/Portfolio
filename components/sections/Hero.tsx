@@ -143,13 +143,10 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.12 }}
           className="flex flex-col gap-5"
         >
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-neon-lime text-neon-lime font-mono text-sm uppercase tracking-widest font-bold">
               <span className="w-2.5 h-2.5 bg-neon-lime animate-pulse-slow" />
               {t("hero.status")}
-            </span>
-            <span className="hidden sm:inline font-mono text-sm uppercase tracking-widest text-phosphor-dim">
-              {t("hero.pressStart")}
             </span>
           </div>
 
