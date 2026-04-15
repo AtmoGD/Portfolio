@@ -233,6 +233,34 @@ export default function ProjectDetailPage() {
           </aside>
         </section>
 
+        {project.trailerUrl && (
+          <section className="mt-16">
+            <h2
+              className={cn(
+                "arcade-title text-base sm:text-lg mb-5",
+                accentText[project.accent]
+              )}
+            >
+              ▸ Trailer
+            </h2>
+            <div
+              className={cn(
+                "relative aspect-video w-full border-2 overflow-hidden",
+                accentBorder[project.accent]
+              )}
+            >
+              <iframe
+                src={project.trailerUrl}
+                title={`${project.title} — trailer`}
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </section>
+        )}
+
         {(prev || next) && (
           <section className="mt-20 grid sm:grid-cols-2 gap-4 border-t-2 border-phosphor/10 pt-8">
             {prev && (

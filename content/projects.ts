@@ -38,6 +38,8 @@ export type Project = {
   externalLink: string;
   linkLabel: ProjectLinkKind;
   descriptionKey: string;
+  /** YouTube embed URL, e.g. https://www.youtube.com/embed/VIDEO_ID */
+  trailerUrl?: string;
   featured?: boolean;
   secret?: boolean;
   accent: "pink" | "cyan" | "amber" | "lime" | "violet";
@@ -50,8 +52,8 @@ export const projects: Project[] = [
     coverImage: unthroned,
     year: 2024,
     roleKey: "gameplayProgrammer",
-    teamSize: 5,
-    duration: "10 months",
+    teamSize: 3,
+    duration: "2 semesters",
     context: "Master Thesis",
     category: "game",
     tagKeys: [
@@ -65,6 +67,7 @@ export const projects: Project[] = [
     externalLink: "https://atmogd.itch.io/unthroned",
     linkLabel: "play",
     descriptionKey: "projects.descriptions.unthroned",
+    trailerUrl: "https://www.youtube.com/embed/_aoRbVDb870",
     featured: true,
     accent: "pink",
   },
