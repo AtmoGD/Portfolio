@@ -33,7 +33,7 @@ export function ContactCta() {
           </h2>
 
           <p className="text-phosphor max-w-xl mx-auto mb-8 text-base sm:text-lg">
-            Game jam idea, junior role, or just coffee — I reply quickly.
+            {t("hero.cta.contactSubtitle")}
           </p>
 
           <a href="mailto:dennishawran@gmail.com">

@@ -19,7 +19,8 @@
     "cta": {
       "viewProjects": "View Projects",
       "readCv": "Read CV",
-      "contact": "Grab a coffee?"
+      "contact": "Grab a coffee?",
+      "contactSubtitle": "Game jam idea, junior role, or just coffee — I reply quickly."
     },
     "location": "Augsburg, Germany",
     "scrollHint": "scroll on"

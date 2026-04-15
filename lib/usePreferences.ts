@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
-type Preferences = {
+export type Preferences = {
   crt: boolean;
   sound: boolean;
   bootSeen: boolean;
@@ -10,7 +10,7 @@ type Preferences = {
 };
 
 const DEFAULTS: Preferences = {
-  crt: true,
+  crt: false,
   sound: false,
   bootSeen: false,
   language: "de",
@@ -18,7 +18,10 @@ const DEFAULTS: Preferences = {
 
 const STORAGE_KEY = "portfolio.prefs.v1";
 
-function readPrefs(): Preferences {
+let state: Preferences = loadInitial();
+const listeners = new Set<() => void>();
+
+function loadInitial(): Preferences {
   if (typeof window === "undefined") return DEFAULTS;
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -29,31 +32,60 @@ function readPrefs(): Preferences {
   }
 }
 
-function writePrefs(prefs: Preferences) {
+function persist() {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch {
     // ignore
   }
 }
 
+function notify() {
+  listeners.forEach((l) => l());
+}
+
+export function updatePreferences(patch: Partial<Preferences>) {
+  state = { ...state, ...patch };
+  persist();
+  notify();
+}
+
+const SERVER_SNAPSHOT: Preferences = DEFAULTS;
+
+function subscribe(cb: () => void) {
+  listeners.add(cb);
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === STORAGE_KEY) {
+      state = loadInitial();
+      notify();
+    }
+  };
+  if (typeof window !== "undefined") {
+    window.addEventListener("storage", onStorage);
+  }
+  return () => {
+    listeners.delete(cb);
+    if (typeof window !== "undefined") {
+      window.removeEventListener("storage", onStorage);
+    }
+  };
+}
+
 export function usePreferences() {
-  const [prefs, setPrefs] = useState<Preferences>(DEFAULTS);
-  const [hydrated, setHydrated] = useState(false);
+  const prefs = useSyncExternalStore(
+    subscribe,
+    () => state,
+    () => SERVER_SNAPSHOT,
+  );
 
-  useEffect(() => {
-    setPrefs(readPrefs());
-    setHydrated(true);
-  }, []);
+  // hydrated flag: false on server render, true after client hydration.
+  // useSyncExternalStore handles the SSR/hydrate transition.
+  const hydrated = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
-  const update = useCallback((patch: Partial<Preferences>) => {
-    setPrefs((prev) => {
-      const next = { ...prev, ...patch };
-      writePrefs(next);
-      return next;
-    });
-  }, []);
-
-  return { prefs, update, hydrated };
+  return { prefs, update: updatePreferences, hydrated };
 }

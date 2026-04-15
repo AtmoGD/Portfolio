@@ -19,7 +19,8 @@
     "cta": {
       "viewProjects": "Projekte ansehen",
       "readCv": "Lebenslauf",
-      "contact": "Kaffee trinken?"
+      "contact": "Kaffee trinken?",
+      "contactSubtitle": "Game Jam, Junior-Rolle oder einfach Kaffee — ich antworte schnell."
     },
     "location": "Augsburg, Deutschland",
     "scrollHint": "weiter scrollen"

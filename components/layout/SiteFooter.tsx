@@ -77,9 +77,9 @@ export function SiteFooter() {
           <div className="flex flex-col gap-2">
             <ToggleRow
               label={t("footer.toggleCrt")}
-              value={hydrated ? prefs.crt : true}
+              value={hydrated ? prefs.crt : false}
               onChange={(v) => {
-                unlock("retroMode");
+                if (v) unlock("retroMode");
                 update({ crt: v });
               }}
               labelOn={t("footer.on")}
