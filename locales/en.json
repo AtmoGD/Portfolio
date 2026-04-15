@@ -226,7 +226,9 @@
     "toggleCrt": "CRT effect",
     "on": "ON",
     "off": "OFF",
-    "konamiHint": "Psst — try the Konami code"
+    "konamiHint": "Psst — try the Konami code",
+    "resetData": "Reset site data",
+    "resetDataHint": "Clears achievements, settings and high score"
   },
   "achievements": {
     "hubTitle": "Achievements",

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Github, Mail, Gamepad2, Linkedin } from "lucide-react";
+import { Github, Mail, Gamepad2, Linkedin, RotateCcw } from "lucide-react";
 import { usePreferences } from "@/lib/usePreferences";
 import { unlock } from "@/lib/achievements";
 import { cn } from "@/lib/cn";
@@ -74,18 +74,20 @@ export function SiteFooter() {
           <span className="font-mono text-sm uppercase tracking-widest text-phosphor font-bold">
             Settings
           </span>
-          <div className="flex flex-col gap-2">
-            <ToggleRow
-              label={t("footer.toggleCrt")}
-              value={hydrated ? prefs.crt : true}
-              onChange={(v) => {
-                if (!v) unlock("retroMode");
-                update({ crt: v });
-              }}
-              labelOn={t("footer.on")}
-              labelOff={t("footer.off")}
-            />
-          </div>
+          <ToggleRow
+            label={t("footer.toggleCrt")}
+            value={hydrated ? prefs.crt : true}
+            onChange={(v) => {
+              if (!v) unlock("retroMode");
+              update({ crt: v });
+            }}
+            labelOn={t("footer.on")}
+            labelOff={t("footer.off")}
+          />
+          <ResetDataButton
+            label={t("footer.resetData")}
+            hint={t("footer.resetDataHint")}
+          />
           <span className="font-mono text-xs text-phosphor-dim max-w-[20em]">
             {t("footer.konamiHint")}: ↑↑↓↓←→←→BA
           </span>
@@ -111,10 +113,10 @@ function ToggleRow({
   return (
     <button
       onClick={() => onChange(!value)}
-      className="inline-flex items-center gap-3 font-mono text-sm text-phosphor hover:text-neon-cyan transition-colors"
+      className="inline-flex self-start items-center justify-between gap-4 font-mono text-sm text-phosphor hover:text-neon-cyan transition-colors"
       aria-pressed={value}
     >
-      <span className="min-w-[6em]">{label}</span>
+      <span>{label}</span>
       <span
         className={cn(
           "px-2.5 py-1 border-2 font-bold",
@@ -125,6 +127,35 @@ function ToggleRow({
       >
         {value ? labelOn : labelOff}
       </span>
+    </button>
+  );
+}
+
+function ResetDataButton({ label, hint }: { label: string; hint: string }) {
+  function handleReset() {
+    try {
+      window.localStorage.clear();
+      window.sessionStorage.clear();
+      // Clear all cookies scoped to current origin
+      document.cookie.split(";").forEach((c) => {
+        const name = c.split("=")[0].trim();
+        if (!name) return;
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+      });
+    } catch {
+      // ignore — proceed with reload anyway
+    }
+    window.location.reload();
+  }
+
+  return (
+    <button
+      onClick={handleReset}
+      title={hint}
+      className="inline-flex self-start items-center gap-2 px-3 py-2 border-2 border-phosphor-dim/40 text-phosphor-dim font-mono text-sm hover:border-neon-pink hover:text-neon-pink transition-colors"
+    >
+      <RotateCcw className="w-4 h-4" />
+      {label}
     </button>
   );
 }

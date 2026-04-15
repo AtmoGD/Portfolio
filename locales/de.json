@@ -226,7 +226,9 @@
     "toggleCrt": "CRT-Effekt",
     "on": "AN",
     "off": "AUS",
-    "konamiHint": "Psst — versuch mal den Konami-Code"
+    "konamiHint": "Psst — versuch mal den Konami-Code",
+    "resetData": "Daten zurücksetzen",
+    "resetDataHint": "Löscht Achievements, Einstellungen und Highscore"
   },
   "achievements": {
     "hubTitle": "Achievements",
