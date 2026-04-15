@@ -19,7 +19,8 @@ export const education: CvEducation[] = [
 ];
 
 export const work: CvWork[] = [
-  { key: "hohenheim", icon: "desk", highlight: true },
+  { key: "knuddels", icon: "desk", highlight: true },
+  { key: "hohenheim", icon: "desk" },
   { key: "tutorUnity", icon: "briefcase" },
   { key: "tutorFudge", icon: "briefcase" },
   { key: "gamelab", icon: "briefcase" },

@@ -159,10 +159,16 @@
       }
     },
     "workEntries": {
+      "knuddels": {
+        "company": "Knuddels",
+        "title": "Fullstack Developer (Gameplay)",
+        "period": "June 2024 — Today",
+        "description": "Fullstack work with a gameplay focus: mini-games built in Phaser, embedded in React. TypeScript. Plus occasional maintenance of older React-based games."
+      },
       "hohenheim": {
         "company": "University of Hohenheim",
         "title": "Working Student",
-        "period": "March 2022 — Today",
+        "period": "March 2022 — November 2024",
         "description": "Developing a chatbot specialized in teaching."
       },
       "tutorUnity": {
