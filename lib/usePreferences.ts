@@ -10,7 +10,7 @@ export type Preferences = {
 };
 
 const DEFAULTS: Preferences = {
-  crt: false,
+  crt: true,
   sound: false,
   bootSeen: false,
   language: "de",
