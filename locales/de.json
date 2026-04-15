@@ -36,10 +36,10 @@
     "title": "About Me",
     "subtitle": "PLAYER PROFILE",
     "paragraphs": [
-      "Hey, ich bin Dennis — Gameplay Programmer mit frischem Master in Game Development.",
-      "Ich baue Systeme, die sich gut anfühlen. Twin-Stick-Combat, Tower Defense, VR ohne Controller, AR-Multiplayer, ML-gesteuerte Pong-Paddel — wenn's spielbar ist, will ich verstehen wie's tickt. Sieben Jahre Unity, daneben Unreal, FUDGE, C++ und eine ungesunde Liebe zu Game Jams.",
-      "Mein Master-Projekt *Unthroned* hat mir gezeigt was ich am liebsten mache: das Unsichtbare bauen. Die Systeme unter der Haube, die den Spieler „nur noch\" spielen lassen. Vorher habe ich Produktionsmaschinen programmiert und repariert — Problemlösen ist bei mir länger Berufskrankheit als Studienfach.",
-      "Jetzt suche ich ein Team, das Spiele ernst nimmt ohne den Spaß dran zu verlieren. Wenn das nach euch klingt: Kaffee steht bereit."
+      "Hey, ich bin Dennis. Gameplay Programmer mit Master in Game Development.",
+      "Ich baue Systeme, die sich gut anfühlen. Twin-Stick-Combat, Tower Defense, AR-Multiplayer, ML-gesteuerte Pong-Paddel — wenn's spielbar ist, will ich verstehen wie's tickt. Sechs Jahre Unity, daneben Unreal, FUDGE und C++.",
+      "Eines meiner Lieblingsprojekte: ein haptischer VR-Raum ohne Controller. Statt Joysticks gibt es echte Objekte, die eins-zu-eins auf ihre virtuellen Gegenstücke gemappt sind. Greifst du in der realen Welt ein Schwert, greifst du es auch in VR. Fühlt sich tatsächlich an wie Magie.",
+      "Was ich sonst liebe: Game Jams. 48 Stunden, eine Idee, ein Team, und am Ende läuft's tatsächlich. Kein Planning-Gremium, kein Ticket-System, nur Code und Kaffee. Da habe ich mehr über Gamedev gelernt als in jedem Kurs."
     ],
     "stats": {
       "coffeeConsumed": "Tassen Kaffee",

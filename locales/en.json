@@ -36,10 +36,10 @@
     "title": "About Me",
     "subtitle": "PLAYER PROFILE",
     "paragraphs": [
-      "Hey, I'm Dennis — Gameplay Programmer with a fresh Master's in Game Development.",
-      "I build systems that feel good to play. Twin-stick combat, tower defense, controller-less VR, AR multiplayer, ML-driven Pong paddles — if it's playable, I want to know how it ticks. Seven years with Unity, plus Unreal, FUDGE, C++ and an unhealthy love for game jams.",
-      "My Master's project *Unthroned* taught me what I enjoy most: building the invisible. The systems under the hood that let the player *just play*. Before this I programmed and repaired production machines — problem-solving has been a professional condition longer than an academic one.",
-      "Now I'm looking for a team that takes games seriously without losing the fun. If that sounds like you: the coffee's on."
+      "Hey, I'm Dennis. Gameplay Programmer with a Master's in Game Development.",
+      "I build systems that feel good to play. Twin-stick combat, tower defense, AR multiplayer, ML-driven Pong paddles — if it's playable, I want to know how it ticks. Six years with Unity, plus Unreal, FUDGE and C++.",
+      "One of my favorite projects: a haptic VR room without controllers. Instead of joysticks, real-world objects are mapped one-to-one to their virtual counterparts. Grab a sword in reality and you grab it in VR too. Genuinely feels like magic.",
+      "What I otherwise love: game jams. 48 hours, one idea, a team, and at the end something actually runs. No planning committee, no ticket system, just code and coffee. I learned more about gamedev there than in any course."
     ],
     "stats": {
       "coffeeConsumed": "Cups of coffee",
