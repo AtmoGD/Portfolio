@@ -1,55 +1,71 @@
-import "@mantine/core/styles.css";
-import "@mantine/carousel/styles.css";
+import type { Metadata } from "next";
+import { Inter, Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
-import HeaderComponent from "../components/header-component";
 
-import {
-  MantineProvider,
-  ColorSchemeScript,
-  createTheme,
-  MantineColorsTuple,
-} from "@mantine/core";
+import { Providers } from "@/components/providers/Providers";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CrtOverlay } from "@/components/arcade/CrtOverlay";
+import { CursorTrail } from "@/components/arcade/CursorTrail";
+import { BootSequence } from "@/components/arcade/BootSequence";
+import { KonamiListener } from "@/components/arcade/KonamiListener";
+import { AchievementToaster } from "@/components/arcade/AchievementToaster";
 
-export const metadata = {
-  title: "Dennis Hawran",
-  description: "Welcome to my website!",
-};
-
-export interface Props {
-  children: React.ReactNode;
-}
-
-const primary: MantineColorsTuple = [
-  "#ffeeee",
-  "#f5dddd",
-  "#e2baba",
-  "#d09494",
-  "#c17473",
-  "#b85f5e",
-  "#b45454",
-  "#9f4445",
-  "#8f3b3c",
-  "#7f3032",
-];
-
-const defaultTheme = createTheme({
-  primaryColor: "primary",
-  colors: {
-    primary,
-  },
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-export default function RootLayout({ children }: Props) {
+const pressStart = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-press-start",
+  display: "swap",
+});
+
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-vt323",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://dennis-hawran.dev"),
+  title: "Dennis Hawran — Gameplay Programmer",
+  description:
+    "Portfolio of Dennis Hawran — Gameplay Programmer, freshly minted Master in Game Development. Unity, Unreal, VR, AR, game jams and an unhealthy love for coffee.",
+  icons: { icon: "/favicon.ico" },
+  openGraph: {
+    title: "Dennis Hawran — Gameplay Programmer",
+    description:
+      "Unity, Unreal, VR, AR, game jams. Powered by coffee, seeking a team.",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <head>
-        <ColorSchemeScript />
-      </head>
-      <body>
-        <MantineProvider theme={defaultTheme}>
-          <HeaderComponent />
+    <html
+      lang="en"
+      className={`${inter.variable} ${pressStart.variable} ${vt323.variable}`}
+    >
+      <body className="bg-ink text-phosphor min-h-screen antialiased">
+        <Providers>
+          <SiteHeader />
           {children}
-        </MantineProvider>
+          <SiteFooter />
+          <CrtOverlay />
+          <CursorTrail />
+          <BootSequence />
+          <KonamiListener />
+          <AchievementToaster />
+        </Providers>
       </body>
     </html>
   );

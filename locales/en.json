@@ -1,0 +1,270 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "meta": {
+    "siteTitle": "Dennis Hawran — Gameplay Programmer",
+    "siteDescription": "Portfolio of Dennis Hawran — Gameplay Programmer, freshly minted Master in Game Development."
+  },
+  "hero": {
+    "pressStart": "PRESS START",
+    "insertCoin": "INSERT COIN",
+    "name": "Dennis Hawran",
+    "role": "Gameplay Programmer",
+    "tagline": "Turns coffee into code",
+    "status": "Open to work",
+    "cta": {
+      "viewProjects": "View Projects",
+      "readCv": "Read CV",
+      "contact": "Grab a coffee?"
+    },
+    "location": "Augsburg, Germany",
+    "scrollHint": "scroll on"
+  },
+  "boot": {
+    "line1": "BOOTING DENNIS.EXE",
+    "line2": "CHECKING GAME DEV SKILLS...",
+    "line3": "LOADING COFFEE MACHINE...",
+    "line4": "READY PLAYER ONE",
+    "skip": "Skip"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "PLAYER PROFILE",
+    "paragraphs": [
+      "Hey, I'm Dennis — Gameplay Programmer with a fresh Master's in Game Development.",
+      "I build systems that feel good to play. Twin-stick combat, tower defense, controller-less VR, AR multiplayer, ML-driven Pong paddles — if it's playable, I want to know how it ticks. Seven years with Unity, plus Unreal, FUDGE, C++ and an unhealthy love for game jams.",
+      "My Master's project *Unthroned* taught me what I enjoy most: building the invisible. The systems under the hood that let the player *just play*. Before this I programmed and repaired production machines — problem-solving has been a professional condition longer than an academic one.",
+      "Now I'm looking for a team that takes games seriously without losing the fun. If that sounds like you: the coffee's on."
+    ],
+    "stats": {
+      "coffeeConsumed": "Cups of coffee",
+      "gameJams": "Game jams",
+      "yearsCoding": "Years coding",
+      "projectsShipped": "Projects shipped"
+    }
+  },
+  "featured": {
+    "title": "Featured Projects",
+    "subtitle": "HAND PICKED",
+    "viewAll": "See all projects"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "THE WHOLE ARCADE",
+    "allFilter": "All",
+    "noneFound": "No projects match this filter.",
+    "gamesCategory": "Games",
+    "modelsCategory": "3D Models",
+    "viewDetails": "View Details",
+    "year": "Year",
+    "role": "Role",
+    "teamSize": "Team Size",
+    "duration": "Duration",
+    "context": "Context",
+    "tech": "Tech",
+    "prevProject": "Previous",
+    "nextProject": "Next",
+    "backToAll": "All projects",
+    "linkLabels": {
+      "play": "Play now",
+      "gameplayTeaser": "Gameplay Teaser",
+      "modelViewer": "3D Model Viewer"
+    },
+    "contexts": {
+      "Master Thesis": "Master Project",
+      "Bachelor Thesis": "Bachelor Thesis",
+      "Student Project": "Student Project",
+      "Game Jam": "Game Jam",
+      "Hobby": "Hobby"
+    },
+    "roles": {
+      "gameplayProgrammer": "Gameplay Programmer",
+      "leadProgrammer": "Lead Programmer",
+      "programmerDesigner": "Programmer & Designer",
+      "soloDeveloper": "Solo Developer",
+      "modeler": "3D Artist"
+    },
+    "descriptions": {
+      "unthroned": "A twin-stick shooter with base-building and tower-defense elements. Built as a team for our Master's degree. You play Dave, a dethroned necromancer reclaiming his brother's empire — farm souls, upgrade your base, send your army to raid.\n\nMy focus: core combat, enemy AI state machines, the weapon and upgrade system, and performance for the particle hordes.",
+      "oasis": "A VR bachelor's thesis built for a haptic VR room — no controllers; real physical objects stand in for virtual ones, the player picks them up, and that drives the interaction. The goal was maximum immersion through 1:1 mapping of physical and virtual worlds.\n\nMy focus: the interaction system linking tracked real objects to VR counterparts, plus the Unreal Blueprint logic for the room's puzzles.",
+      "aurea": "A low-poly AR multiplayer game for smartphones. Unity AR Foundation turns your living room into an arena — models in Blender and Maya, netcode for small matches, playful vibe.\n\nMy focus: AR plane detection, multiplayer sync via a relay server, and the gameplay feel.",
+      "cozyWinter": "A cozy Christmas-market builder. No fail state, no deadline — just you, a blanket and some mulled wine. Place buildings, add decorations, watch the customers roll in.\n\nBuilt during a game jam as an antidote to all stress games. I did nearly everything: code, design, balance.",
+      "pumpkinHarvest": "A relaxed farming game. Plant, water, harvest, deliver — or just take a walk in the woods. The suburb wants pumpkins; you deliver. Atmosphere-first, no shooter-adrenaline curve.\n\nGame-jam submission, built solo.",
+      "witchWay": "Indirect control: you don't steer the witch, you shape the forest around her. Place objects, lay down arrows, keep her alive as long as you can. Every choice has side effects.\n\nStudent project in a game-jam format, team of three.",
+      "gravityPong": "Pong — with gravity, and an ML agent as opponent. Trained with Unity ML-Agents, learns to steer the paddle itself. A small experiment where debugging the training was the real game.\n\nHobby project, fully solo.",
+      "bomberman": "A Bomberman clone, built in the FUDGE engine at HFU. No prebuilt framework, every gameplay system from scratch.\n\nStudent project for the course \"Development of Interactive Applications\", team work focused on grid logic and bomb simulation.",
+      "arcReactor": "3D model — Tony Stark's Arc Reactor, high-poly with PBR textures. Modeled in Blender, textured in Substance Painter.\n\nStudent project on game-asset creation.",
+      "mjolnir": "3D model — Thor's hammer, high-poly, PBR textures with scratches and wear. Blender plus Substance Painter.\n\nStudent project on game-asset creation."
+    }
+  },
+  "cv": {
+    "title": "CV",
+    "subtitle": "CHARACTER SHEET",
+    "education": "Education",
+    "work": "Work Experience",
+    "skills": "Skills",
+    "downloadPdf": "CV as PDF",
+    "today": "Today",
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    },
+    "educationEntries": {
+      "augsburg": {
+        "institution": "Augsburg University of Applied Sciences",
+        "title": "M.A. Interactive Media Systems / Game Development",
+        "period": "2022 — 2024",
+        "grade": "1.4"
+      },
+      "furtwangen": {
+        "institution": "Furtwangen University",
+        "title": "B.Sc. Media Informatics",
+        "period": "2019 — 2022",
+        "grade": "1.6"
+      },
+      "vocational": {
+        "institution": "Vocational College Weil am Rhein",
+        "title": "Advanced technical college certificate",
+        "period": "2016 — 2017",
+        "grade": "2.8"
+      },
+      "apprenticeship": {
+        "institution": "Global Safety Textiles",
+        "title": "Apprenticeship — Production Mechanic (Textiles)",
+        "period": "2011 — 2014",
+        "grade": "2.4"
+      },
+      "secondary": {
+        "institution": "Schiller School Rheinfelden",
+        "title": "Secondary School",
+        "period": "2004 — 2011",
+        "grade": "2.4"
+      },
+      "primary": {
+        "institution": "Schiller School Rheinfelden",
+        "title": "Primary School",
+        "period": "2001 — 2004"
+      }
+    },
+    "workEntries": {
+      "hohenheim": {
+        "company": "University of Hohenheim",
+        "title": "Working Student",
+        "period": "March 2022 — Today",
+        "description": "Developing a chatbot specialized in teaching."
+      },
+      "tutorUnity": {
+        "company": "Furtwangen University",
+        "title": "Tutor \"Unity Engine\"",
+        "period": "March 2021 — February 2022",
+        "description": "Supporting students in developing games with the Unity Engine."
+      },
+      "tutorFudge": {
+        "company": "Furtwangen University",
+        "title": "Tutor \"Development of Interactive Applications\"",
+        "period": "September 2020 — February 2021",
+        "description": "Supporting students in developing games with the FUDGE engine."
+      },
+      "gamelab": {
+        "company": "Furtwangen University",
+        "title": "Internship at the Gamelab",
+        "period": "March 2020 — August 2020",
+        "description": "Organizing the game lab, supporting students, developing various applications."
+      },
+      "productionMechanic": {
+        "company": "Global Safety Textiles",
+        "title": "Production Mechanic",
+        "period": "September 2014 — July 2016",
+        "description": "Programming and repairing CNC sewing machines and laser cutters."
+      }
+    }
+  },
+  "tags": {
+    "unity": "Unity",
+    "unreal": "Unreal",
+    "fudge": "FUDGE",
+    "programming": "Programming",
+    "engineDevelopment": "Engine Dev",
+    "gameDesign": "Game Design",
+    "vr": "VR",
+    "ar": "AR",
+    "motionCapturing": "Motion Capture",
+    "machineLearning": "ML",
+    "multiplayer": "Multiplayer",
+    "gameJam": "Game Jam",
+    "hobby": "Hobby",
+    "studentProject": "Student Project",
+    "bachelorThesis": "Bachelor Thesis",
+    "masterThesis": "Master Thesis",
+    "blender": "Blender",
+    "substancePainter": "Substance",
+    "towerDefense": "Tower Defense",
+    "twinStick": "Twin-Stick",
+    "arcade": "Arcade",
+    "cozy": "Cozy"
+  },
+  "footer": {
+    "madeWith": "Built with coffee in Augsburg",
+    "sourceCode": "Source on GitHub",
+    "toggleSound": "Sound",
+    "toggleCrt": "CRT effect",
+    "on": "ON",
+    "off": "OFF",
+    "konamiHint": "Psst — try the Konami code"
+  },
+  "achievements": {
+    "firstVisit": {
+      "title": "First Contact",
+      "desc": "You signed in!"
+    },
+    "scrolledAbout": {
+      "title": "Get to know",
+      "desc": "Read the About-Me to the end."
+    },
+    "openedProject": {
+      "title": "Curious Recruiter",
+      "desc": "Opened your first project detail."
+    },
+    "visitedCv": {
+      "title": "Resume Reader",
+      "desc": "Opened the CV."
+    },
+    "konami": {
+      "title": "Cheat Activated",
+      "desc": "You know your cheat codes."
+    },
+    "found404": {
+      "title": "Lost in Space",
+      "desc": "Found a page that doesn't exist."
+    }
+  },
+  "notFound": {
+    "title": "PAGE NOT FOUND",
+    "subtitle": "But hey — mini-game!",
+    "instructions": "Arrow keys or A/D — dodge the falling bugs.",
+    "score": "Score",
+    "highScore": "High",
+    "start": "Start",
+    "restart": "Again",
+    "gameOver": "GAME OVER",
+    "back": "Back to home"
+  },
+  "cookieToast": {
+    "text": "Achievement unlocked",
+    "close": "OK"
+  }
+}

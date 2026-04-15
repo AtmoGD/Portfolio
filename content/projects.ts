@@ -1,0 +1,245 @@
+import type { StaticImageData } from "next/image";
+
+import unthroned from "@/assets/Unthroned.png";
+import oasis from "@/assets/Oasis.jpg";
+import aurea from "@/assets/Aurea.png";
+import cozyWinter from "@/assets/CozyWinterMarket.png";
+import pumpkinHarvest from "@/assets/PumpkinHarvest@0.25x.png";
+import witchWay from "@/assets/WitchWay.png";
+import gravityPong from "@/assets/GravityPong.png";
+import bomberman from "@/assets/Bomb.png";
+import arcReactor from "@/assets/Arc.png";
+import mjolnir from "@/assets/Hammer.png";
+
+export type ProjectContext =
+  | "Master Thesis"
+  | "Bachelor Thesis"
+  | "Student Project"
+  | "Game Jam"
+  | "Hobby";
+
+export type ProjectCategory = "game" | "model";
+
+export type ProjectLinkKind = "play" | "gameplayTeaser" | "modelViewer";
+
+export type Project = {
+  slug: string;
+  title: string;
+  coverImage: StaticImageData;
+  year: number;
+  roleKey: string;
+  teamSize: number;
+  duration: string; // English duration, we translate at render if needed
+  context: ProjectContext;
+  category: ProjectCategory;
+  tagKeys: string[];
+  techKeys: string[];
+  externalLink: string;
+  linkLabel: ProjectLinkKind;
+  descriptionKey: string;
+  featured?: boolean;
+  accent: "pink" | "cyan" | "amber" | "lime" | "violet";
+};
+
+export const projects: Project[] = [
+  {
+    slug: "unthroned",
+    title: "Unthroned",
+    coverImage: unthroned,
+    year: 2024,
+    roleKey: "gameplayProgrammer",
+    teamSize: 5,
+    duration: "10 months",
+    context: "Master Thesis",
+    category: "game",
+    tagKeys: [
+      "unity",
+      "masterThesis",
+      "twinStick",
+      "towerDefense",
+      "programming",
+    ],
+    techKeys: ["unity", "programming", "gameDesign"],
+    externalLink: "https://atmogd.itch.io/unthroned",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.unthroned",
+    featured: true,
+    accent: "pink",
+  },
+  {
+    slug: "oasis",
+    title: "Oasis",
+    coverImage: oasis,
+    year: 2022,
+    roleKey: "gameplayProgrammer",
+    teamSize: 4,
+    duration: "6 months",
+    context: "Bachelor Thesis",
+    category: "game",
+    tagKeys: ["unreal", "vr", "bachelorThesis", "motionCapturing"],
+    techKeys: ["unreal", "vr", "motionCapturing", "programming"],
+    externalLink: "https://youtu.be/Wh6ieci--3E",
+    linkLabel: "gameplayTeaser",
+    descriptionKey: "projects.descriptions.oasis",
+    featured: true,
+    accent: "cyan",
+  },
+  {
+    slug: "aurea",
+    title: "Aurea",
+    coverImage: aurea,
+    year: 2021,
+    roleKey: "programmerDesigner",
+    teamSize: 3,
+    duration: "4 months",
+    context: "Student Project",
+    category: "game",
+    tagKeys: ["unity", "ar", "multiplayer", "studentProject"],
+    techKeys: ["unity", "programming", "gameDesign", "ar"],
+    externalLink: "https://www.youtube.com/watch?v=t9RwqJnLjy8",
+    linkLabel: "gameplayTeaser",
+    descriptionKey: "projects.descriptions.aurea",
+    featured: true,
+    accent: "amber",
+  },
+  {
+    slug: "cozy-winter-market",
+    title: "Cozy Winter Market",
+    coverImage: cozyWinter,
+    year: 2022,
+    roleKey: "soloDeveloper",
+    teamSize: 1,
+    duration: "1 week (jam)",
+    context: "Game Jam",
+    category: "game",
+    tagKeys: ["unity", "cozy", "gameJam", "gameDesign"],
+    techKeys: ["unity", "programming", "gameDesign"],
+    externalLink: "https://atmogd.itch.io/cozy-winter-market",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.cozyWinter",
+    accent: "cyan",
+  },
+  {
+    slug: "pumpkin-harvest",
+    title: "Pumpkin Harvest",
+    coverImage: pumpkinHarvest,
+    year: 2021,
+    roleKey: "soloDeveloper",
+    teamSize: 1,
+    duration: "1 week (jam)",
+    context: "Game Jam",
+    category: "game",
+    tagKeys: ["unity", "cozy", "gameJam", "gameDesign"],
+    techKeys: ["unity", "programming", "gameDesign"],
+    externalLink: "https://atmogd.itch.io/pumpkin-harvest",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.pumpkinHarvest",
+    accent: "amber",
+  },
+  {
+    slug: "witch-way",
+    title: "Witch Way?",
+    coverImage: witchWay,
+    year: 2021,
+    roleKey: "gameplayProgrammer",
+    teamSize: 3,
+    duration: "3 weeks",
+    context: "Student Project",
+    category: "game",
+    tagKeys: ["unity", "arcade", "gameJam", "studentProject"],
+    techKeys: ["unity", "programming", "gameDesign"],
+    externalLink: "https://atmogd.itch.io/witch-way",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.witchWay",
+    accent: "violet",
+  },
+  {
+    slug: "gravity-pong",
+    title: "Gravity Pong",
+    coverImage: gravityPong,
+    year: 2020,
+    roleKey: "soloDeveloper",
+    teamSize: 1,
+    duration: "2 weeks",
+    context: "Hobby",
+    category: "game",
+    tagKeys: ["unity", "machineLearning", "hobby"],
+    techKeys: ["unity", "programming", "machineLearning"],
+    externalLink: "https://atmogd.itch.io/gravity-pong",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.gravityPong",
+    accent: "lime",
+  },
+  {
+    slug: "bomberman",
+    title: "Bomberman",
+    coverImage: bomberman,
+    year: 2020,
+    roleKey: "programmerDesigner",
+    teamSize: 3,
+    duration: "1 semester",
+    context: "Student Project",
+    category: "game",
+    tagKeys: ["fudge", "studentProject", "programming"],
+    techKeys: ["fudge", "programming", "engineDevelopment"],
+    externalLink: "https://atmogd.github.io/BomberMan/html/Game.html",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.bomberman",
+    accent: "pink",
+  },
+  {
+    slug: "arc-reactor",
+    title: "Arc Reactor",
+    coverImage: arcReactor,
+    year: 2020,
+    roleKey: "modeler",
+    teamSize: 1,
+    duration: "3 weeks",
+    context: "Student Project",
+    category: "model",
+    tagKeys: ["blender", "substancePainter", "studentProject"],
+    techKeys: ["blender", "substancePainter"],
+    externalLink:
+      "https://sketchfab.com/3d-models/arc-reactor-tony-stark-high-poly-7c57e1f6b3034194a1e3c8abb3a49df2",
+    linkLabel: "modelViewer",
+    descriptionKey: "projects.descriptions.arcReactor",
+    accent: "cyan",
+  },
+  {
+    slug: "mjolnir",
+    title: "Mjölnir",
+    coverImage: mjolnir,
+    year: 2020,
+    roleKey: "modeler",
+    teamSize: 1,
+    duration: "3 weeks",
+    context: "Student Project",
+    category: "model",
+    tagKeys: ["blender", "substancePainter", "studentProject"],
+    techKeys: ["blender", "substancePainter"],
+    externalLink:
+      "https://sketchfab.com/3d-models/thors-hammer-mjolnir-high-poly-b5ab1f0f032e40abbe33ef47e53cc7c0",
+    linkLabel: "modelViewer",
+    descriptionKey: "projects.descriptions.mjolnir",
+    accent: "amber",
+  },
+];
+
+export function getProject(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
+
+export function getAdjacentProjects(slug: string) {
+  const idx = projects.findIndex((p) => p.slug === slug);
+  if (idx === -1) return { prev: undefined, next: undefined };
+  const prev = idx > 0 ? projects[idx - 1] : projects[projects.length - 1];
+  const next =
+    idx < projects.length - 1 ? projects[idx + 1] : projects[0];
+  return { prev, next };
+}
+
+export function getAllTagKeys(): string[] {
+  const set = new Set<string>();
+  for (const p of projects) p.tagKeys.forEach((t) => set.add(t));
+  return Array.from(set);
+}
