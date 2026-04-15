@@ -56,7 +56,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden border-b-2 border-phosphor/10">
+    <section className="relative min-h-[calc(100svh-5rem)] flex items-center overflow-hidden border-b-2 border-phosphor/10">
       <BackgroundFx />
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 py-20 w-full grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-center">
