@@ -142,7 +142,8 @@
         "institution": "Berufskolleg Weil am Rhein",
         "title": "Allgemeine Fachhochschulreife",
         "period": "2016 — 2017",
-        "grade": "2.8"
+        "grade": "2.8",
+        "description": "Technisches Profil."
       },
       "apprenticeship": {
         "institution": "Global Safety Textiles",
