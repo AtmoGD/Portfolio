@@ -131,7 +131,7 @@ export const projects: Project[] = [
     year: 2021,
     roleKey: "soloDeveloper",
     teamSize: 1,
-    duration: "1 week (jam)",
+    duration: "3 days (jam)",
     context: "Game Jam",
     category: "game",
     tagKeys: ["unity", "cozy", "gameJam", "gameDesign"],
