@@ -61,9 +61,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${pressStart.variable} ${vt323.variable}`}
     >
-      <body className="bg-ink text-phosphor min-h-screen antialiased">
+      <body
+        suppressHydrationWarning
+        className="bg-ink text-phosphor min-h-screen antialiased"
+      >
         <Providers>
           <SiteHeader />
           {children}
