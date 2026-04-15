@@ -128,13 +128,15 @@
         "institution": "Augsburg University of Applied Sciences",
         "title": "M.A. Interactive Media Systems / Game Development",
         "period": "2022 — 2024",
-        "grade": "1.5"
+        "grade": "1.5",
+        "description": "Game Development focus. Master's project: Unthroned. Master's thesis: Druids Call – Tales of the Forgotten (Metroidvania)."
       },
       "furtwangen": {
         "institution": "Furtwangen University",
         "title": "B.Sc. Media Informatics",
         "period": "2019 — 2022",
-        "grade": "1.6"
+        "grade": "1.6",
+        "description": "Game Development focus plus additional Games Certificate from the university. Bachelor's thesis: Oasis — haptic VR room without controllers."
       },
       "vocational": {
         "institution": "Vocational College Weil am Rhein",

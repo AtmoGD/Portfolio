@@ -128,13 +128,15 @@
         "institution": "Technische Hochschule Augsburg",
         "title": "M.A. Interaktive Mediensysteme / Game Development",
         "period": "2022 — 2024",
-        "grade": "1.5"
+        "grade": "1.5",
+        "description": "Schwerpunkt Game Development. Masterprojekt: Unthroned. Masterarbeit: Druids Call – Tales of the Forgotten (Metroidvania)."
       },
       "furtwangen": {
         "institution": "Hochschule Furtwangen",
         "title": "B.Sc. Medieninformatik",
         "period": "2019 — 2022",
-        "grade": "1.6"
+        "grade": "1.6",
+        "description": "Schwerpunkt Game Development mit zusätzlichem Games-Zertifikat der Hochschule. Bachelorarbeit: Oasis — haptischer VR-Raum ohne Controller."
       },
       "vocational": {
         "institution": "Berufskolleg Weil am Rhein",
