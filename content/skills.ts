@@ -8,12 +8,9 @@ export type Skill = {
 export const skills: Skill[] = [
   { name: "Unity", level: 95, category: "engine", accent: "pink" },
   { name: "C#", level: 95, category: "language", accent: "pink" },
+  { name: "Game Design", level: 80, category: "design", accent: "amber" },
+  { name: "TypeScript", level: 70, category: "language", accent: "lime" },
+  { name: "Phaser", level: 70, category: "engine", accent: "lime" },
   { name: "Unreal", level: 70, category: "engine", accent: "cyan" },
   { name: "C++", level: 60, category: "language", accent: "cyan" },
-  { name: "Java", level: 75, category: "language", accent: "amber" },
-  { name: "Python", level: 55, category: "language", accent: "amber" },
-  { name: "TypeScript", level: 70, category: "language", accent: "lime" },
-  { name: "Blender", level: 55, category: "tools", accent: "violet" },
-  { name: "Game Design", level: 80, category: "design", accent: "pink" },
-  { name: "FUDGE", level: 65, category: "engine", accent: "lime" },
 ];
