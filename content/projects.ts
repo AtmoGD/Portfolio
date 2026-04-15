@@ -8,8 +8,6 @@ import pumpkinHarvest from "@/assets/PumpkinHarvest@0.25x.png";
 import witchWay from "@/assets/WitchWay.png";
 import gravityPong from "@/assets/GravityPong.png";
 import bomberman from "@/assets/Bomb.png";
-import arcReactor from "@/assets/Arc.png";
-import mjolnir from "@/assets/Hammer.png";
 import profile from "@/assets/profile_compressed.jpg";
 
 export type ProjectContext =
@@ -174,42 +172,6 @@ export const projects: Project[] = [
     linkLabel: "play",
     descriptionKey: "projects.descriptions.gravityPong",
     accent: "lime",
-  },
-  {
-    slug: "arc-reactor",
-    title: "Arc Reactor",
-    coverImage: arcReactor,
-    year: 2020,
-    roleKey: "modeler",
-    teamSize: 1,
-    duration: "3 weeks",
-    context: "Student Project",
-    category: "model",
-    tagKeys: ["blender", "substancePainter", "studentProject"],
-    techKeys: ["blender", "substancePainter"],
-    externalLink:
-      "https://sketchfab.com/3d-models/arc-reactor-tony-stark-high-poly-7c57e1f6b3034194a1e3c8abb3a49df2",
-    linkLabel: "modelViewer",
-    descriptionKey: "projects.descriptions.arcReactor",
-    accent: "cyan",
-  },
-  {
-    slug: "mjolnir",
-    title: "Mjölnir",
-    coverImage: mjolnir,
-    year: 2020,
-    roleKey: "modeler",
-    teamSize: 1,
-    duration: "3 weeks",
-    context: "Student Project",
-    category: "model",
-    tagKeys: ["blender", "substancePainter", "studentProject"],
-    techKeys: ["blender", "substancePainter"],
-    externalLink:
-      "https://sketchfab.com/3d-models/thors-hammer-mjolnir-high-poly-b5ab1f0f032e40abbe33ef47e53cc7c0",
-    linkLabel: "modelViewer",
-    descriptionKey: "projects.descriptions.mjolnir",
-    accent: "amber",
   },
   {
     slug: "bomberman",

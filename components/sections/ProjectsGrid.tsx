@@ -10,8 +10,6 @@ import { cn } from "@/lib/cn";
 
 const FILTERS = [
   { key: "all", tagKeys: null },
-  { key: "games", tagKeys: null, category: "game" as const },
-  { key: "models", tagKeys: null, category: "model" as const },
   { key: "unity", tagKeys: ["unity"] },
   { key: "unreal", tagKeys: ["unreal"] },
   { key: "vr", tagKeys: ["vr", "ar"] },
@@ -27,7 +25,6 @@ export function ProjectsGrid() {
     const visible = cheating ? projects : projects.filter((p) => !p.secret);
     const f = FILTERS.find((ff) => ff.key === activeFilter);
     if (!f || f.key === "all") return visible;
-    if (f.category) return visible.filter((p) => p.category === f.category);
     if (f.tagKeys)
       return visible.filter((p) =>
         p.tagKeys.some((tag) => f.tagKeys!.includes(tag))
@@ -42,10 +39,6 @@ export function ProjectsGrid() {
           const label =
             filter.key === "all"
               ? t("projects.allFilter")
-              : filter.key === "games"
-              ? t("projects.gamesCategory")
-              : filter.key === "models"
-              ? t("projects.modelsCategory")
               : t(`tags.${filter.tagKeys![0]}`);
           const active = filter.key === activeFilter;
           return (
