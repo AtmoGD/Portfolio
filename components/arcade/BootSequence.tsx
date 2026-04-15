@@ -83,16 +83,23 @@ export function BootSequence() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
-          className="fixed inset-0 z-[200] bg-ink flex flex-col items-center justify-center p-6 grid-bg"
+          onClick={handleStart}
+          role="button"
+          tabIndex={0}
+          aria-label={t("hero.pressStart")}
+          className="fixed inset-0 z-[200] bg-ink flex flex-col items-center justify-center p-6 grid-bg cursor-pointer"
         >
           <button
-            onClick={handleSkip}
-            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest text-phosphor-dim hover:text-neon-cyan transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleSkip();
+            }}
+            className="absolute top-4 right-4 font-mono text-sm uppercase tracking-widest text-phosphor-dim hover:text-neon-cyan transition-colors font-bold"
           >
             {t("boot.skip")} ›
           </button>
 
-          <div className="max-w-2xl w-full font-mono text-sm sm:text-lg text-neon-cyan space-y-2">
+          <div className="max-w-2xl w-full font-mono text-sm sm:text-lg text-neon-cyan space-y-2 pointer-events-none">
             {lines.slice(0, lineIndex + 1).map((line, i) => (
               <div key={i} className="flex gap-2">
                 <span className="text-neon-pink">&gt;</span>
@@ -118,12 +125,19 @@ export function BootSequence() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              onClick={handleStart}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleStart();
+              }}
               className="mt-12 arcade-title text-xl sm:text-3xl text-neon-amber animate-blink hover:animate-none hover:text-neon-pink transition-colors"
             >
               {t("hero.pressStart")}
             </motion.button>
           )}
+
+          <span className="absolute bottom-6 font-mono text-xs uppercase tracking-widest text-phosphor-dim pointer-events-none">
+            click anywhere to start · enter · space
+          </span>
         </motion.div>
       )}
     </AnimatePresence>

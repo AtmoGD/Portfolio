@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next";
 import { usePreferences } from "@/lib/usePreferences";
 import { cn } from "@/lib/cn";
+import { unlock } from "@/lib/achievements";
 
 export function LanguageSwitch() {
   const { i18n } = useTranslation();
@@ -10,6 +11,7 @@ export function LanguageSwitch() {
   const current = hydrated ? prefs.language : i18n.language;
 
   function switchTo(lang: "de" | "en") {
+    if (current !== lang) unlock("bilingual");
     update({ language: lang });
     i18n.changeLanguage(lang);
   }
@@ -18,17 +20,17 @@ export function LanguageSwitch() {
     <div
       role="group"
       aria-label="Language"
-      className="inline-flex items-center gap-1 font-mono text-xs uppercase border-2 border-phosphor/20"
+      className="inline-flex items-center font-mono text-base uppercase border-2 border-phosphor/40"
     >
       {(["de", "en"] as const).map((lang) => (
         <button
           key={lang}
           onClick={() => switchTo(lang)}
           className={cn(
-            "px-2 py-1 transition-colors",
+            "px-3.5 py-2 transition-colors font-bold tracking-wider",
             current === lang
               ? "bg-neon-pink text-black"
-              : "text-phosphor-dim hover:text-neon-cyan"
+              : "text-phosphor hover:text-neon-cyan hover:bg-phosphor/5"
           )}
           aria-pressed={current === lang}
         >

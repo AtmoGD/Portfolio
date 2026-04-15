@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { SkillsPreview } from "@/components/sections/SkillsPreview";
+import { ConnectSection } from "@/components/sections/ConnectSection";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutSection />
       <FeaturedProjects />
       <SkillsPreview />
+      <ConnectSection />
       <ContactCta />
     </>
   );

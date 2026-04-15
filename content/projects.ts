@@ -10,6 +10,7 @@ import gravityPong from "@/assets/GravityPong.png";
 import bomberman from "@/assets/Bomb.png";
 import arcReactor from "@/assets/Arc.png";
 import mjolnir from "@/assets/Hammer.png";
+import profile from "@/assets/profile_compressed.jpg";
 
 export type ProjectContext =
   | "Master Thesis"
@@ -38,6 +39,7 @@ export type Project = {
   linkLabel: ProjectLinkKind;
   descriptionKey: string;
   featured?: boolean;
+  secret?: boolean;
   accent: "pink" | "cyan" | "amber" | "lime" | "violet";
 };
 
@@ -223,18 +225,36 @@ export const projects: Project[] = [
     descriptionKey: "projects.descriptions.mjolnir",
     accent: "amber",
   },
+  {
+    slug: "coffee-exe",
+    title: "Coffee.exe",
+    coverImage: profile,
+    year: new Date().getFullYear(),
+    roleKey: "soloDeveloper",
+    teamSize: 1,
+    duration: "28 years",
+    context: "Hobby",
+    category: "game",
+    tagKeys: ["hobby", "programming", "gameDesign"],
+    techKeys: ["programming", "gameDesign"],
+    externalLink: "mailto:dennishawran@gmail.com",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.coffeeExe",
+    secret: true,
+    accent: "violet",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
-export function getAdjacentProjects(slug: string) {
-  const idx = projects.findIndex((p) => p.slug === slug);
+export function getAdjacentProjects(slug: string, includeSecret = false) {
+  const pool = includeSecret ? projects : projects.filter((p) => !p.secret);
+  const idx = pool.findIndex((p) => p.slug === slug);
   if (idx === -1) return { prev: undefined, next: undefined };
-  const prev = idx > 0 ? projects[idx - 1] : projects[projects.length - 1];
-  const next =
-    idx < projects.length - 1 ? projects[idx + 1] : projects[0];
+  const prev = idx > 0 ? pool[idx - 1] : pool[pool.length - 1];
+  const next = idx < pool.length - 1 ? pool[idx + 1] : pool[0];
   return { prev, next };
 }
 

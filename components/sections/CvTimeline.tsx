@@ -14,11 +14,11 @@ import { cn } from "@/lib/cn";
 type IconKey = "school" | "college" | "desk" | "briefcase" | "wrench";
 
 const iconMap: Record<IconKey, React.ReactNode> = {
-  school: <GraduationCap className="w-4 h-4" />,
-  college: <BookOpen className="w-4 h-4" />,
-  desk: <Laptop className="w-4 h-4" />,
-  briefcase: <Briefcase className="w-4 h-4" />,
-  wrench: <Wrench className="w-4 h-4" />,
+  school: <GraduationCap className="w-3.5 h-3.5" />,
+  college: <BookOpen className="w-3.5 h-3.5" />,
+  desk: <Laptop className="w-3.5 h-3.5" />,
+  briefcase: <Briefcase className="w-3.5 h-3.5" />,
+  wrench: <Wrench className="w-3.5 h-3.5" />,
 };
 
 interface Entry {
@@ -60,7 +60,7 @@ export function CvTimeline({
   const a = accentClasses[accent];
 
   return (
-    <ol className="relative border-l-2 border-phosphor/20 ml-3 space-y-8">
+    <ol className="relative border-l-2 border-phosphor/20 ml-3 space-y-10">
       {entries.map((entry, i) => {
         const base = `${translationNamespace}.${entry.key}`;
         const title = t(`${base}.title`);
@@ -92,35 +92,37 @@ export function CvTimeline({
           >
             <span
               className={cn(
-                "absolute -left-[11px] top-1 flex items-center justify-center w-5 h-5 bg-ink border-2",
+                "absolute -left-[13px] top-1 flex items-center justify-center w-6 h-6 bg-ink border-2",
                 entry.highlight ? a.border : "border-phosphor/40",
                 entry.highlight && a.text
               )}
             >
               {iconMap[entry.icon]}
             </span>
-            <div className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
+            <div className="flex flex-col gap-1.5">
+              <span className="font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
                 {period}
               </span>
               <h3
                 className={cn(
-                  "arcade-title text-sm sm:text-base",
+                  "arcade-title text-base sm:text-lg",
                   entry.highlight ? a.text : "text-phosphor"
                 )}
               >
                 {institution}
               </h3>
-              <span className="text-sm text-phosphor/90">{title}</span>
+              <span className="text-base sm:text-lg text-phosphor">
+                {title}
+              </span>
               {description && (
-                <p className="text-xs text-phosphor-dim max-w-xl mt-1">
+                <p className="text-sm sm:text-base text-phosphor/80 max-w-xl mt-1 leading-relaxed">
                   {description}
                 </p>
               )}
               {grade && (
-                <span className="mt-1 inline-flex self-start items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
-                  <span className="w-1 h-1 bg-phosphor-dim" />
-                  {t("cv.skills")}: {grade}
+                <span className="mt-2 inline-flex self-start items-center gap-2 font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
+                  <span className="w-1.5 h-1.5 bg-phosphor-dim" />
+                  Note: {grade}
                 </span>
               )}
             </div>

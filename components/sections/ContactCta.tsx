@@ -16,21 +16,23 @@ export function ContactCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative border-2 border-neon-pink p-8 sm:p-12 bg-ink-100 shadow-neon-pink text-center"
+          className="relative border-2 border-neon-pink p-10 sm:p-14 bg-ink-100 shadow-neon-pink text-center"
         >
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-ink px-3">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-neon-pink">
-              ★ Final Boss ★
+          <div className="absolute -top-5 sm:-top-6 left-1/2 -translate-x-1/2 bg-ink px-4 py-1">
+            <span className="arcade-title text-base sm:text-lg text-neon-pink text-glow-pink inline-flex items-center gap-2 animate-pulse-slow">
+              <span className="text-neon-amber">★</span>
+              FINAL BOSS
+              <span className="text-neon-amber">★</span>
             </span>
           </div>
 
-          <Coffee className="w-10 h-10 text-neon-amber mx-auto mb-5 animate-pulse-slow" />
+          <Coffee className="w-14 h-14 text-neon-amber mx-auto mb-5 animate-pulse-slow" />
 
-          <h2 className="arcade-title text-xl sm:text-2xl md:text-3xl text-phosphor mb-4">
+          <h2 className="arcade-title text-2xl sm:text-3xl md:text-4xl text-phosphor text-glow-pink mb-5">
             {t("hero.cta.contact")}
           </h2>
 
-          <p className="text-phosphor-dim max-w-xl mx-auto mb-8 text-sm sm:text-base">
+          <p className="text-phosphor max-w-xl mx-auto mb-8 text-base sm:text-lg">
             Game jam idea, junior role, or just coffee — I reply quickly.
           </p>
 

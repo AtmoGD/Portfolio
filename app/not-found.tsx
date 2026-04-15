@@ -19,13 +19,13 @@ export default function NotFound() {
   return (
     <PageShell>
       <div className="flex flex-col items-center text-center gap-4 mb-10">
-        <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-neon-cyan">
+        <span className="font-mono text-sm sm:text-base uppercase tracking-[0.3em] text-neon-cyan font-bold">
           ERR_404
         </span>
         <h1 className="arcade-title text-3xl sm:text-5xl text-neon-pink text-glow-pink chromatic">
           {t("notFound.title")}
         </h1>
-        <p className="font-mono text-phosphor-dim max-w-xl">
+        <p className="font-mono text-base sm:text-lg text-phosphor-dim max-w-xl">
           {t("notFound.subtitle")}
         </p>
       </div>

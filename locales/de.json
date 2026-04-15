@@ -98,7 +98,8 @@
       "gravityPong": "Pong mit Schwerkraft — und einem ML-Agent als Gegner. Trainiert mit Unity ML-Agents, lernt eigenständig das Paddel zu steuern. Kleines Experiment, aber das Training zu debuggen war das echte Spiel.\n\nHobby-Projekt, komplett solo.",
       "bomberman": "Bomberman-Klon, gebaut in der FUDGE-Engine an der HFU. Kein fertiges Framework, jedes Gameplay-System from scratch.\n\nStudentenprojekt im Kurs „Entwicklung Interaktiver Anwendungen\", Team-Arbeit mit Fokus auf Grid-Logik und Bomb-Simulation.",
       "arcReactor": "3D-Modell — Tony Starks Arc Reactor, high-poly mit PBR-Texturen. Gebaut in Blender, texturiert in Substance Painter.\n\nStudienprojekt zu Game-Asset-Erstellung.",
-      "mjolnir": "3D-Modell — Thors Hammer, high-poly, PBR-Texturen mit Kratzern und Wear. Blender plus Substance Painter.\n\nStudienprojekt zu Game-Asset-Erstellung."
+      "mjolnir": "3D-Modell — Thors Hammer, high-poly, PBR-Texturen mit Kratzern und Wear. Blender plus Substance Painter.\n\nStudienprojekt zu Game-Asset-Erstellung.",
+      "coffeeExe": "Ein streng geheimes Long-Running-Projekt: Kaffee zuverlässig in lauffähigen Code konvertieren. Läuft seit 1996, crasht ohne Espresso, Performance steigt proportional zur Bohnenstärke.\n\nEinziges bekanntes Balancing-Issue: zu viel Zucker führt zu unerwünschten Features. Pull-Requests (in Bohnenform) willkommen."
     }
   },
   "cv": {
@@ -227,29 +228,64 @@
     "konamiHint": "Psst — versuch mal den Konami-Code"
   },
   "achievements": {
+    "hubTitle": "Achievements",
+    "unlocked": "Freigeschaltet",
+    "locked": "Gesperrt",
+    "progress": "{{found}} / {{total}} entdeckt",
+    "tooltipNone": "Noch keine — auf gehts!",
+    "tooltipSome": "{{missing}} fehlen noch",
+    "tooltipAll": "Alle gefunden!",
+    "viewAll": "Alle ansehen",
+    "close": "Schließen",
     "firstVisit": {
       "title": "First Contact",
-      "desc": "Du hast dich eingeloggt!"
+      "desc": "Du hast dich eingeloggt!",
+      "hint": "Einfach vorbeischauen."
     },
     "scrolledAbout": {
-      "title": "Get to know",
-      "desc": "About-Me bis zum Ende gelesen."
+      "title": "Get To Know",
+      "desc": "About-Me bis zum Ende gelesen.",
+      "hint": "Lies bis zum letzten Wort."
     },
     "openedProject": {
       "title": "Curious Recruiter",
-      "desc": "Erstes Projekt im Detail angeschaut."
+      "desc": "Erstes Projekt im Detail angeschaut.",
+      "hint": "Schau dir was genauer an."
     },
     "visitedCv": {
       "title": "Resume Reader",
-      "desc": "Den Lebenslauf geöffnet."
+      "desc": "Den Lebenslauf geöffnet.",
+      "hint": "Checke das Character Sheet."
     },
     "konami": {
       "title": "Cheat Activated",
-      "desc": "Du kennst deine Cheat-Codes."
+      "desc": "Du kennst deine Cheat-Codes.",
+      "hint": "Ein klassischer Cheat-Code funktioniert hier noch."
     },
     "found404": {
-      "title": "Lost in Space",
-      "desc": "Eine Seite gefunden, die es nicht gibt."
+      "title": "Lost In Space",
+      "desc": "Eine Seite gefunden, die es nicht gibt.",
+      "hint": "Biege falsch ab."
+    },
+    "bilingual": {
+      "title": "Bilingual",
+      "desc": "Sprache gewechselt.",
+      "hint": "Sprichst du beides?"
+    },
+    "arcadeJunkie": {
+      "title": "Arcade Junkie",
+      "desc": "Über 200 Punkte im 404-Mini-Game.",
+      "hint": "Geh für den High Score."
+    },
+    "retroMode": {
+      "title": "Retro Mode",
+      "desc": "Den CRT-Effekt umgeschaltet.",
+      "hint": "Knöpfchen drücken lohnt sich."
+    },
+    "avatarFlipper": {
+      "title": "Avatar Flipper",
+      "desc": "Das Profilbild dreimal gewechselt.",
+      "hint": "Klick mich. Nochmal. Und nochmal."
     }
   },
   "notFound": {

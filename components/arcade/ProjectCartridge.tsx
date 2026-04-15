@@ -79,7 +79,7 @@ export function ProjectCartridge({
           <div className="absolute top-3 right-3">
             <span
               className={cn(
-                "font-mono text-xs px-2 py-0.5 bg-black/70 border",
+                "font-mono text-base font-bold px-3 py-1 bg-black/75 border-2",
                 accentText[project.accent],
                 accentBorder[project.accent]
               )}
@@ -111,10 +111,10 @@ export function ProjectCartridge({
               <Badge key={tag}>{t(`tags.${tag}`)}</Badge>
             ))}
           </div>
-          <div className="mt-1 flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-wider text-phosphor-dim">
+          <div className="mt-1 flex items-center gap-3 font-mono text-base uppercase tracking-wider text-phosphor font-semibold">
             <span>{t(`projects.roles.${project.roleKey}`)}</span>
-            <span className="w-1 h-1 bg-phosphor-dim/50" />
-            <span>
+            <span className="w-1.5 h-1.5 bg-neon-cyan" />
+            <span className="text-phosphor-dim">
               {project.teamSize === 1
                 ? "Solo"
                 : `${project.teamSize} devs`}

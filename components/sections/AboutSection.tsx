@@ -85,13 +85,13 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className={`bg-ink-100 border-2 p-4 sm:p-5 flex flex-col gap-2 ${accentClasses[stat.accent]}`}
+                className={`bg-ink-100 border-2 p-5 sm:p-6 flex flex-col gap-3 ${accentClasses[stat.accent]}`}
               >
-                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest">
+                <div className="flex items-center gap-2 font-mono text-xs sm:text-sm uppercase tracking-widest font-bold">
                   {stat.icon}
                   {t(`about.stats.${stat.key}`)}
                 </div>
-                <span className="arcade-title text-2xl sm:text-3xl">
+                <span className="arcade-title text-3xl sm:text-4xl">
                   {stat.value}
                 </span>
               </motion.div>

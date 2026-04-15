@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { unlock } from "@/lib/achievements";
+import { useCheatMode } from "@/lib/useCheatMode";
 
 const accentText = {
   pink: "text-neon-pink",
@@ -60,17 +61,20 @@ export default function ProjectDetailPage() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug;
   const project = slug ? getProject(slug) : undefined;
+  const cheating = useCheatMode();
 
   useEffect(() => {
-    if (project) unlock("openedProject");
-  }, [project]);
+    if (project && !(project.secret && !cheating)) {
+      unlock("openedProject");
+    }
+  }, [project, cheating]);
 
-  if (!project) {
+  if (!project || (project.secret && !cheating)) {
     if (typeof window !== "undefined") notFound();
     return null;
   }
 
-  const { prev, next } = getAdjacentProjects(project.slug);
+  const { prev, next } = getAdjacentProjects(project.slug, cheating);
   const description = t(project.descriptionKey);
   const paragraphs = description.split(/\n\n+/);
 
@@ -119,7 +123,7 @@ export default function ProjectDetailPage() {
             <div className="mx-auto max-w-7xl px-5 sm:px-8 pb-10 w-full">
               <Link
                 href={"/projects" as any}
-                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-phosphor-dim hover:text-neon-cyan mb-4"
+                className="inline-flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-phosphor hover:text-neon-cyan mb-4 font-bold"
               >
                 <ArrowLeft className="w-4 h-4" />
                 {t("projects.backToAll")}
@@ -150,7 +154,7 @@ export default function ProjectDetailPage() {
           <div className="space-y-5">
             <p
               className={cn(
-                "font-display text-xs uppercase tracking-widest",
+                "font-display text-sm sm:text-base uppercase tracking-widest",
                 accentText[project.accent]
               )}
             >
@@ -182,40 +186,45 @@ export default function ProjectDetailPage() {
 
           <aside
             className={cn(
-              "bg-ink-100 border-2 p-5 sm:p-6 w-full lg:w-72 flex flex-col gap-4",
+              "bg-ink-100 border-2 p-6 sm:p-8 w-full lg:w-[22rem] flex flex-col gap-6",
               accentBorder[project.accent]
             )}
           >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
+            <span
+              className={cn(
+                "font-mono text-base sm:text-lg uppercase tracking-widest font-bold",
+                accentText[project.accent]
+              )}
+            >
               ▸ Project Info
             </span>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-5">
               {meta.map((m) => (
                 <li key={m.label} className="flex items-start gap-3">
                   <span
                     className={cn(
-                      "mt-0.5 shrink-0",
+                      "mt-1 shrink-0",
                       accentText[project.accent]
                     )}
                   >
                     {m.icon}
                   </span>
-                  <div className="flex flex-col">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
                       {m.label}
                     </span>
-                    <span className="font-mono text-sm text-phosphor">
+                    <span className="font-mono text-lg text-phosphor font-bold">
                       {m.value}
                     </span>
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="border-t border-phosphor/10 pt-4">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim mb-2 block">
+            <div className="border-t-2 border-phosphor/15 pt-5">
+              <span className="font-mono text-sm uppercase tracking-widest text-phosphor font-bold mb-3 block">
                 {t("projects.tech")}
               </span>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {project.techKeys.map((tk) => (
                   <Badge key={tk}>{t(`tags.${tk}`)}</Badge>
                 ))}
@@ -231,12 +240,12 @@ export default function ProjectDetailPage() {
                 href={`/projects/${prev.slug}` as any}
                 className="group bg-ink-100 border-2 border-phosphor/20 hover:border-neon-cyan p-5 flex items-center gap-4 transition-colors"
               >
-                <ArrowLeft className="w-5 h-5 text-phosphor-dim group-hover:text-neon-cyan group-hover:-translate-x-1 transition-all" />
-                <div className="flex flex-col">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
+                <ArrowLeft className="w-6 h-6 text-phosphor-dim group-hover:text-neon-cyan group-hover:-translate-x-1 transition-all" />
+                <div className="flex flex-col gap-0.5">
+                  <span className="font-mono text-xs uppercase tracking-widest text-phosphor-dim font-bold">
                     {t("projects.prevProject")}
                   </span>
-                  <span className="arcade-title text-sm text-phosphor group-hover:text-neon-cyan">
+                  <span className="arcade-title text-base text-phosphor group-hover:text-neon-cyan">
                     {prev.title}
                   </span>
                 </div>
@@ -247,15 +256,15 @@ export default function ProjectDetailPage() {
                 href={`/projects/${next.slug}` as any}
                 className="group bg-ink-100 border-2 border-phosphor/20 hover:border-neon-pink p-5 flex items-center gap-4 justify-end text-right transition-colors sm:ml-auto w-full"
               >
-                <div className="flex flex-col">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
+                <div className="flex flex-col gap-0.5">
+                  <span className="font-mono text-xs uppercase tracking-widest text-phosphor-dim font-bold">
                     {t("projects.nextProject")}
                   </span>
-                  <span className="arcade-title text-sm text-phosphor group-hover:text-neon-pink">
+                  <span className="arcade-title text-base text-phosphor group-hover:text-neon-pink">
                     {next.title}
                   </span>
                 </div>
-                <ArrowRight className="w-5 h-5 text-phosphor-dim group-hover:text-neon-pink group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-6 h-6 text-phosphor-dim group-hover:text-neon-pink group-hover:translate-x-1 transition-all" />
               </Link>
             )}
           </section>

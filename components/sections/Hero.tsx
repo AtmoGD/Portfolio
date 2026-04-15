@@ -3,16 +3,57 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ArrowDown, Coffee, MapPin, Sparkles } from "lucide-react";
+import {
+  ArrowDown,
+  Coffee,
+  FileText,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Sparkles,
+  Gamepad2,
+} from "lucide-react";
 import profileImg from "@/assets/profile_compressed.jpg";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+import { unlock } from "@/lib/achievements";
+
+const HERO_SOCIALS = [
+  {
+    href: "mailto:dennishawran@gmail.com",
+    label: "Email",
+    icon: Mail,
+  },
+  {
+    href: "https://github.com/AtmoGD",
+    label: "GitHub",
+    icon: Github,
+  },
+  {
+    href: "https://atmogd.itch.io/",
+    label: "itch.io",
+    icon: Gamepad2,
+  },
+  {
+    href: "https://www.linkedin.com/in/dennis-hawran-30497b19a/",
+    label: "LinkedIn",
+    icon: Linkedin,
+  },
+] as const;
 
 export function Hero() {
   const { t } = useTranslation();
   const [pixel, setPixel] = useState(false);
+  const flipCountRef = useRef(0);
+
+  function flipAvatar() {
+    setPixel((p) => !p);
+    flipCountRef.current += 1;
+    if (flipCountRef.current >= 3) unlock("avatarFlipper");
+  }
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden border-b-2 border-phosphor/10">
@@ -26,7 +67,7 @@ export function Hero() {
           className="flex flex-col items-center md:items-start gap-4"
         >
           <button
-            onClick={() => setPixel((p) => !p)}
+            onClick={flipAvatar}
             aria-label="Toggle avatar style"
             className="group relative"
           >
@@ -70,13 +111,29 @@ export function Hero() {
                 <div className="absolute inset-0 pointer-events-none mix-blend-overlay bg-scanline-overlay" />
               )}
             </div>
-            <span className="absolute -bottom-2 -right-2 bg-ink border-2 border-neon-cyan text-neon-cyan px-2 py-1 font-mono text-[10px] uppercase tracking-wider">
+            <span className="absolute -bottom-2 -right-2 bg-ink border-2 border-neon-cyan text-neon-cyan px-2 py-1 font-mono text-xs uppercase tracking-wider font-bold">
               {pixel ? "RAW" : "8-BIT"}
             </span>
           </button>
-          <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-phosphor-dim">
-            <MapPin className="w-4 h-4" />
+          <div className="flex items-center gap-2 font-mono text-base text-phosphor">
+            <MapPin className="w-5 h-5 text-neon-cyan" />
             {t("hero.location")}
+          </div>
+
+          <div className="flex items-center gap-2" aria-label="Social links">
+            {HERO_SOCIALS.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className="w-11 h-11 border-2 border-phosphor/30 text-phosphor hover:text-neon-cyan hover:border-neon-cyan hover:shadow-neon-cyan hover:-translate-y-0.5 flex items-center justify-center transition-all"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
         </motion.div>
 
@@ -86,12 +143,12 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.12 }}
           className="flex flex-col gap-5"
         >
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-2 px-3 py-1 border-2 border-neon-lime text-neon-lime font-mono text-[11px] uppercase tracking-widest">
-              <span className="w-2 h-2 bg-neon-lime animate-pulse-slow" />
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-neon-lime text-neon-lime font-mono text-sm uppercase tracking-widest font-bold">
+              <span className="w-2.5 h-2.5 bg-neon-lime animate-pulse-slow" />
               {t("hero.status")}
             </span>
-            <span className="hidden sm:inline font-mono text-[11px] uppercase tracking-widest text-phosphor-dim">
+            <span className="hidden sm:inline font-mono text-sm uppercase tracking-widest text-phosphor-dim">
               {t("hero.pressStart")}
             </span>
           </div>
@@ -112,24 +169,25 @@ export function Hero() {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-3 mt-4">
-            <Link href={"/projects" as any}>
-              <Button variant="primary" size="lg">
+          <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-3 mt-4">
+            <Link href={"/projects" as any} className="w-full sm:w-auto">
+              <Button variant="primary" size="lg" className="w-full sm:w-auto">
                 <Sparkles className="w-4 h-4" />
                 {t("hero.cta.viewProjects")}
               </Button>
             </Link>
-            <Link href={"/cv" as any}>
-              <Button variant="outline" size="lg">
-                {t("hero.cta.readCv")}
-              </Button>
-            </Link>
-            <a href="mailto:dennishawran@gmail.com">
-              <Button variant="cyan" size="lg">
+            <a href="mailto:dennishawran@gmail.com" className="w-full sm:w-auto">
+              <Button variant="cyan" size="lg" className="w-full sm:w-auto">
                 <Coffee className="w-4 h-4" />
                 {t("hero.cta.contact")}
               </Button>
             </a>
+            <Link href={"/cv" as any} className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                <FileText className="w-4 h-4" />
+                {t("hero.cta.readCv")}
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -138,10 +196,10 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-phosphor-dim font-mono text-[10px] uppercase tracking-widest"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-phosphor-dim font-mono text-xs uppercase tracking-widest"
       >
         {t("hero.scrollHint")}
-        <ArrowDown className="w-4 h-4 animate-bounce-slow" />
+        <ArrowDown className="w-5 h-5 animate-bounce-slow" />
       </motion.div>
     </section>
   );

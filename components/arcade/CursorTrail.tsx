@@ -29,10 +29,20 @@ export function CursorTrail() {
     if (!ctx) return;
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const w = Math.min(
+        window.innerWidth,
+        document.documentElement.clientWidth
+      );
+      const h = Math.min(
+        window.innerHeight,
+        document.documentElement.clientHeight
+      );
+      canvas.width = w;
+      canvas.height = h;
     };
     resize();
+    // Re-run after paint to catch DevTools device-mode switches that don't fire resize.
+    const raf = requestAnimationFrame(resize);
     window.addEventListener("resize", resize);
 
     const onMove = (e: MouseEvent) => {
@@ -62,6 +72,7 @@ export function CursorTrail() {
     rafRef.current = requestAnimationFrame(tick);
 
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMove);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -74,6 +85,7 @@ export function CursorTrail() {
       ref={canvasRef}
       aria-hidden="true"
       className="fixed inset-0 pointer-events-none z-[95]"
+      style={{ width: "100vw", height: "100vh", maxWidth: "100%" }}
     />
   );
 }

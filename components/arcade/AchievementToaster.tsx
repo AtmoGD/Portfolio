@@ -22,20 +22,20 @@ export function AchievementToaster() {
             animate={{ opacity: 1, y: 0, x: 0 }}
             exit={{ opacity: 0, x: 40 }}
             transition={{ type: "spring", stiffness: 240, damping: 22 }}
-            className="pointer-events-auto max-w-sm bg-ink-100 border-2 border-neon-amber shadow-neon-amber p-4 flex items-center gap-3"
+            className="pointer-events-auto max-w-sm bg-ink-100 border-2 border-neon-amber shadow-neon-amber p-5 flex items-center gap-4"
             onClick={() => dismissToast(toast.id)}
           >
-            <div className="shrink-0 w-10 h-10 bg-neon-amber/20 flex items-center justify-center">
-              <Trophy className="w-5 h-5 text-neon-amber" />
+            <div className="shrink-0 w-12 h-12 bg-neon-amber/20 flex items-center justify-center">
+              <Trophy className="w-6 h-6 text-neon-amber" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-phosphor-dim">
+            <div className="flex flex-col gap-0.5">
+              <span className="font-mono text-xs uppercase tracking-widest text-phosphor-dim font-bold">
                 {t("cookieToast.text")}
               </span>
-              <span className="font-display text-sm text-neon-amber">
+              <span className="font-display text-sm sm:text-base text-neon-amber">
                 {t(`achievements.${toast.id as AchievementId}.title`)}
               </span>
-              <span className="text-xs text-phosphor-dim mt-1">
+              <span className="text-sm text-phosphor-dim mt-1">
                 {t(`achievements.${toast.id as AchievementId}.desc`)}
               </span>
             </div>

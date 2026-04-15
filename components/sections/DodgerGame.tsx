@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/Button";
+import { unlock } from "@/lib/achievements";
 
 type State = "idle" | "running" | "over";
 
@@ -112,6 +113,7 @@ export function DodgerGame() {
               setHighScore(final);
               localStorage.setItem("dodger.highScore", String(final));
             }
+            if (final >= 200) unlock("arcadeJunkie");
             return final;
           });
           return;
@@ -162,20 +164,20 @@ export function DodgerGame() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="flex items-center gap-6 font-mono text-sm">
+      <div className="flex items-center gap-8 font-mono">
         <div>
-          <span className="text-phosphor-dim text-[10px] uppercase tracking-widest block">
+          <span className="text-phosphor-dim text-xs uppercase tracking-widest block font-bold">
             {t("notFound.score")}
           </span>
-          <span className="text-neon-pink text-2xl arcade-title">
+          <span className="text-neon-pink text-3xl arcade-title">
             {String(score).padStart(4, "0")}
           </span>
         </div>
         <div>
-          <span className="text-phosphor-dim text-[10px] uppercase tracking-widest block">
+          <span className="text-phosphor-dim text-xs uppercase tracking-widest block font-bold">
             {t("notFound.highScore")}
           </span>
-          <span className="text-neon-amber text-2xl arcade-title">
+          <span className="text-neon-amber text-3xl arcade-title">
             {String(highScore).padStart(4, "0")}
           </span>
         </div>
@@ -199,7 +201,7 @@ export function DodgerGame() {
             <Button variant="primary" size="md" onClick={start}>
               {state === "over" ? t("notFound.restart") : t("notFound.start")}
             </Button>
-            <span className="font-mono text-xs text-phosphor-dim max-w-[260px]">
+            <span className="font-mono text-sm text-phosphor-dim max-w-[280px]">
               {t("notFound.instructions")}
             </span>
           </div>

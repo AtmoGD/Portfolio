@@ -45,13 +45,13 @@ export function SectionTitle({
       {kicker && (
         <div
           className={cn(
-            "inline-flex items-center gap-3 font-mono text-xs sm:text-sm uppercase tracking-[0.35em]",
+            "inline-flex items-center gap-3 font-mono text-base sm:text-lg uppercase tracking-[0.3em] font-bold",
             accentClasses[accent]
           )}
         >
-          <span className="inline-block w-8 h-[2px] bg-current" />
+          <span className="inline-block w-10 h-[3px] bg-current" />
           {kicker}
-          <span className="inline-block w-8 h-[2px] bg-current" />
+          <span className="inline-block w-10 h-[3px] bg-current" />
         </div>
       )}
       <h2

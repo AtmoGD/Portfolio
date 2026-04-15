@@ -27,7 +27,7 @@ export default function CvPage() {
 
       <div className="mt-12 grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
         <section className="space-y-5">
-          <h2 className="arcade-title text-lg text-neon-pink">
+          <h2 className="arcade-title text-lg sm:text-xl text-neon-pink">
             ▸ {t("cv.skills")}
           </h2>
           <div className="space-y-4">
@@ -44,7 +44,7 @@ export default function CvPage() {
 
         <div className="space-y-16">
           <section>
-            <h2 className="arcade-title text-lg text-neon-cyan mb-6">
+            <h2 className="arcade-title text-lg sm:text-xl text-neon-cyan mb-6">
               ▸ {t("cv.education")}
             </h2>
             <CvTimeline
@@ -55,7 +55,7 @@ export default function CvPage() {
           </section>
 
           <section>
-            <h2 className="arcade-title text-lg text-neon-amber mb-6">
+            <h2 className="arcade-title text-lg sm:text-xl text-neon-amber mb-6">
               ▸ {t("cv.work")}
             </h2>
             <CvTimeline
