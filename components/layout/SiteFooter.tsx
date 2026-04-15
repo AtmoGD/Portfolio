@@ -79,7 +79,7 @@ export function SiteFooter() {
               label={t("footer.toggleCrt")}
               value={hydrated ? prefs.crt : false}
               onChange={(v) => {
-                if (v) unlock("retroMode");
+                unlock("retroMode");
                 update({ crt: v });
               }}
               labelOn={t("footer.on")}

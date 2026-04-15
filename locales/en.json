@@ -279,9 +279,9 @@
       "hint": "Go for a high score."
     },
     "retroMode": {
-      "title": "Retro Mode",
-      "desc": "Toggled the CRT effect.",
-      "hint": "Flipping switches is worth it."
+      "title": "Clear View",
+      "desc": "You discovered the display mode.",
+      "hint": "There's a way to tune the picture somewhere."
     },
     "avatarFlipper": {
       "title": "Avatar Flipper",
