@@ -26,19 +26,19 @@ export function AboutSection() {
     },
     {
       key: "gameJams",
-      value: "12+",
+      value: "10",
       icon: <Zap className="w-4 h-4" />,
       accent: "amber" as const,
     },
     {
       key: "yearsCoding",
-      value: "8",
+      value: "6",
       icon: <Code2 className="w-4 h-4" />,
       accent: "cyan" as const,
     },
     {
-      key: "projectsShipped",
-      value: "10",
+      key: "projectsBuilt",
+      value: "20",
       icon: <Rocket className="w-4 h-4" />,
       accent: "lime" as const,
     },
