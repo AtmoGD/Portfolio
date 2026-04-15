@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ArrowDown,
+  Box,
   Coffee,
   FileText,
   Github,
@@ -36,6 +37,11 @@ const HERO_SOCIALS = [
     href: "https://atmogd.itch.io/",
     label: "itch.io",
     icon: Gamepad2,
+  },
+  {
+    href: "https://sketchfab.com/atmo_gd",
+    label: "Sketchfab",
+    icon: Box,
   },
   {
     href: "https://www.linkedin.com/in/dennis-hawran-30497b19a/",

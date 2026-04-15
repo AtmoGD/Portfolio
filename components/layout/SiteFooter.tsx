@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Github, Mail, Gamepad2, Linkedin, RotateCcw } from "lucide-react";
+import { Github, Mail, Gamepad2, Linkedin, RotateCcw, Box } from "lucide-react";
 import { usePreferences } from "@/lib/usePreferences";
 import { unlock } from "@/lib/achievements";
 import { cn } from "@/lib/cn";
@@ -26,6 +26,11 @@ export function SiteFooter() {
       href: "https://atmogd.itch.io/",
       label: "itch.io",
       icon: <Gamepad2 className="w-4 h-4" />,
+    },
+    {
+      href: "https://sketchfab.com/atmo_gd",
+      label: "Sketchfab",
+      icon: <Box className="w-4 h-4" />,
     },
     {
       href: "https://www.linkedin.com/in/dennis-hawran-30497b19a/",

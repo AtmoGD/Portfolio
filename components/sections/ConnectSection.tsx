@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import {
   ArrowUpRight,
+  Box,
   Gamepad2,
   Github,
   Linkedin,
@@ -13,7 +14,7 @@ import {
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { cn } from "@/lib/cn";
 
-type Accent = "pink" | "cyan" | "amber" | "violet";
+type Accent = "pink" | "cyan" | "amber" | "violet" | "lime";
 
 const LINKS: {
   href: string;
@@ -57,6 +58,17 @@ const LINKS: {
     },
   },
   {
+    href: "https://sketchfab.com/atmo_gd",
+    label: "Sketchfab",
+    handle: "@atmo_gd",
+    icon: Box,
+    accent: "lime",
+    desc: {
+      en: "3D models, turntable-ready.",
+      de: "3D-Modelle zum Rundum-Ansehen.",
+    },
+  },
+  {
     href: "https://www.linkedin.com/in/dennis-hawran-30497b19a/",
     label: "LinkedIn",
     handle: "Dennis Hawran",
@@ -75,6 +87,7 @@ const accentBorder: Record<Accent, string> = {
   amber: "hover:border-neon-amber hover:shadow-neon-amber",
   violet:
     "hover:border-neon-violet hover:shadow-[0_0_20px_rgba(185,103,255,0.5)]",
+  lime: "hover:border-neon-lime hover:shadow-[0_0_20px_rgba(155,255,107,0.5)]",
 };
 
 const accentText: Record<Accent, string> = {
@@ -82,6 +95,7 @@ const accentText: Record<Accent, string> = {
   cyan: "text-neon-cyan",
   amber: "text-neon-amber",
   violet: "text-neon-violet",
+  lime: "text-neon-lime",
 };
 
 const accentBg: Record<Accent, string> = {
@@ -89,6 +103,7 @@ const accentBg: Record<Accent, string> = {
   cyan: "bg-neon-cyan/10",
   amber: "bg-neon-amber/10",
   violet: "bg-neon-violet/10",
+  lime: "bg-neon-lime/10",
 };
 
 export function ConnectSection() {
@@ -105,7 +120,7 @@ export function ConnectSection() {
           align="center"
         />
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {LINKS.map((link, i) => {
             const Icon = link.icon;
             return (
