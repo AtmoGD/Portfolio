@@ -148,7 +148,7 @@ export const projects: Project[] = [
     year: 2021,
     roleKey: "gameplayProgrammer",
     teamSize: 3,
-    duration: "3 weeks",
+    duration: "2 days (jam)",
     context: "Student Project",
     category: "game",
     tagKeys: ["unity", "arcade", "gameJam", "studentProject"],
