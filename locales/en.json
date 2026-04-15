@@ -128,7 +128,7 @@
         "institution": "Augsburg University of Applied Sciences",
         "title": "M.A. Interactive Media Systems / Game Development",
         "period": "2022 — 2024",
-        "grade": "1.4"
+        "grade": "1.5"
       },
       "furtwangen": {
         "institution": "Furtwangen University",
@@ -153,11 +153,6 @@
         "title": "Secondary School",
         "period": "2004 — 2011",
         "grade": "2.4"
-      },
-      "primary": {
-        "institution": "Schiller School Rheinfelden",
-        "title": "Primary School",
-        "period": "2001 — 2004"
       }
     },
     "workEntries": {

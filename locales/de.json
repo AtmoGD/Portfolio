@@ -128,7 +128,7 @@
         "institution": "Technische Hochschule Augsburg",
         "title": "M.A. Interaktive Mediensysteme / Game Development",
         "period": "2022 — 2024",
-        "grade": "1.4"
+        "grade": "1.5"
       },
       "furtwangen": {
         "institution": "Hochschule Furtwangen",
@@ -153,11 +153,6 @@
         "title": "Hauptschulabschluss",
         "period": "2004 — 2011",
         "grade": "2.4"
-      },
-      "primary": {
-        "institution": "Schillerschule Rheinfelden",
-        "title": "Grundschule",
-        "period": "2001 — 2004"
       }
     },
     "workEntries": {

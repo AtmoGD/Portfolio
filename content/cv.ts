@@ -16,7 +16,6 @@ export const education: CvEducation[] = [
   { key: "vocational", icon: "college" },
   { key: "apprenticeship", icon: "college" },
   { key: "secondary", icon: "college" },
-  { key: "primary", icon: "college" },
 ];
 
 export const work: CvWork[] = [
