@@ -169,19 +169,21 @@ export default function ProjectDetailPage() {
               </p>
             ))}
 
-            <div className="pt-4">
-              <a
-                href={project.externalLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant={project.accent === "pink" ? "primary" : "cyan"} size="lg">
-                  <ExternalLink className="w-4 h-4" />
-                  {t(`projects.linkLabels.${project.linkLabel}`)}
-                  <ArrowUpRight className="w-4 h-4" />
-                </Button>
-              </a>
-            </div>
+            {project.externalLink && project.linkLabel && (
+              <div className="pt-4">
+                <a
+                  href={project.externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant={project.accent === "pink" ? "primary" : "cyan"} size="lg">
+                    <ExternalLink className="w-4 h-4" />
+                    {t(`projects.linkLabels.${project.linkLabel}`)}
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Button>
+                </a>
+              </div>
+            )}
           </div>
 
           <aside

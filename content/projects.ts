@@ -35,8 +35,10 @@ export type Project = {
   category: ProjectCategory;
   tagKeys: string[];
   techKeys: string[];
-  externalLink: string;
-  linkLabel: ProjectLinkKind;
+  /** Optional external link (itch.io, Sketchfab, download, etc.). Omit when
+   *  the only external destination is a trailer that's already embedded. */
+  externalLink?: string;
+  linkLabel?: ProjectLinkKind;
   descriptionKey: string;
   /** YouTube embed URL, e.g. https://www.youtube.com/embed/VIDEO_ID */
   trailerUrl?: string;
@@ -83,8 +85,6 @@ export const projects: Project[] = [
     category: "game",
     tagKeys: ["unreal", "vr", "bachelorThesis", "hardware"],
     techKeys: ["unreal", "vr", "hardware", "programming"],
-    externalLink: "https://youtu.be/Wh6ieci--3E",
-    linkLabel: "gameplayTeaser",
     descriptionKey: "projects.descriptions.oasis",
     trailerUrl: "https://www.youtube.com/embed/Wh6ieci--3E",
     featured: true,
@@ -95,16 +95,15 @@ export const projects: Project[] = [
     title: "Aurea",
     coverImage: aurea,
     year: 2021,
-    roleKey: "programmerDesigner",
-    teamSize: 3,
-    duration: "4 months",
+    roleKey: "gameplayProgrammer",
+    teamSize: 6,
+    duration: "2 semesters",
     context: "Student Project",
     category: "game",
     tagKeys: ["unity", "ar", "multiplayer", "studentProject"],
     techKeys: ["unity", "programming", "gameDesign", "ar"],
-    externalLink: "https://www.youtube.com/watch?v=t9RwqJnLjy8",
-    linkLabel: "gameplayTeaser",
     descriptionKey: "projects.descriptions.aurea",
+    trailerUrl: "https://www.youtube.com/embed/t9RwqJnLjy8",
     featured: true,
     accent: "amber",
   },
