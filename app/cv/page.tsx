@@ -2,10 +2,8 @@
 
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Download } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { Button } from "@/components/ui/Button";
 import { CvTimeline } from "@/components/sections/CvTimeline";
 import { ExpBar } from "@/components/arcade/ExpBar";
 import { skills } from "@/content/skills";
@@ -21,23 +19,11 @@ export default function CvPage() {
 
   return (
     <PageShell>
-      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-        <SectionTitle
-          kicker={t("cv.subtitle")}
-          title={t("cv.title")}
-          accent="amber"
-        />
-        <a
-          href="/cv/print?print=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" size="md">
-            <Download className="w-4 h-4" />
-            {t("cv.downloadPdf")}
-          </Button>
-        </a>
-      </div>
+      <SectionTitle
+        kicker={t("cv.subtitle")}
+        title={t("cv.title")}
+        accent="amber"
+      />
 
       <div className="mt-12 grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
         <section className="space-y-5">

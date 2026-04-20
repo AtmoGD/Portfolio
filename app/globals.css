@@ -137,48 +137,6 @@ html {
   z-index: 101;
 }
 
-/* ===== Print ===== */
-@media print {
-  @page {
-    size: A4;
-    margin: 12mm;
-  }
-
-  /* Force ink-friendly background/colors on the printed sheet. */
-  html,
-  body {
-    background: #ffffff !important;
-    color: #15151c !important;
-  }
-
-  /* Hide global chrome when printing. The CV print page stands alone. */
-  body > header,
-  body > footer,
-  .crt-overlay,
-  [data-hide-print],
-  [aria-hidden="true"] {
-    display: none !important;
-  }
-
-  /* Don't fade/animate anything during the print snapshot. */
-  * {
-    animation: none !important;
-    transition: none !important;
-    text-shadow: none !important;
-    box-shadow: none !important;
-  }
-
-  /* Trim the print page's outer padding so the sheet sits right at the margin. */
-  .cv-print-page {
-    padding: 0 !important;
-    background: #ffffff !important;
-  }
-  .cv-print-sheet {
-    padding: 0 !important;
-    max-width: 100% !important;
-  }
-}
-
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
