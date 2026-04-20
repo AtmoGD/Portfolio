@@ -17,7 +17,7 @@ import {
   Sparkles,
   Gamepad2,
 } from "lucide-react";
-import dennisRaw from "@/assets/Dennis.JPG";
+import dennisRaw from "@/assets/Dennis.jpg";
 import dennis8bit from "@/assets/Dennis_8Bit.png";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
