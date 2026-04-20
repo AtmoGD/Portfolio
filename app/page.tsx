@@ -7,9 +7,9 @@ import { ConnectSection } from "@/components/sections/ConnectSection";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { LazyMount } from "@/components/ui/LazyMount";
 
-// ProjectWheel bundles the ~49-entry galleryImages metadata map; code-splitting
-// it keeps that weight out of the initial landing-page bundle. LazyMount then
-// defers the actual mount (and its JS chunk fetch) until the user scrolls near.
+// Split ProjectWheel into its own JS chunk + defer mount until the user
+// scrolls near it — keeps the ~49-image metadata map out of the initial
+// landing-page bundle.
 const ProjectWheel = dynamic(
   () => import("@/components/sections/ProjectWheel"),
   { ssr: false },
@@ -19,11 +19,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <AboutSection />
-      <FeaturedProjects />
-      <LazyMount placeholderClassName="min-h-[620px] sm:min-h-[680px]">
+      <LazyMount placeholderClassName="min-h-[640px] sm:min-h-[720px]">
         <ProjectWheel />
       </LazyMount>
+      <AboutSection />
+      <FeaturedProjects />
       <SkillsPreview />
       <ConnectSection />
       <ContactCta />
