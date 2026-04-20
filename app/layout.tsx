@@ -43,8 +43,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dennis-hawran.dev"),
   title: "Dennis Hawran — Gameplay Programmer",
   description:
-    "Portfolio of Dennis Hawran — Gameplay Programmer, freshly minted Master in Game Development. Unity, Unreal, VR, AR, game jams and an unhealthy love for coffee.",
-  icons: { icon: "/favicon.ico" },
+    "Portfolio of Dennis Hawran — Gameplay Programmer with a Master's in Game Development. Unity, Unreal, VR, AR, game jams and an unhealthy love for coffee.",
   openGraph: {
     title: "Dennis Hawran — Gameplay Programmer",
     description:
