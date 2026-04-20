@@ -46,7 +46,7 @@ export function ContactCta() {
             </Button>
           </a>
 
-          <p className="mt-5 font-mono text-sm sm:text-base text-phosphor-dim">
+          <p className="mt-5 font-mono text-lg sm:text-xl text-phosphor-dim">
             <a
               href="mailto:dennishawran@gmail.com"
               className="hover:text-neon-pink transition-colors break-all"
