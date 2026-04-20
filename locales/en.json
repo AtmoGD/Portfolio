@@ -53,6 +53,13 @@
     "subtitle": "HAND PICKED",
     "viewAll": "See all projects"
   },
+  "wheel": {
+    "kicker": "GALLERY",
+    "title": "From the Portfolio",
+    "prev": "Previous",
+    "next": "Next",
+    "srCurrent": "Current: {{title}}"
+  },
   "projects": {
     "title": "Projects",
     "subtitle": "THE WHOLE ARCADE",

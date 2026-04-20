@@ -53,6 +53,13 @@
     "subtitle": "HAND VERLESEN",
     "viewAll": "Alle Projekte ansehen"
   },
+  "wheel": {
+    "kicker": "GALLERY",
+    "title": "Aus dem Portfolio",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "srCurrent": "Aktuell: {{title}}"
+  },
   "projects": {
     "title": "Projects",
     "subtitle": "DAS GESAMTE ARCADE",
