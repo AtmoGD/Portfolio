@@ -43,7 +43,7 @@ export function ContactCta() {
             <Button
               variant="primary"
               size="lg"
-              className="w-full sm:w-auto max-w-full break-all"
+              className="w-full sm:w-auto max-w-full whitespace-nowrap px-4 sm:px-7 text-[clamp(0.7rem,3vw,1rem)]"
             >
               <Mail className="w-4 h-4 flex-shrink-0" />
               dennishawran@gmail.com
