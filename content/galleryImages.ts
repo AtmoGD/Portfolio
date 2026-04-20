@@ -1,12 +1,6 @@
 import type { StaticImageData } from "next/image";
 
 // --- Unthroned ---
-import unthroned1 from "@/assets/gallery/unthroned-1.png";
-import unthroned2 from "@/assets/gallery/unthroned-2.png";
-import unthroned3 from "@/assets/gallery/unthroned-3.png";
-import unthroned4 from "@/assets/gallery/unthroned-4.png";
-import unthroned5 from "@/assets/gallery/unthroned-5.png";
-import unthroned6 from "@/assets/gallery/unthroned-6.png";
 import unthroned7 from "@/assets/gallery/unthroned-7.png";
 
 // --- Cozy Winter Market ---
@@ -17,7 +11,6 @@ import cozyWinter4 from "@/assets/gallery/cozy-winter-4.jpg";
 import cozyWinter5 from "@/assets/gallery/cozy-winter-5.jpg";
 
 // --- Pumpkin Harvest ---
-import pumpkin1 from "@/assets/gallery/pumpkin-1.png";
 import pumpkin2 from "@/assets/gallery/pumpkin-2.png";
 import pumpkin3 from "@/assets/gallery/pumpkin-3.png";
 import pumpkin4 from "@/assets/gallery/pumpkin-4.png";
@@ -26,10 +19,6 @@ import pumpkin6 from "@/assets/gallery/pumpkin-6.png";
 
 // --- Witch Way? ---
 import witchWay1 from "@/assets/gallery/witch-way-1.png";
-import witchWay2 from "@/assets/gallery/witch-way-2.png";
-import witchWay3 from "@/assets/gallery/witch-way-3.png";
-import witchWay4 from "@/assets/gallery/witch-way-4.png";
-import witchWay5 from "@/assets/gallery/witch-way-5.png";
 import witchWay6 from "@/assets/gallery/witch-way-6.png";
 import witchWay7 from "@/assets/gallery/witch-way-7.png";
 import witchWay8 from "@/assets/gallery/witch-way-8.png";
@@ -74,15 +63,7 @@ import rocketScience3 from "@/assets/gallery/rocket-science-3.png";
  * Keyed by project slug. Empty / missing slug = no gallery section renders.
  */
 export const galleryBySlug: Record<string, StaticImageData[]> = {
-  unthroned: [
-    unthroned1,
-    unthroned2,
-    unthroned3,
-    unthroned4,
-    unthroned5,
-    unthroned6,
-    unthroned7,
-  ],
+  unthroned: [unthroned7],
   "cozy-winter-market": [
     cozyWinter1,
     cozyWinter2,
@@ -90,18 +71,8 @@ export const galleryBySlug: Record<string, StaticImageData[]> = {
     cozyWinter4,
     cozyWinter5,
   ],
-  "pumpkin-harvest": [pumpkin1, pumpkin2, pumpkin3, pumpkin4, pumpkin5, pumpkin6],
-  "witch-way": [
-    witchWay1,
-    witchWay2,
-    witchWay3,
-    witchWay4,
-    witchWay5,
-    witchWay6,
-    witchWay7,
-    witchWay8,
-    witchWay9,
-  ],
+  "pumpkin-harvest": [pumpkin2, pumpkin3, pumpkin4, pumpkin5, pumpkin6],
+  "witch-way": [witchWay1, witchWay6, witchWay7, witchWay8, witchWay9],
   "gravity-pong": [gravityPong1, gravityPong2, gravityPong3],
   "little-critters": [
     littleCritters1,
