@@ -22,7 +22,7 @@ export function CrtOverlay() {
         className="fixed inset-0 pointer-events-none z-[90]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(0deg, rgba(0,0,0,0.55) 0px, rgba(0,0,0,0.55) 1px, transparent 1px, transparent 3px)",
+            "repeating-linear-gradient(0deg, rgba(0,0,0,0.42) 0px, rgba(0,0,0,0.42) 1px, transparent 1px, transparent 3px)",
         }}
       />
 
@@ -32,28 +32,28 @@ export function CrtOverlay() {
         className="fixed inset-0 pointer-events-none z-[91]"
         style={{
           background:
-            "linear-gradient(rgba(18, 180, 200, 0.04), rgba(18, 180, 200, 0.04))",
+            "linear-gradient(rgba(18, 180, 200, 0.03), rgba(18, 180, 200, 0.03))",
           mixBlendMode: "screen",
         }}
       />
 
-      {/* Strong vignette — pronounced darkening toward edges */}
+      {/* Vignette — softer darkening toward edges */}
       <div
         aria-hidden="true"
         className="fixed inset-0 pointer-events-none z-[92]"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.8) 100%)",
+            "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.38) 85%, rgba(0,0,0,0.62) 100%)",
         }}
       />
 
-      {/* Animated flicker — noticeable brightness pulse */}
+      {/* Animated flicker — subtle brightness pulse */}
       {!reduced && (
         <div
           aria-hidden="true"
           className="fixed inset-0 pointer-events-none z-[93] animate-flicker"
           style={{
-            background: "rgba(255, 255, 255, 0.04)",
+            background: "rgba(255, 255, 255, 0.03)",
             mixBlendMode: "overlay",
           }}
         />
@@ -66,7 +66,7 @@ export function CrtOverlay() {
           className="fixed inset-x-0 pointer-events-none z-[94] h-24 animate-crt-roll"
           style={{
             background:
-              "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%)",
+              "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.045) 50%, transparent 100%)",
           }}
         />
       )}

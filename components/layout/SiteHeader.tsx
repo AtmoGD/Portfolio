@@ -183,7 +183,7 @@ function MobileDrawer({ open, onClose, links, isActive }: MobileDrawerProps) {
             </nav>
 
             <div className="mt-2 px-5 py-5 border-t-2 border-phosphor/10 flex flex-col gap-4">
-              <span className="font-mono text-xs uppercase tracking-widest text-phosphor-dim font-bold">
+              <span className="font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
                 ▸ Stats
               </span>
               <AchievementHub />
@@ -191,14 +191,14 @@ function MobileDrawer({ open, onClose, links, isActive }: MobileDrawerProps) {
             </div>
 
             <div className="px-5 py-5 border-t-2 border-phosphor/10 flex flex-col gap-4">
-              <span className="font-mono text-xs uppercase tracking-widest text-phosphor-dim font-bold">
+              <span className="font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
                 ▸ Language
               </span>
               <LanguageSwitch />
             </div>
 
             <div className="mt-auto px-5 py-5 border-t-2 border-phosphor/10">
-              <span className="font-mono text-xs text-phosphor-dim/70">
+              <span className="font-mono text-sm text-phosphor-dim/80">
                 Press ESC or tap outside to close
               </span>
             </div>

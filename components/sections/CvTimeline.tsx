@@ -100,7 +100,7 @@ export function CvTimeline({
               {iconMap[entry.icon]}
             </span>
             <div className="flex flex-col gap-1.5">
-              <span className="font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
+              <span className="font-mono text-base uppercase tracking-widest text-phosphor/80 font-bold">
                 {period}
               </span>
               <h3
@@ -120,8 +120,8 @@ export function CvTimeline({
                 </p>
               )}
               {grade && (
-                <span className="mt-2 inline-flex self-start items-center gap-2 font-mono text-sm uppercase tracking-widest text-phosphor-dim font-bold">
-                  <span className="w-1.5 h-1.5 bg-phosphor-dim" />
+                <span className="mt-2 inline-flex self-start items-center gap-2 font-mono text-base uppercase tracking-widest text-phosphor font-bold">
+                  <span className="w-2 h-2 bg-phosphor" />
                   Note: {grade}
                 </span>
               )}

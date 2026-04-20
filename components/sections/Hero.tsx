@@ -178,7 +178,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-phosphor-dim font-mono text-xs uppercase tracking-widest"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-phosphor-dim font-mono text-sm uppercase tracking-widest"
       >
         {t("hero.scrollHint")}
         <ArrowDown className="w-5 h-5 animate-bounce-slow" />

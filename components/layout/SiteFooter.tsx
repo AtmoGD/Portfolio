@@ -49,7 +49,7 @@ export function SiteFooter() {
           <span className="font-mono text-sm text-phosphor-dim max-w-xs">
             {t("footer.madeWith")}.
           </span>
-          <span className="font-mono text-xs text-phosphor-dim/70">
+          <span className="font-mono text-sm text-phosphor-dim/80">
             © {new Date().getFullYear()}
           </span>
         </div>
@@ -93,7 +93,7 @@ export function SiteFooter() {
             label={t("footer.resetData")}
             hint={t("footer.resetDataHint")}
           />
-          <span className="font-mono text-xs text-phosphor-dim max-w-[20em]">
+          <span className="font-mono text-sm text-phosphor-dim max-w-[20em]">
             {t("footer.konamiHint")}: ↑↑↓↓←→←→BA
           </span>
         </div>

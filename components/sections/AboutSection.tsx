@@ -87,7 +87,7 @@ export function AboutSection() {
                 transition={{ duration: 0.4 }}
                 className={`bg-ink-100 border-2 p-5 sm:p-6 flex flex-col gap-3 ${accentClasses[stat.accent]}`}
               >
-                <div className="flex items-center gap-2 font-mono text-xs sm:text-sm uppercase tracking-widest font-bold">
+                <div className="flex items-center gap-2 font-mono text-sm sm:text-base uppercase tracking-widest font-bold">
                   {stat.icon}
                   {t(`about.stats.${stat.key}`)}
                 </div>

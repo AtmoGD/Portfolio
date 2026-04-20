@@ -36,9 +36,16 @@ export function ContactCta() {
             {t("hero.cta.contactSubtitle")}
           </p>
 
-          <a href="mailto:dennishawran@gmail.com">
-            <Button variant="primary" size="lg">
-              <Mail className="w-4 h-4" />
+          <a
+            href="mailto:dennishawran@gmail.com"
+            className="inline-flex w-full sm:w-auto max-w-full"
+          >
+            <Button
+              variant="primary"
+              size="lg"
+              className="w-full sm:w-auto max-w-full break-all"
+            >
+              <Mail className="w-4 h-4 flex-shrink-0" />
               dennishawran@gmail.com
             </Button>
           </a>
