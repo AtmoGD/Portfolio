@@ -20,7 +20,8 @@
       "viewProjects": "View Projects",
       "readCv": "Read CV",
       "contact": "Grab a coffee?",
-      "contactSubtitle": "Game jam idea, junior role, or just coffee — I reply quickly."
+      "contactSubtitle": "Game jam idea, junior role, or just coffee — I reply quickly.",
+      "writeMe": "Write me"
     },
     "location": "Augsburg, Germany",
     "scrollHint": "scroll on"

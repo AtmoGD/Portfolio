@@ -38,17 +38,22 @@ export function ContactCta() {
 
           <a
             href="mailto:dennishawran@gmail.com"
-            className="inline-flex w-full sm:w-auto max-w-full"
+            className="inline-flex"
           >
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto max-w-full whitespace-nowrap px-4 sm:px-7 text-[clamp(0.7rem,3vw,1rem)]"
-            >
+            <Button variant="primary" size="lg">
               <Mail className="w-4 h-4 flex-shrink-0" />
-              dennishawran@gmail.com
+              {t("hero.cta.writeMe")}
             </Button>
           </a>
+
+          <p className="mt-5 font-mono text-sm sm:text-base text-phosphor-dim">
+            <a
+              href="mailto:dennishawran@gmail.com"
+              className="hover:text-neon-pink transition-colors break-all"
+            >
+              dennishawran@gmail.com
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>
