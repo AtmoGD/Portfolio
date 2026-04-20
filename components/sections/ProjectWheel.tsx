@@ -83,12 +83,12 @@ const OPACITY_BY_ABS: Record<number, number> = {
 };
 
 function useTileWidth() {
-  const [w, setW] = useState(352); // 22rem fallback
+  const [w, setW] = useState(512); // 32rem fallback (SSR-ish)
   useLayoutEffect(() => {
     const update = () => {
-      // clamp(240, 80vw, 24rem) — bigger than v1 to fill the section
+      // clamp(320px, 85vw, 40rem=640px) — big enough to dominate the section
       const vw = window.innerWidth;
-      const next = Math.max(240, Math.min(vw * 0.72, 24 * 16));
+      const next = Math.max(320, Math.min(vw * 0.85, 40 * 16));
       setW(next);
     };
     update();
