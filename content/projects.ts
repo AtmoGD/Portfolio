@@ -8,7 +8,7 @@ import pumpkinHarvest from "@/assets/PumpkinHarvest@0.25x.png";
 import witchWay from "@/assets/WitchWay.png";
 import gravityPong from "@/assets/GravityPong.png";
 import bomberman from "@/assets/Bomb.png";
-import profile from "@/assets/Dennis.jpg";
+import profile from "@/assets/Dennis-v2.jpg";
 import littleCritters from "@/assets/LittleCritters.png";
 import professorPapillon from "@/assets/ProfessorPapillon.png";
 import sockItUp from "@/assets/SockItUp.png";
