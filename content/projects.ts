@@ -45,6 +45,9 @@ export type Project = {
   descriptionKey: string;
   /** YouTube embed URL, e.g. https://www.youtube.com/embed/VIDEO_ID */
   trailerUrl?: string;
+  /** If true, the detail page won't render the Screenshots section. The
+   *  slug's images still appear in the landing-page ProjectWheel. */
+  hideProjectGallery?: boolean;
   featured?: boolean;
   secret?: boolean;
   accent: "pink" | "cyan" | "amber" | "lime" | "violet";
@@ -166,6 +169,7 @@ export const projects: Project[] = [
     linkLabel: "play",
     descriptionKey: "projects.descriptions.unthroned",
     trailerUrl: "https://www.youtube.com/embed/_aoRbVDb870",
+    hideProjectGallery: true,
     accent: "pink",
   },
   {

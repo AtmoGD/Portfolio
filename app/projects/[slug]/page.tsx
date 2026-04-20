@@ -264,7 +264,7 @@ export default function ProjectDetailPage() {
           </section>
         )}
 
-        {galleryBySlug[project.slug]?.length ? (
+        {!project.hideProjectGallery && galleryBySlug[project.slug]?.length ? (
           <section className="mt-16">
             <h2
               className={cn(
