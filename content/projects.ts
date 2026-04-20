@@ -9,6 +9,11 @@ import witchWay from "@/assets/WitchWay.png";
 import gravityPong from "@/assets/GravityPong.png";
 import bomberman from "@/assets/Bomb.png";
 import profile from "@/assets/profile_compressed.jpg";
+import littleCritters from "@/assets/LittleCritters.png";
+import professorPapillon from "@/assets/ProfessorPapillon.png";
+import sockItUp from "@/assets/SockItUp.png";
+import kibosPath from "@/assets/KibosPath.png";
+import rocketScience from "@/assets/RocketScience.png";
 
 export type ProjectContext =
   | "Master Thesis"
@@ -106,7 +111,7 @@ export const projects: Project[] = [
   {
     slug: "little-critters",
     title: "Little Critters",
-    coverImage: profile,
+    coverImage: littleCritters,
     year: 2024,
     roleKey: "programmer",
     teamSize: 7,
@@ -123,7 +128,7 @@ export const projects: Project[] = [
   {
     slug: "professor-papillon",
     title: "Professor Papillon",
-    coverImage: profile,
+    coverImage: professorPapillon,
     year: 2025,
     roleKey: "programmer",
     teamSize: 8,
@@ -140,7 +145,7 @@ export const projects: Project[] = [
   {
     slug: "sock-it-up",
     title: "Sock It Up!",
-    coverImage: profile,
+    coverImage: sockItUp,
     year: 2025,
     roleKey: "programmer",
     teamSize: 4,
@@ -157,7 +162,7 @@ export const projects: Project[] = [
   {
     slug: "kibos-path",
     title: "Kibō's Path",
-    coverImage: profile,
+    coverImage: kibosPath,
     year: 2026,
     roleKey: "programmer",
     teamSize: 4,
@@ -175,7 +180,7 @@ export const projects: Project[] = [
   {
     slug: "its-not-rocket-science",
     title: "It's Not Rocket Science",
-    coverImage: profile,
+    coverImage: rocketScience,
     year: 2026,
     roleKey: "programmer",
     teamSize: 4,

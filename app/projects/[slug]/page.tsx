@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getAdjacentProjects, getProject } from "@/content/projects";
+import { galleryBySlug } from "@/content/galleryImages";
 import { PageShell } from "@/components/layout/PageShell";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -262,6 +263,38 @@ export default function ProjectDetailPage() {
             </div>
           </section>
         )}
+
+        {galleryBySlug[project.slug]?.length ? (
+          <section className="mt-16">
+            <h2
+              className={cn(
+                "arcade-title text-base sm:text-lg mb-5",
+                accentText[project.accent]
+              )}
+            >
+              ▸ {t("projects.gallery")}
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {galleryBySlug[project.slug].map((img, idx) => (
+                <div
+                  key={idx}
+                  className={cn(
+                    "relative aspect-video border-2 overflow-hidden bg-ink-100",
+                    accentBorder[project.accent]
+                  )}
+                >
+                  <Image
+                    src={img}
+                    alt={`${project.title} — Screenshot ${idx + 1}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {(prev || next) && (
           <section className="mt-20 grid sm:grid-cols-2 gap-4 border-t-2 border-phosphor/10 pt-8">
