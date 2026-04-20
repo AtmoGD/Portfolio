@@ -3,6 +3,14 @@ import type { StaticImageData } from "next/image";
 // --- Unthroned ---
 import unthroned7 from "@/assets/gallery/unthroned-7.png";
 
+// --- Amapo ---
+import amapo1 from "@/assets/gallery/amapo-1.png";
+import amapo2 from "@/assets/gallery/amapo-2.png";
+import amapo3 from "@/assets/gallery/amapo-3.png";
+import amapo4 from "@/assets/gallery/amapo-4.png";
+import amapo5 from "@/assets/gallery/amapo-5.png";
+import amapo6 from "@/assets/gallery/amapo-6.png";
+
 // --- Cozy Winter Market ---
 import cozyWinter1 from "@/assets/gallery/cozy-winter-1.png";
 import cozyWinter2 from "@/assets/gallery/cozy-winter-2.png";
@@ -64,6 +72,7 @@ import rocketScience3 from "@/assets/gallery/rocket-science-3.png";
  */
 export const galleryBySlug: Record<string, StaticImageData[]> = {
   unthroned: [unthroned7],
+  amapo: [amapo1, amapo2, amapo3, amapo4, amapo5, amapo6],
   "cozy-winter-market": [
     cozyWinter1,
     cozyWinter2,

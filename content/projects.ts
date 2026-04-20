@@ -14,6 +14,7 @@ import professorPapillon from "@/assets/ProfessorPapillon.png";
 import sockItUp from "@/assets/SockItUp.png";
 import kibosPath from "@/assets/KibosPath.png";
 import rocketScience from "@/assets/RocketScience.png";
+import amapo from "@/assets/Amapo.png";
 
 export type ProjectContext =
   | "Master Thesis"
@@ -205,6 +206,23 @@ export const projects: Project[] = [
     trailerUrl: "https://www.youtube.com/embed/Wh6ieci--3E",
     featured: true,
     accent: "cyan",
+  },
+  {
+    slug: "amapo",
+    title: "Amapo",
+    coverImage: amapo,
+    year: 2022,
+    roleKey: "programmer",
+    teamSize: 4,
+    duration: "48h (jam)",
+    context: "Game Jam",
+    category: "game",
+    tagKeys: ["unity", "gameJam", "gameDesign"],
+    techKeys: ["unity", "programming", "gameDesign"],
+    externalLink: "https://atmogd.itch.io/apamo",
+    linkLabel: "play",
+    descriptionKey: "projects.descriptions.amapo",
+    accent: "lime",
   },
   {
     slug: "pumpkin-harvest",
