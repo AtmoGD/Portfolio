@@ -80,7 +80,7 @@ const SLOTS: Slot[] = [
 
 const AUTO_ADVANCE_MS = 4000;
 
-export function ProjectWheel() {
+export default function ProjectWheel() {
   const { t } = useTranslation();
   const reduced = useFramerReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);

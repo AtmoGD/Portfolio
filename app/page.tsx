@@ -11,7 +11,7 @@ import { LazyMount } from "@/components/ui/LazyMount";
 // it keeps that weight out of the initial landing-page bundle. LazyMount then
 // defers the actual mount (and its JS chunk fetch) until the user scrolls near.
 const ProjectWheel = dynamic(
-  () => import("@/components/sections/ProjectWheel").then((m) => m.ProjectWheel),
+  () => import("@/components/sections/ProjectWheel"),
   { ssr: false },
 );
 
