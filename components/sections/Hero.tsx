@@ -17,7 +17,8 @@ import {
   Sparkles,
   Gamepad2,
 } from "lucide-react";
-import profileImg from "@/assets/profile_compressed.jpg";
+import dennisRaw from "@/assets/Dennis.JPG";
+import dennis8bit from "@/assets/Dennis_8Bit.png";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { unlock } from "@/lib/achievements";
@@ -84,38 +85,16 @@ export function Hero() {
               )}
             >
               <Image
-                src={profileImg}
+                src={pixel ? dennis8bit : dennisRaw}
                 alt="Dennis Hawran"
                 fill
                 sizes="224px"
                 className={cn(
-                  "object-cover transition-all duration-300",
-                  pixel && "contrast-125 saturate-150"
+                  "object-cover transition-opacity duration-200",
+                  pixel && "[image-rendering:pixelated]"
                 )}
-                style={
-                  pixel
-                    ? {
-                        filter:
-                          "contrast(1.25) saturate(1.6) hue-rotate(-5deg) blur(0.5px)",
-                        imageRendering: "pixelated",
-                      }
-                    : undefined
-                }
                 priority
               />
-              {pixel && (
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 5px), repeating-linear-gradient(90deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 5px)",
-                  }}
-                />
-              )}
-              {pixel && (
-                <div className="absolute inset-0 pointer-events-none mix-blend-overlay bg-scanline-overlay" />
-              )}
             </div>
             <span className="absolute -bottom-2 -right-2 bg-ink border-2 border-neon-cyan text-neon-cyan px-2 py-1 font-mono text-xs uppercase tracking-wider font-bold">
               {pixel ? "RAW" : "8-BIT"}
