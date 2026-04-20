@@ -68,7 +68,6 @@ export const projects: Project[] = [
     linkLabel: "play",
     descriptionKey: "projects.descriptions.unthroned",
     trailerUrl: "https://www.youtube.com/embed/_aoRbVDb870",
-    featured: true,
     accent: "pink",
   },
   {
@@ -102,7 +101,6 @@ export const projects: Project[] = [
     techKeys: ["unity", "programming", "gameDesign", "ar"],
     descriptionKey: "projects.descriptions.aurea",
     trailerUrl: "https://www.youtube.com/embed/t9RwqJnLjy8",
-    featured: true,
     accent: "amber",
   },
   {
@@ -171,6 +169,7 @@ export const projects: Project[] = [
     externalLink: "https://atmogd.itch.io/kibos-path",
     linkLabel: "play",
     descriptionKey: "projects.descriptions.kibosPath",
+    featured: true,
     accent: "cyan",
   },
   {
@@ -188,6 +187,7 @@ export const projects: Project[] = [
     externalLink: "https://atmogd.itch.io/its-not-rocket-science",
     linkLabel: "play",
     descriptionKey: "projects.descriptions.itsNotRocketScience",
+    featured: true,
     accent: "violet",
   },
   {
